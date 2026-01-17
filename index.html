@@ -23,16 +23,16 @@
     <meta name="author" content="Md. Masum Billah">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://itsmebillah.github.io/itsmebillah/">
+    <meta property="og:url" content="https://itsmebillah.github.io">
     <meta property="og:title" content="Md. Masum Billah | Data Analyst & Automation Developer">
     <meta property="og:description" content="Data Analyst at Data Solution 360 with expertise in data analysis, automation, and business intelligence.">
     <meta property="og:image" content="https://i.postimg.cc/SRhCysjL/Whats-App-Image-2025-10.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://itsmebillah.github.io/itsmebillah/">
+    <meta property="twitter:url" content="https://itsmebillah.github.io">
     <meta property="twitter:title" content="Md. Masum Billah | Data Analyst & Automation Developer">
     <meta property="twitter:description" content="Data Analyst at Data Solution 360 with expertise in data analysis, automation, and business intelligence.">
     <meta property="twitter:image" content="https://i.postimg.cc/SRhCysjL/Whats-App-Image-2025-10.jpg">
@@ -54,9 +54,6 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
         * {
@@ -139,24 +136,16 @@
             animation: float 6s ease-in-out infinite;
         }
 
-        /* Magnetic Buttons */
-        .magnetic-btn {
-            transition: all 0.3s ease;
-            cursor: pointer;
+        /* Button Styles */
+        .btn-gradient {
+            background: linear-gradient(45deg, #FF6B35, #FF8B35);
+            color: white;
         }
         
-        .magnetic-btn:hover {
-            transform: translateY(-2px) scale(1.05);
+        .light-mode .btn-gradient {
+            background: linear-gradient(45deg, #4f46e5, #7c3aed);
         }
-
-        .dark .magnetic-btn:hover {
-            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
-        }
-
-        .light-mode .magnetic-btn:hover {
-            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.2);
-        }
-
+        
         /* Skills Progress Bars */
         .skill-container {
             margin-bottom: 1.5rem;
@@ -240,17 +229,13 @@
         .timeline-item:nth-child(odd) .timeline-content {
             margin-left: auto;
             margin-right: 2rem;
-            text-align: left;
             padding-right: 4rem;
-            padding-left: 0;
         }
 
         .timeline-item:nth-child(even) .timeline-content {
             margin-left: 2rem;
             margin-right: auto;
-            text-align: left;
             padding-left: 4rem;
-            padding-right: 0;
         }
 
         .timeline-content {
@@ -267,18 +252,6 @@
         .light-mode .timeline-content {
             background: rgba(255, 255, 255, 0.92);
             border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-5px);
-        }
-
-        .dark .timeline-content:hover {
-            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.2);
-        }
-
-        .light-mode .timeline-content:hover {
-            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.15);
         }
 
         .timeline-icon {
@@ -324,57 +297,6 @@
             color: #4f46e5;
         }
 
-        .timeline-content h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-            color: white;
-        }
-
-        .light-mode .timeline-content h3 {
-            color: #1e293b;
-        }
-
-        .timeline-company {
-            display: block;
-            color: #FF8B35;
-            font-weight: 500;
-            margin-bottom: 0.75rem;
-            font-size: 1rem;
-        }
-
-        .light-mode .timeline-company {
-            color: #7c3aed;
-        }
-
-        .timeline-description {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
-            font-size: 0.9rem;
-        }
-
-        .light-mode .timeline-description {
-            color: #64748b;
-        }
-
-        /* Project Tags */
-        .project-tag {
-            display: inline-block;
-            background: rgba(255, 107, 53, 0.2);
-            color: #FF8B35;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .light-mode .project-tag {
-            background: rgba(79, 70, 229, 0.15);
-            color: #4f46e5;
-        }
-
         /* Loader Styles */
         #loader {
             position: fixed;
@@ -400,65 +322,10 @@
             animation: spin 1s ease-in-out infinite;
         }
         
-        .light-mode #loader {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        }
-        
-        .light-mode .loader-spinner {
-            border: 3px solid rgba(79, 70, 229, 0.3);
-            border-top-color: #4f46e5;
-        }
-        
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
         
-        .loader-text {
-            margin-top: 20px;
-            color: #FF8B35;
-            font-weight: 500;
-        }
-        
-        .light-mode .loader-text {
-            color: #4f46e5;
-        }
-
-        /* Form Styles */
-        input, textarea {
-            transition: all 0.3s ease;
-        }
-        
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: #FF6B35;
-            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
-        }
-        
-        .light-mode input:focus,
-        .light-mode textarea:focus {
-            border-color: #4f46e5;
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-        }
-
-        /* Button Gradients */
-        .btn-gradient {
-            background: linear-gradient(45deg, #FF6B35, #FF8B35);
-            color: white;
-        }
-        
-        .light-mode .btn-gradient {
-            background: linear-gradient(45deg, #4f46e5, #7c3aed);
-        }
-        
-        .btn-gradient:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
-        }
-        
-        .light-mode .btn-gradient:hover {
-            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .timeline-container::before {
@@ -469,9 +336,7 @@
             .timeline-item:nth-child(even) .timeline-content {
                 width: calc(100% - 80px);
                 margin-left: 80px;
-                text-align: left;
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
+                padding: 1.5rem;
             }
 
             .timeline-item:nth-child(odd) .timeline-icon,
@@ -479,149 +344,6 @@
                 left: -55px;
                 right: auto;
             }
-            
-            h1 {
-                font-size: 2.5rem !important;
-            }
-            
-            h2 {
-                font-size: 2rem !important;
-            }
-        }
-
-        /* Experience Section Fix */
-        #experience .timeline-content {
-            padding: 2rem !important;
-        }
-
-        @media (max-width: 768px) {
-            #experience .timeline-content {
-                padding: 1.5rem !important;
-            }
-        }
-
-        /* Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            display: none;
-            overflow-y: auto;
-            padding: 1rem;
-        }
-        
-        .modal-content {
-            background: linear-gradient(135deg, #0B1120 0%, #1a202c 100%);
-            max-width: 800px;
-            margin: 2rem auto;
-            border-radius: 1rem;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-        }
-        
-        .light-mode .modal-overlay {
-            background: rgba(0, 0, 0, 0.7);
-        }
-        
-        .light-mode .modal-content {
-            background: white;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(255, 107, 53, 0.2);
-            border: none;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 1.25rem;
-            transition: all 0.3s ease;
-        }
-        
-        .modal-close:hover {
-            background: rgba(255, 107, 53, 0.4);
-            transform: rotate(90deg);
-        }
-        
-        .light-mode .modal-close {
-            background: rgba(79, 70, 229, 0.15);
-            color: #4f46e5;
-        }
-        
-        .light-mode .modal-close:hover {
-            background: rgba(79, 70, 229, 0.3);
-        }
-
-        /* Achievement List */
-        .achievement-list {
-            list-style: none;
-            padding: 0;
-            margin: 1rem 0;
-        }
-        
-        .achievement-list li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .achievement-list li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #FF6B35;
-            font-weight: bold;
-        }
-        
-        .light-mode .achievement-list li {
-            color: #64748b;
-        }
-        
-        .light-mode .achievement-list li:before {
-            color: #4f46e5;
-        }
-
-        /* Form Message Styles */
-        .form-message {
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin: 1rem 0;
-            text-align: center;
-        }
-        
-        .form-message.success {
-            background: rgba(34, 197, 94, 0.15);
-            color: #22c55e;
-            border: 1px solid rgba(34, 197, 94, 0.3);
-        }
-        
-        .form-message.error {
-            background: rgba(239, 68, 68, 0.15);
-            color: #ef4444;
-            border: 1px solid rgba(239, 68, 68, 0.3);
-        }
-        
-        .light-mode .form-message.success {
-            background: rgba(34, 197, 94, 0.1);
-        }
-        
-        .light-mode .form-message.error {
-            background: rgba(239, 68, 68, 0.1);
         }
     </style>
 </head>
@@ -629,7 +351,7 @@
     <!-- Loader -->
     <div id="loader">
         <div class="loader-spinner"></div>
-        <div class="loader-text">Loading Portfolio...</div>
+        <div class="text-white mt-4 text-lg font-semibold">Loading Portfolio...</div>
     </div>
 
     <!-- Navigation -->
@@ -640,54 +362,26 @@
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="text-gray-300 hover:text-white transition-colors duration-300 magnetic-btn">Home</a>
-                    <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300 magnetic-btn">About</a>
-                    <a href="#skills" class="text-gray-300 hover:text-white transition-colors duration-300 magnetic-btn">Skills</a>
-                    <a href="#projects" class="text-gray-300 hover:text-white transition-colors duration-300 magnetic-btn">Projects</a>
-                    <a href="#certificates" class="text-gray-300 hover:text-white transition-colors duration-300 magnetic-btn">Certificates</a>
-                    <a href="#blogs" class="text-gray-300 hover:text-white transition-colors duration-300 magnetic-btn">Case Studies</a>
-                    <a href="#experience" class="text-gray-300 hover:text-white transition-colors duration-300 magnetic-btn">Experience</a>
-                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300 magnetic-btn">Contact</a>
+                    <a href="#home" class="nav-link text-gray-300 hover:text-white transition-colors duration-300">Home</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-white transition-colors duration-300">About</a>
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-white transition-colors duration-300">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-300 hover:text-white transition-colors duration-300">Projects</a>
+                    <a href="#experience" class="nav-link text-gray-300 hover:text-white transition-colors duration-300">Experience</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
                     
                     <!-- CV Download Button -->
                     <a href="https://drive.google.com/file/d/1AGm--2_soUpLvUB1a16xf-w4KHbF1I48/view" 
-                       class="text-gray-300 hover:text-white transition-colors duration-300 magnetic-btn"
-                       download="Md_Masum_Billah_CV.pdf" target="_blank">
+                       class="text-gray-300 hover:text-white transition-colors duration-300"
+                       download target="_blank">
                         <i class="fas fa-download mr-1"></i>CV
                     </a>
                 </div>
                 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center space-x-4">
-                    <button id="mobileMenuBtn" class="p-2 rounded-lg glass magnetic-btn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-                
                 <!-- Theme Toggle -->
                 <div class="flex items-center space-x-4">
-                    <button id="themeToggle" class="p-2 rounded-lg glass magnetic-btn">
+                    <button id="themeToggle" class="p-2 rounded-lg glass hover:bg-white/10 transition-colors">
                         <i class="fas fa-sun text-white"></i>
                     </button>
-                </div>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="md:hidden mt-4 py-4 border-t border-white/10 hidden">
-                <div class="flex flex-col space-y-3">
-                    <a href="#home" class="text-gray-300 hover:text-white transition-colors py-2">Home</a>
-                    <a href="#about" class="text-gray-300 hover:text-white transition-colors py-2">About</a>
-                    <a href="#skills" class="text-gray-300 hover:text-white transition-colors py-2">Skills</a>
-                    <a href="#projects" class="text-gray-300 hover:text-white transition-colors py-2">Projects</a>
-                    <a href="#certificates" class="text-gray-300 hover:text-white transition-colors py-2">Certificates</a>
-                    <a href="#blogs" class="text-gray-300 hover:text-white transition-colors py-2">Case Studies</a>
-                    <a href="#experience" class="text-gray-300 hover:text-white transition-colors py-2">Experience</a>
-                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors py-2">Contact</a>
-                    <a href="https://drive.google.com/file/d/1AGm--2_soUpLvUB1a16xf-w4KHbF1I48/view" 
-                       class="text-gray-300 hover:text-white transition-colors py-2"
-                       download target="_blank">
-                        <i class="fas fa-download mr-2"></i>Download CV
-                    </a>
                 </div>
             </div>
         </div>
@@ -717,29 +411,26 @@
             
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#projects" class="px-6 py-3 sm:px-8 sm:py-3 btn-gradient rounded-full text-white font-semibold magnetic-btn hover:shadow-lg transition-all duration-300">
+                <a href="#projects" class="px-6 py-3 sm:px-8 sm:py-3 btn-gradient rounded-full text-white font-semibold hover:shadow-lg transition-all duration-300">
                     <i class="fas fa-briefcase mr-2"></i>View My Work
                 </a>
-                <a href="#contact" class="px-6 py-3 sm:px-8 sm:py-3 glass border border-white/20 rounded-full text-white font-semibold magnetic-btn hover:border-white/40 transition-all duration-300">
+                <a href="#contact" class="px-6 py-3 sm:px-8 sm:py-3 glass border border-white/20 rounded-full text-white font-semibold hover:border-white/40 transition-all duration-300">
                     <i class="fas fa-paper-plane mr-2"></i>Get In Touch
                 </a>
             </div>
 
             <!-- Social Links -->
             <div class="flex justify-center space-x-4 sm:space-x-6 mt-8">
-                <a id="linkedinLink" href="https://linkedin.com/in/itsmebillah" class="text-gray-400 hover:text-white transition-colors duration-300 magnetic-btn" target="_blank">
+                <a id="linkedinLink" href="https://linkedin.com/in/itsmebillah" class="text-gray-400 hover:text-white transition-colors duration-300" target="_blank">
                     <i class="fab fa-linkedin text-xl sm:text-2xl"></i>
                 </a>
-                <a id="githubLink" href="https://github.com/itsmbillah" class="text-gray-400 hover:text-white transition-colors duration-300 magnetic-btn" target="_blank">
+                <a id="githubLink" href="https://github.com/itsmbillah" class="text-gray-400 hover:text-white transition-colors duration-300" target="_blank">
                     <i class="fab fa-github text-xl sm:text-2xl"></i>
                 </a>
-                <a id="facebookLink" href="https://www.facebook.com/itsmebillah" class="text-gray-400 hover:text-white transition-colors duration-300 magnetic-btn" target="_blank">
-                    <i class="fab fa-facebook text-xl sm:text-2xl"></i>
-                </a>
-                <a id="whatsappLink" href="https://wa.me/8801915966721" class="text-gray-400 hover:text-white transition-colors duration-300 magnetic-btn" target="_blank">
+                <a id="whatsappLink" href="https://wa.me/8801915966721" class="text-gray-400 hover:text-white transition-colors duration-300" target="_blank">
                     <i class="fab fa-whatsapp text-xl sm:text-2xl"></i>
                 </a>
-                <a id="emailLink" href="mailto:itsmbillah@gmail.com" class="text-gray-400 hover:text-white transition-colors duration-300 magnetic-btn">
+                <a id="emailLink" href="mailto:itsmbillah@gmail.com" class="text-gray-400 hover:text-white transition-colors duration-300">
                     <i class="fas fa-envelope text-xl sm:text-2xl"></i>
                 </a>
             </div>
@@ -749,16 +440,16 @@
     <!-- About Section -->
     <section id="about" class="py-16 sm:py-20 px-4 sm:px-6">
         <div class="container mx-auto">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 gradient-text" data-aos="fade-up">About Me</h2>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 gradient-text">About Me</h2>
             
-            <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
                 <div class="glass rounded-3xl p-6 sm:p-8">
                     <h3 class="text-xl sm:text-2xl font-semibold mb-4 text-orange-500">My Journey</h3>
                     <p class="text-gray-300 leading-relaxed mb-4">
-                        I'm <span class="gradient-text font-semibold" id="aboutName">Md. Masum Billah</span>, a passionate Data Analyst and Automation Developer with expertise in transforming complex datasets into actionable business strategies and building systems that run themselves.
+                        I'm <span class="gradient-text font-semibold">Md. Masum Billah</span>, a passionate Data Analyst and Automation Developer with expertise in transforming complex datasets into actionable business strategies and building systems that run themselves.
                     </p>
                     <p class="text-gray-300 leading-relaxed">
-                        I combine strong analytical skills with automation logic to streamline reporting, improve decision-making, and unlock efficiency for teams and organizations. Whether it's a Power BI dashboard, Google Apps Script automation, or data-driven business system, I build with precision, scalability, and purpose.
+                        I combine strong analytical skills with automation logic to streamline reporting, improve decision-making, and unlock efficiency for teams and organizations.
                     </p>
                 </div>
                 
@@ -767,30 +458,19 @@
                     <div class="space-y-4">
                         <div class="flex items-center">
                             <i class="fas fa-map-marker-alt text-orange-500 mr-3 text-lg"></i>
-                            <span class="text-gray-300" id="location">Dhaka, Bangladesh</span>
+                            <span class="text-gray-300">Dhaka, Bangladesh</span>
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-envelope text-orange-500 mr-3 text-lg"></i>
-                            <a id="contactEmail" href="mailto:itsmbillah@gmail.com" class="text-gray-300 hover:text-orange-400 transition-colors">itsmbillah@gmail.com</a>
+                            <a href="mailto:itsmbillah@gmail.com" class="text-gray-300 hover:text-orange-400 transition-colors">itsmbillah@gmail.com</a>
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-phone text-orange-500 mr-3 text-lg"></i>
-                            <span class="text-gray-300" id="phone">+880 1915-966721</span>
+                            <span class="text-gray-300">+880 1915-966721</span>
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-briefcase text-orange-500 mr-3 text-lg"></i>
                             <span class="text-gray-300">Data Analyst at Data Solution 360</span>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/10">
-                        <h4 class="text-lg font-semibold mb-4 text-orange-500">Core Expertise</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm">Data Analysis</span>
-                            <span class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm">Business Intelligence</span>
-                            <span class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm">Automation</span>
-                            <span class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm">Google Apps Script</span>
-                            <span class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm">Power BI</span>
                         </div>
                     </div>
                 </div>
@@ -801,41 +481,10 @@
     <!-- Skills Section -->
     <section id="skills" class="py-16 sm:py-20 px-4 sm:px-6">
         <div class="container mx-auto">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 gradient-text" data-aos="fade-up">Technical Skills</h2>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 gradient-text">Technical Skills</h2>
             
-            <div class="grid md:grid-cols-2 gap-8 sm:gap-12" id="skillsContainer" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 gap-8 sm:gap-12" id="skillsContainer">
                 <!-- Skills will be loaded dynamically -->
-                <div class="text-center py-8">
-                    <i class="fas fa-spinner fa-spin text-3xl text-gray-400 mb-4"></i>
-                    <p class="text-gray-400">Loading skills...</p>
-                </div>
-            </div>
-            
-            <!-- Skills Categories -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-12 sm:mt-16" data-aos="fade-up">
-                <div class="glass rounded-2xl p-4 sm:p-6 text-center magnetic-btn">
-                    <i class="fas fa-database text-3xl sm:text-4xl text-orange-500 mb-4"></i>
-                    <h3 class="text-lg sm:text-xl font-semibold mb-2">Data Analysis</h3>
-                    <p class="text-gray-300 text-sm">SQL, Python, Advanced Excel</p>
-                </div>
-                
-                <div class="glass rounded-2xl p-4 sm:p-6 text-center magnetic-btn">
-                    <i class="fas fa-robot text-3xl sm:text-4xl text-orange-500 mb-4"></i>
-                    <h3 class="text-lg sm:text-xl font-semibold mb-2">Automation</h3>
-                    <p class="text-gray-300 text-sm">Google Apps Script, APIs</p>
-                </div>
-                
-                <div class="glass rounded-2xl p-4 sm:p-6 text-center magnetic-btn">
-                    <i class="fas fa-chart-bar text-3xl sm:text-4xl text-orange-500 mb-4"></i>
-                    <h3 class="text-lg sm:text-xl font-semibold mb-2">BI & Visualization</h3>
-                    <p class="text-gray-300 text-sm">Power BI, Tableau, Dashboards</p>
-                </div>
-                
-                <div class="glass rounded-2xl p-4 sm:p-6 text-center magnetic-btn">
-                    <i class="fas fa-code text-3xl sm:text-4xl text-orange-500 mb-4"></i>
-                    <h3 class="text-lg sm:text-xl font-semibold mb-2">Development</h3>
-                    <p class="text-gray-300 text-sm">JavaScript, HTML, CSS, Apps Script</p>
-                </div>
             </div>
         </div>
     </section>
@@ -843,66 +492,21 @@
     <!-- Projects Section -->
     <section id="projects" class="py-16 sm:py-20 px-4 sm:px-6">
         <div class="container mx-auto">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 gradient-text" data-aos="fade-up">Featured Projects</h2>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 gradient-text">Featured Projects</h2>
             
-            <!-- Featured Projects Container -->
-            <div id="featuredProjectsContainer" data-aos="fade-up">
-                <div class="text-center py-8">
-                    <i class="fas fa-spinner fa-spin text-3xl text-gray-400 mb-4"></i>
-                    <p class="text-gray-400">Loading projects...</p>
-                </div>
-            </div>
-            
-            <!-- Other Projects Grid -->
-            <h3 class="text-2xl font-bold text-center mb-8 gradient-text" data-aos="fade-up">Other Projects</h3>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" id="otherProjectsContainer" data-aos="fade-up">
-                <!-- Other projects will be loaded here -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" id="projectsContainer">
+                <!-- Projects will be loaded dynamically -->
             </div>
         </div>
     </section>
 
-    <!-- Certificates Section -->
-    <section id="certificates" class="py-16 sm:py-20 px-4 sm:px-6">
-        <div class="container mx-auto">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 gradient-text" data-aos="fade-up">Certifications</h2>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" id="certificatesContainer" data-aos="fade-up">
-                <div class="text-center py-8">
-                    <i class="fas fa-spinner fa-spin text-3xl text-gray-400 mb-4"></i>
-                    <p class="text-gray-400">Loading certificates...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blogs/Case Studies Section -->
-    <section id="blogs" class="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-[#0B1120] to-[#1a202c]">
-        <div class="container mx-auto">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 gradient-text" data-aos="fade-up">Case Studies & Blogs</h2>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8" id="blogsContainer" data-aos="fade-up">
-                <div class="text-center py-8">
-                    <i class="fas fa-spinner fa-spin text-3xl text-gray-400 mb-4"></i>
-                    <p class="text-gray-400">Loading case studies...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience & Education Section -->
+    <!-- Experience Section -->
     <section id="experience" class="py-16 sm:py-20 px-4 sm:px-6">
         <div class="container mx-auto">
-            <div class="section-header text-center mb-12 sm:mb-16">
-                <span class="timeline-period mb-2 inline-block">Career Journey</span>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mt-2 mb-4 gradient-text" data-aos="fade-up">Experience & Education</h2>
-                <p class="text-gray-400 text-base sm:text-xl" data-aos="fade-up">My professional growth and academic achievements</p>
-            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 gradient-text">Experience & Education</h2>
             
-            <div class="timeline-container" id="timelineContainer" data-aos="fade-up">
-                <div class="text-center py-8">
-                    <i class="fas fa-spinner fa-spin text-3xl text-gray-400 mb-4"></i>
-                    <p class="text-gray-400">Loading experience...</p>
-                </div>
+            <div class="timeline-container" id="timelineContainer">
+                <!-- Timeline will be loaded dynamically -->
             </div>
         </div>
     </section>
@@ -910,350 +514,158 @@
     <!-- Contact Section -->
     <section id="contact" class="py-16 sm:py-20 px-4 sm:px-6">
         <div class="container mx-auto">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 gradient-text" data-aos="fade-up">Get In Touch</h2>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 gradient-text">Get In Touch</h2>
             
-            <div class="max-w-2xl mx-auto glass rounded-3xl p-6 sm:p-8" data-aos="fade-up">
+            <div class="max-w-2xl mx-auto glass rounded-3xl p-6 sm:p-8">
                 <form id="contactForm" class="space-y-6">
                     <div class="grid sm:grid-cols-2 gap-4 sm:gap-6">
-                        <div>
-                            <input type="text" id="name" name="name" placeholder="Your Name *" 
-                                   class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/30 transition-all"
-                                   required>
-                            <div class="text-xs text-gray-500 mt-1">Required field</div>
-                        </div>
-                        <div>
-                            <input type="email" id="email" name="email" placeholder="Your Email *" 
-                                   class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/30 transition-all"
-                                   required>
-                            <div class="text-xs text-gray-500 mt-1">Required field</div>
-                        </div>
+                        <input type="text" id="name" name="name" placeholder="Your Name *" 
+                               class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 transition-all"
+                               required>
+                        <input type="email" id="email" name="email" placeholder="Your Email *" 
+                               class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 transition-all"
+                               required>
                     </div>
                     
-                    <div>
-                        <input type="text" id="subject" name="subject" placeholder="Subject" 
-                               class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/30 transition-all">
-                        <div class="text-xs text-gray-500 mt-1">Optional</div>
-                    </div>
+                    <input type="text" id="subject" name="subject" placeholder="Subject" 
+                           class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 transition-all">
                     
-                    <div>
-                        <textarea id="message" name="message" placeholder="Your Message *" rows="5" 
-                                  class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/30 transition-all"
-                                  required></textarea>
-                        <div class="text-xs text-gray-500 mt-1">Required field</div>
-                    </div>
+                    <textarea id="message" name="message" placeholder="Your Message *" rows="5" 
+                              class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 transition-all"
+                              required></textarea>
                     
                     <button type="submit" id="submitBtn" 
-                            class="w-full py-3 btn-gradient rounded-lg text-white font-semibold magnetic-btn hover:shadow-lg transition-all duration-300 flex items-center justify-center">
+                            class="w-full py-3 btn-gradient rounded-lg text-white font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center">
                         <span id="btnText">Send Message</span>
-                        <i id="btnIcon" class="fas fa-paper-plane ml-2"></i>
                         <i id="btnSpinner" class="fas fa-spinner fa-spin ml-2 hidden"></i>
                     </button>
                 </form>
                 
-                <div id="formMessage" class="form-message hidden"></div>
-                
-                <div class="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/10">
-                    <p class="text-gray-400 text-center mb-6">Or contact me directly:</p>
-                    
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-                        <a id="contactEmailCard" href="mailto:itsmbillah@gmail.com" 
-                           class="glass p-3 sm:p-4 rounded-xl text-center magnetic-btn hover:border-orange-500 transition-all">
-                            <i class="fas fa-envelope text-xl sm:text-2xl text-orange-500 mb-2"></i>
-                            <div class="text-sm font-medium">Email</div>
-                            <div class="text-xs text-gray-400 mt-1 truncate" id="contactEmailText">itsmbillah@gmail.com</div>
-                        </a>
-                        
-                        <a id="contactLinkedinCard" href="https://linkedin.com/in/itsmebillah" 
-                           target="_blank"
-                           class="glass p-3 sm:p-4 rounded-xl text-center magnetic-btn hover:border-orange-500 transition-all">
-                            <i class="fab fa-linkedin text-xl sm:text-2xl text-orange-500 mb-2"></i>
-                            <div class="text-sm font-medium">LinkedIn</div>
-                            <div class="text-xs text-gray-400 mt-1">/itsmebillah</div>
-                        </a>
-                        
-                        <a id="contactWhatsappCard" href="https://wa.me/8801915966721" 
-                           target="_blank"
-                           class="glass p-3 sm:p-4 rounded-xl text-center magnetic-btn hover:border-orange-500 transition-all">
-                            <i class="fab fa-whatsapp text-xl sm:text-2xl text-orange-500 mb-2"></i>
-                            <div class="text-sm font-medium">WhatsApp</div>
-                            <div class="text-xs text-gray-400 mt-1">+880 1915-966721</div>
-                        </a>
-                        
-                        <a id="contactPhoneCard" href="tel:+8801915966721" 
-                           class="glass p-3 sm:p-4 rounded-xl text-center magnetic-btn hover:border-orange-500 transition-all">
-                            <i class="fas fa-phone text-xl sm:text-2xl text-orange-500 mb-2"></i>
-                            <div class="text-sm font-medium">Call</div>
-                            <div class="text-xs text-gray-400 mt-1">+880 1915-966721</div>
-                        </a>
-                    </div>
-                </div>
+                <div id="formMessage" class="mt-4 p-4 rounded-lg hidden"></div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 sm:py-12 px-4 sm:px-6 border-t border-white/10 bg-gradient-to-b from-transparent to-black/20">
-        <div class="container mx-auto">
-            <div class="grid md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
-                <div>
-                    <div class="text-xl sm:text-2xl font-bold gradient-text mb-4">Md. Masum Billah</div>
-                    <p class="text-gray-400 text-sm">Turning data into intelligence and automation into impact.</p>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
-                    <div class="space-y-2">
-                        <a href="#home" class="block text-gray-400 hover:text-orange-500 transition-colors text-sm">Home</a>
-                        <a href="#projects" class="block text-gray-400 hover:text-orange-500 transition-colors text-sm">Projects</a>
-                        <a href="#certificates" class="block text-gray-400 hover:text-orange-500 transition-colors text-sm">Certificates</a>
-                        <a href="#blogs" class="block text-gray-400 hover:text-orange-500 transition-colors text-sm">Case Studies</a>
-                        <a href="#contact" class="block text-gray-400 hover:text-orange-500 transition-colors text-sm">Contact</a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4 text-white">Connect</h4>
-                    <div class="flex space-x-4">
-                        <a id="footerLinkedin" href="https://linkedin.com/in/itsmebillah" 
-                           class="text-gray-400 hover:text-white transition-colors" target="_blank">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                        <a id="footerGithub" href="https://github.com/itsmbillah" 
-                           class="text-gray-400 hover:text-white transition-colors" target="_blank">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                        <a id="footerFacebook" href="https://www.facebook.com/itsmebillah" 
-                           class="text-gray-400 hover:text-white transition-colors" target="_blank">
-                            <i class="fab fa-facebook text-xl"></i>
-                        </a>
-                        <a id="footerEmail" href="mailto:itsmbillah@gmail.com" 
-                           class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fas fa-envelope text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="pt-6 sm:pt-8 border-t border-white/10 text-center">
-                <p class="text-gray-500 text-sm">© 2025 Md. Masum Billah. All rights reserved.</p>
-                <p class="text-gray-600 text-xs mt-2">Built with Google Apps Script & Tailwind CSS</p>
-            </div>
+    <footer class="py-8 sm:py-12 px-4 sm:px-6 border-t border-white/10">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-500 text-sm">© 2025 Md. Masum Billah. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    
     <script>
-        // Configuration
-        const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbzZQt1DKHw3d3Ya6Lgen_kTYNfSZ7xeeZHDRSSh1St1w2LR5VemUJQ3DSKmg-6Dx7YlMQ/exec';
+        // Configuration - USE YOUR GAS URL HERE
+        const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbwM263dREny57y2nXBCrAvgesWLdITWPHJLjqv2NmALXkCMIK016bZ819bMwzX0hn4t2g/exec';
         
-        // Global Variables
-        let portfolioData = {};
-        let skills = [];
-        let projects = [];
-        let certificates = [];
-        let experience = [];
-        let education = [];
-        let blogs = [];
+        // Static Data (Fallback if API fails)
+        const STATIC_DATA = {
+            skills: [
+                { name: "Google Apps Script", level: 90, category: "Automation" },
+                { name: "SQL", level: 85, category: "Data Analysis" },
+                { name: "Python", level: 80, category: "Programming" },
+                { name: "Excel", level: 95, category: "Data Analysis" },
+                { name: "Power BI", level: 85, category: "Data Visualization" },
+                { name: "Data Analysis", level: 88, category: "Analytics" },
+                { name: "Automation", level: 92, category: "Technical" },
+                { name: "Marketing Analytics", level: 75, category: "Business" }
+            ],
+            projects: [
+                {
+                    name: "Autopilot Business System",
+                    description: "Fully automated Point of Sale & Business Management System built using Google Sheets and Apps Script",
+                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&w=400",
+                    tags: ["Google Apps Script", "Automation", "Google Sheets API"],
+                    liveUrl: "https://script.google.com/macros/s/AKfycbze2NXUH8ddcmy7l99wLCbPrsz0v95vu7xO_bR632byfPPi0Yn7uxoZJm_W1Me4k8IH/exec",
+                    featured: true
+                },
+                {
+                    name: "Car Sales Analysis",
+                    description: "Vehicle sales trends and profitability analysis with Power BI dashboard",
+                    image: "https://i.postimg.cc/Hnp5vTtn/Screenshot-2025-07-28-110516.png",
+                    tags: ["Power BI", "SQL", "Data Analysis", "Dashboard"],
+                    liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiMjBhNzM1MDEtNTZiYy00MGM1LWJhM2MtY2NlZmYyZTA0ZjQ0IiwidCI6IjliOTk0Yjg2LWZmNjctNGEyNC05YTBjLTFkYzgzNWVjOTJjNSIsImMiOjEwfQ%3D%3D",
+                    featured: false
+                }
+            ],
+            experience: [
+                {
+                    title: "Data Analyst",
+                    company: "Data Solution 360",
+                    period: "June 2025 – Present",
+                    description: "Developed automated data pipelines reducing manual reporting time by 70%.",
+                    icon: "fa-briefcase"
+                },
+                {
+                    degree: "Bachelor of Business Administration (BBA)",
+                    institution: "Mohammadpur Kendriya College",
+                    period: "2018 – 2022",
+                    description: "Specialized in Marketing with coursework in business analytics, statistics.",
+                    icon: "fa-graduation-cap"
+                }
+            ]
+        };
 
         // Initialize when DOM is loaded
-        document.addEventListener('DOMContentLoaded', async function() {
-            // Initialize AOS
-            AOS.init({
-                duration: 800,
-                once: true,
-                offset: 100
-            });
-
-            // Initialize particles
-            particlesJS('particles-js', {
-                particles: {
-                    number: { value: 70, density: { enable: true, value_area: 800 } },
-                    color: { value: "#FF6B35" },
-                    shape: { type: "circle" },
-                    opacity: { value: 0.5, random: true },
-                    size: { value: 3, random: true },
-                    line_linked: {
-                        enable: true,
-                        distance: 150,
-                        color: "#FF6B35",
-                        opacity: 0.3,
-                        width: 1
-                    },
-                    move: {
-                        enable: true,
-                        speed: 2,
-                        direction: "none",
-                        random: true,
-                        straight: false,
-                        out_mode: "out",
-                        bounce: false
-                    }
-                },
-                interactivity: {
-                    detect_on: "canvas",
-                    events: {
-                        onhover: { enable: true, mode: "repulse" },
-                        onclick: { enable: true, mode: "push" }
-                    }
-                }
-            });
-
-            // Load portfolio data
-            await loadPortfolioData();
-            
-            // Initialize components
-            initializeMagneticButtons();
-            initializeSmoothScrolling();
+        document.addEventListener('DOMContentLoaded', function() {
             initializeThemeToggle();
-            initializeMobileMenu();
-            initializeFormSubmission();
+            initializeSmoothScrolling();
+            loadData();
             
-            // Hide loader
+            // Initialize form submission
+            document.getElementById('contactForm').addEventListener('submit', handleFormSubmit);
+            
+            // Hide loader after 1 second
             setTimeout(() => {
                 document.getElementById('loader').style.opacity = '0';
                 setTimeout(() => {
                     document.getElementById('loader').style.display = 'none';
                 }, 500);
-            }, 800);
+            }, 1000);
         });
 
-        // Load portfolio data from GAS
-        async function loadPortfolioData() {
+        // Load data from GAS or use static data
+        async function loadData() {
             try {
-                console.log('📡 Loading portfolio data from:', GAS_API_URL);
+                console.log('Loading data from:', GAS_API_URL);
                 
+                // Try to load from GAS
                 const response = await fetch(`${GAS_API_URL}?action=getAllData&cache=${Date.now()}`);
                 
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    throw new Error('GAS API failed');
                 }
                 
                 const result = await response.json();
                 
                 if (result.success && result.data) {
-                    console.log('✅ Portfolio data loaded successfully');
-                    
-                    portfolioData = result.data.config || {};
-                    skills = result.data.skills || [];
-                    projects = result.data.projects || [];
-                    certificates = result.data.certificates || [];
-                    experience = result.data.experience || [];
-                    education = result.data.education || [];
-                    blogs = result.data.blogs || [];
-                    
-                    updateUIWithData();
+                    console.log('✅ Data loaded from GAS');
+                    renderData(result.data);
                 } else {
-                    throw new Error('Invalid data structure received');
+                    throw new Error('Invalid data from GAS');
                 }
                 
             } catch (error) {
-                console.error('❌ Error loading portfolio data:', error);
-                useStaticData();
+                console.log('⚠️ Using static data:', error.message);
+                renderData(STATIC_DATA);
             }
         }
 
-        // Update UI with loaded data
-        function updateUIWithData() {
-            // Update basic info
-            updateBasicInfo();
-            
-            // Update social links
-            updateSocialLinks();
-            
-            // Update profile image
-            updateProfileImage();
-            
-            // Render sections
-            renderSkills();
-            renderProjects();
-            renderCertificates();
-            renderBlogs();
-            renderTimeline();
-            
-            // Animate skill bars
-            setTimeout(animateSkillBars, 500);
+        // Render data to UI
+        function renderData(data) {
+            renderSkills(data.skills || []);
+            renderProjects(data.projects || []);
+            renderTimeline(data.experience || []);
         }
 
-        function updateBasicInfo() {
-            if (portfolioData.name) {
-                document.getElementById('heroName').textContent = portfolioData.name;
-                document.getElementById('aboutName').textContent = portfolioData.name;
-            }
-            
-            if (portfolioData.title) {
-                document.getElementById('heroTitle').textContent = portfolioData.title;
-            }
-            
-            if (portfolioData.location) {
-                document.getElementById('location').textContent = portfolioData.location;
-            }
-            
-            if (portfolioData.phone) {
-                document.getElementById('phone').textContent = portfolioData.phone;
-            }
-            
-            if (portfolioData.email) {
-                const emailElements = [
-                    document.getElementById('contactEmail'),
-                    document.getElementById('contactEmailText'),
-                    document.getElementById('contactEmailCard'),
-                    document.getElementById('footerEmail')
-                ];
-                
-                emailElements.forEach(el => {
-                    if (el) {
-                        if (el.tagName === 'A') {
-                            el.href = `mailto:${portfolioData.email}`;
-                            if (el.id === 'contactEmail') {
-                                el.textContent = portfolioData.email;
-                            }
-                        } else {
-                            el.textContent = portfolioData.email;
-                        }
-                    }
-                });
-            }
-        }
-
-        function updateSocialLinks() {
-            if (portfolioData.social) {
-                const social = portfolioData.social;
-                
-                if (social.linkedin) {
-                    document.getElementById('linkedinLink').href = social.linkedin;
-                    document.getElementById('contactLinkedinCard').href = social.linkedin;
-                    document.getElementById('footerLinkedin').href = social.linkedin;
-                }
-                
-                if (social.github) {
-                    document.getElementById('githubLink').href = social.github;
-                    document.getElementById('footerGithub').href = social.github;
-                }
-                
-                if (social.facebook) {
-                    document.getElementById('facebookLink').href = social.facebook;
-                    document.getElementById('footerFacebook').href = social.facebook;
-                }
-                
-                if (social.whatsapp) {
-                    document.getElementById('whatsappLink').href = social.whatsapp;
-                    document.getElementById('contactWhatsappCard').href = social.whatsapp;
-                }
-            }
-        }
-
-        function updateProfileImage() {
-            if (portfolioData.images && portfolioData.images.profile) {
-                document.getElementById('profileImage').src = portfolioData.images.profile;
-            }
-        }
-
-        function renderSkills() {
+        // Render skills
+        function renderSkills(skills) {
             const container = document.getElementById('skillsContainer');
-            if (!container || skills.length === 0) return;
+            if (!container) return;
+            
+            if (skills.length === 0) {
+                container.innerHTML = '<p class="text-gray-400 text-center col-span-2">No skills data available</p>';
+                return;
+            }
             
             const firstHalf = skills.slice(0, Math.ceil(skills.length / 2));
             const secondHalf = skills.slice(Math.ceil(skills.length / 2));
@@ -1269,7 +681,6 @@
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="${skill.level}"></div>
                             </div>
-                            <div class="text-sm text-gray-400 mt-1">${skill.category}</div>
                         </div>
                     `).join('')}
                 </div>
@@ -1283,363 +694,92 @@
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="${skill.level}"></div>
                             </div>
-                            <div class="text-sm text-gray-400 mt-1">${skill.category}</div>
                         </div>
                     `).join('')}
                 </div>
             `;
+            
+            // Animate skill bars
+            setTimeout(() => {
+                document.querySelectorAll('.skill-progress').forEach(bar => {
+                    const width = bar.getAttribute('data-width');
+                    bar.style.width = width + '%';
+                });
+            }, 100);
         }
 
-        function renderProjects() {
-            const featuredContainer = document.getElementById('featuredProjectsContainer');
-            const otherContainer = document.getElementById('otherProjectsContainer');
-            
-            if (!featuredContainer || !otherContainer || projects.length === 0) return;
-            
-            const featuredProjects = projects.filter(p => p.featured);
-            const otherProjects = projects.filter(p => !p.featured);
-            
-            // Render featured projects
-            featuredContainer.innerHTML = featuredProjects.map(project => `
-                <div class="glass rounded-3xl p-6 mb-8">
-                    <div class="grid md:grid-cols-2 gap-6 items-center">
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-4 gradient-text">${project.name}</h3>
-                            <p class="text-gray-300 mb-6">
-                                ${project.description}
-                            </p>
-                            
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                ${project.tags.map(tag => `
-                                    <span class="project-tag">${tag}</span>
-                                `).join('')}
-                            </div>
-                            
-                            ${project.demoCredentials ? `
-                                <div class="mb-6 p-4 bg-white/5 rounded-lg">
-                                    <p class="text-sm font-semibold mb-2">Demo Credentials:</p>
-                                    <p class="text-sm mb-1">Email: <code class="bg-black/30 px-2 py-1 rounded">${project.demoCredentials.email}</code></p>
-                                    <p class="text-sm">Password: <code class="bg-black/30 px-2 py-1 rounded">${project.demoCredentials.password}</code></p>
-                                    <p class="text-xs text-gray-400 mt-2">Use these credentials to test the demo</p>
-                                </div>
-                            ` : ''}
-                            
-                            ${project.impact ? `
-                                <div class="mb-6 p-4 bg-gradient-to-r from-orange-500/10 to-pink-500/10 rounded-lg border border-orange-500/20">
-                                    <p class="text-sm font-semibold text-orange-400">Impact:</p>
-                                    <p class="text-sm text-gray-300">${project.impact}</p>
-                                </div>
-                            ` : ''}
-                            
-                            <div class="flex flex-wrap gap-4">
-                                ${project.liveUrl ? `
-                                    <a href="${project.liveUrl}" 
-                                       target="_blank"
-                                       class="px-6 py-3 btn-gradient rounded-full text-white font-semibold magnetic-btn inline-flex items-center">
-                                        <i class="fas fa-external-link-alt mr-2"></i>Live Demo
-                                    </a>
-                                ` : ''}
-                                ${project.githubUrl && project.githubUrl !== '#' ? `
-                                    <a href="${project.githubUrl}" 
-                                       target="_blank"
-                                       class="px-6 py-3 glass border border-white/20 rounded-full text-white font-semibold magnetic-btn inline-flex items-center">
-                                        <i class="fab fa-github mr-2"></i>View Code
-                                    </a>
-                                ` : ''}
-                            </div>
-                        </div>
-                        
-                        <div class="text-center">
-                            <img src="${project.image}" 
-                                 alt="${project.name}" 
-                                 class="w-full h-48 sm:h-64 object-cover rounded-2xl mb-6 shadow-2xl">
-                            <div class="text-xl font-bold gradient-text">${project.featured ? 'Featured Project' : 'Project'}</div>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-            
-            // Render other projects
-            if (otherProjects.length > 0) {
-                otherContainer.innerHTML = otherProjects.map(project => `
-                    <div class="glass rounded-2xl p-6 magnetic-btn h-full flex flex-col">
-                        <div class="mb-4 flex-grow">
-                            <img src="${project.image}" 
-                                 alt="${project.name}" 
-                                 class="w-full h-40 object-cover rounded-lg mb-4 shadow-lg">
-                            
-                            <h4 class="text-xl font-semibold mb-3 text-white">${project.name}</h4>
-                            <p class="text-gray-300 text-sm mb-4 flex-grow">${project.description}</p>
-                            
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                ${project.tags.slice(0, 3).map(tag => `
-                                    <span class="px-2 py-1 bg-orange-500/10 text-orange-400 rounded text-xs">${tag}</span>
-                                `).join('')}
-                            </div>
-                        </div>
-                        
-                        ${project.liveUrl ? `
-                            <a href="${project.liveUrl}" 
-                               target="_blank"
-                               class="text-orange-400 hover:text-orange-300 text-sm font-semibold magnetic-btn inline-flex items-center mt-auto">
-                                View Project <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                            </a>
-                        ` : ''}
-                    </div>
-                `).join('');
-            } else {
-                otherContainer.innerHTML = `
-                    <div class="col-span-3 text-center py-8">
-                        <p class="text-gray-400">No other projects available</p>
-                    </div>
-                `;
-            }
-        }
-
-        function renderCertificates() {
-            const container = document.getElementById('certificatesContainer');
+        // Render projects
+        function renderProjects(projects) {
+            const container = document.getElementById('projectsContainer');
             if (!container) return;
             
-            if (certificates.length === 0) {
-                container.innerHTML = `
-                    <div class="col-span-3 text-center py-8">
-                        <i class="fas fa-certificate text-4xl text-gray-400 mb-4"></i>
-                        <p class="text-gray-400">No certificates available</p>
-                    </div>
-                `;
+            if (projects.length === 0) {
+                container.innerHTML = '<p class="text-gray-400 text-center col-span-3">No projects available</p>';
                 return;
             }
             
-            container.innerHTML = certificates.map(cert => `
-                <div class="glass rounded-2xl overflow-hidden group border border-white/10 hover:border-orange-500 transition-all duration-300 magnetic-btn h-full flex flex-col">
-                    <div class="relative h-48 overflow-hidden flex-grow-0">
-                        <img src="${cert.image}" 
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="text-white font-bold text-lg mb-1 truncate">${cert.name}</h3>
-                            <p class="text-gray-300 text-sm">${cert.org}</p>
-                        </div>
+            container.innerHTML = projects.map(project => `
+                <div class="glass rounded-2xl p-6 hover:transform hover:-translate-y-1 transition-transform">
+                    <img src="${project.image}" 
+                         alt="${project.name}" 
+                         class="w-full h-48 object-cover rounded-lg mb-4">
+                    
+                    <h3 class="text-xl font-semibold mb-2 text-white">${project.name}</h3>
+                    <p class="text-gray-300 text-sm mb-4">${project.description}</p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        ${project.tags.map(tag => `
+                            <span class="px-2 py-1 bg-orange-500/20 text-orange-400 rounded text-xs">${tag}</span>
+                        `).join('')}
                     </div>
                     
-                    <div class="p-4 flex-grow">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-orange-500 font-semibold text-sm">${cert.date}</span>
-                            
-                            ${cert.verify ? `
-                                <a href="${cert.verify}" 
-                                   target="_blank"
-                                   class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-xs hover:bg-orange-500/30 transition-colors">
-                                    <i class="fas fa-external-link-alt mr-1"></i>Verify
-                                </a>
-                            ` : ''}
-                        </div>
-                        
-                        ${cert.skills && cert.skills.length > 0 ? `
-                            <div class="mt-3">
-                                <div class="flex flex-wrap gap-1">
-                                    ${cert.skills.slice(0, 3).map(skill => `
-                                        <span class="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs">${skill}</span>
-                                    `).join('')}
-                                </div>
-                            </div>
-                        ` : ''}
-                    </div>
+                    ${project.liveUrl ? `
+                        <a href="${project.liveUrl}" 
+                           target="_blank"
+                           class="text-orange-400 hover:text-orange-300 text-sm font-semibold inline-flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    ` : ''}
                 </div>
             `).join('');
         }
 
-        function renderBlogs() {
-            const container = document.getElementById('blogsContainer');
-            if (!container) return;
-            
-            if (blogs.length === 0) {
-                container.innerHTML = `
-                    <div class="col-span-2 text-center py-8">
-                        <i class="fas fa-blog text-4xl text-gray-400 mb-4"></i>
-                        <p class="text-gray-400">No case studies available</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            container.innerHTML = blogs.slice(0, 4).map(blog => `
-                <div class="glass rounded-2xl overflow-hidden flex flex-col border border-white/10 hover:border-orange-500 transition-all magnetic-btn h-full">
-                    <div class="h-48">
-                        <img src="${blog.thumbnail}" 
-                             class="w-full h-full object-cover">
-                    </div>
-                    
-                    <div class="p-6 flex-grow flex flex-col">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="text-xs font-bold text-orange-500 uppercase tracking-wider">${blog.category}</span>
-                            <span class="text-xs text-gray-500"><i class="far fa-clock mr-1"></i>${blog.readTime} min</span>
-                        </div>
-                        
-                        <h3 class="text-xl font-bold text-white mt-2 mb-3 leading-tight flex-grow">${blog.title}</h3>
-                        
-                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">${blog.description}</p>
-                        
-                        <div class="flex justify-between items-center mt-auto">
-                            <span class="text-xs text-gray-500">${blog.date}</span>
-                            
-                            <button onclick="openBlogModal('${blog.title}', '${blog.description}', '${blog.content}', '${blog.category}', '${blog.readTime}')" 
-                                    class="text-white font-semibold hover:text-orange-500 flex items-center text-sm transition-colors">
-                                Read More <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function renderTimeline() {
+        // Render timeline
+        function renderTimeline(items) {
             const container = document.getElementById('timelineContainer');
             if (!container) return;
             
-            const allItems = [...experience, ...education];
-            
-            if (allItems.length === 0) {
-                container.innerHTML = `
-                    <div class="text-center py-8">
-                        <i class="fas fa-briefcase text-4xl text-gray-400 mb-4"></i>
-                        <p class="text-gray-400">No experience or education data available</p>
-                    </div>
-                `;
+            if (items.length === 0) {
+                container.innerHTML = '<p class="text-gray-400 text-center">No experience data available</p>';
                 return;
             }
             
-            container.innerHTML = allItems.map((item, index) => `
+            container.innerHTML = items.map((item, index) => `
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="timeline-period">${item.period}</span>
+                        <span class="timeline-period">${item.period || ''}</span>
                         <div class="timeline-icon">
-                            <i class="fas ${item.icon}"></i>
+                            <i class="fas ${item.icon || 'fa-briefcase'}"></i>
                         </div>
-                        <h3>${item.title || item.degree}</h3>
-                        <span class="timeline-company">${item.company || item.institution}</span>
-                        <p class="timeline-description">${item.description}</p>
-                        
-                        ${item.achievements ? `
-                            <ul class="achievement-list mt-3">
-                                ${item.achievements.map(achievement => `
-                                    <li>${achievement}</li>
-                                `).join('')}
-                            </ul>
-                        ` : ''}
-                        
-                        ${item.grade ? `
-                            <div class="mt-3">
-                                <span class="text-sm text-gray-400">Grade: </span>
-                                <span class="text-sm font-semibold text-orange-500">${item.grade}</span>
-                            </div>
-                        ` : ''}
+                        <h3 class="text-lg font-semibold mb-2 text-white">${item.title || item.degree || ''}</h3>
+                        <span class="text-orange-400 text-sm block mb-2">${item.company || item.institution || ''}</span>
+                        <p class="text-gray-300 text-sm">${item.description || ''}</p>
                     </div>
                 </div>
             `).join('');
         }
 
-        function animateSkillBars() {
-            const skillBars = document.querySelectorAll('.skill-progress');
-            skillBars.forEach(bar => {
-                const width = bar.getAttribute('data-width');
-                bar.style.width = width + '%';
-            });
-        }
-
-        function useStaticData() {
-            console.log('📦 Using static fallback data');
-            
-            // Static fallback data
-            portfolioData = {
-                name: "Md. Masum Billah",
-                title: "Data Analyst | Automation Developer | Business Intelligence Specialist",
-                email: "itsmbillah@gmail.com",
-                phone: "+880 1915-966721",
-                location: "Dhaka, Bangladesh",
-                social: {
-                    linkedin: "https://linkedin.com/in/itsmebillah",
-                    github: "https://github.com/itsmbillah",
-                    facebook: "https://www.facebook.com/itsmebillah",
-                    whatsapp: "https://wa.me/8801915966721"
-                },
-                images: {
-                    profile: "https://i.postimg.cc/SRhCysjL/Whats-App-Image-2025-10.jpg"
-                }
-            };
-            
-            skills = [
-                { name: "Google Apps Script", level: 90, category: "Automation" },
-                { name: "SQL", level: 85, category: "Data Analysis" },
-                { name: "Python", level: 80, category: "Programming" },
-                { name: "Excel", level: 95, category: "Data Analysis" },
-                { name: "Power BI", level: 85, category: "Data Visualization" },
-                { name: "Data Analysis", level: 88, category: "Analytics" },
-                { name: "Automation", level: 92, category: "Technical" },
-                { name: "Marketing Analytics", level: 75, category: "Business" }
-            ];
-            
-            updateUIWithData();
-        }
-
-        // Initialize magnetic buttons
-        function initializeMagneticButtons() {
-            document.querySelectorAll('.magnetic-btn').forEach(btn => {
-                btn.addEventListener('mousemove', (e) => {
-                    const rect = btn.getBoundingClientRect();
-                    const x = e.clientX - rect.left - rect.width / 2;
-                    const y = e.clientY - rect.top - rect.height / 2;
-                    
-                    btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
-                });
-                
-                btn.addEventListener('mouseleave', () => {
-                    btn.style.transform = 'translate(0, 0)';
-                });
-            });
-        }
-
-        // Initialize smooth scrolling
-        function initializeSmoothScrolling() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        // Close mobile menu if open
-                        document.getElementById('mobileMenu').classList.add('hidden');
-                        
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        }
-
-        // Initialize theme toggle
+        // Theme toggle
         function initializeThemeToggle() {
             const themeToggle = document.getElementById('themeToggle');
             const themeIcon = themeToggle.querySelector('i');
             
-            // Check saved theme or system preference
+            // Check saved theme
             const savedTheme = localStorage.getItem('theme');
-            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            
-            if (savedTheme === 'light' || (!savedTheme && !systemPrefersDark)) {
+            if (savedTheme === 'light') {
                 document.body.classList.add('light-mode');
                 document.body.classList.remove('dark');
                 themeIcon.className = 'fas fa-moon';
-            } else {
-                document.body.classList.remove('light-mode');
-                document.body.classList.add('dark');
-                themeIcon.className = 'fas fa-sun text-white';
             }
             
             themeToggle.addEventListener('click', () => {
@@ -1649,154 +789,101 @@
                 if (isLightMode) {
                     themeIcon.className = 'fas fa-moon';
                     localStorage.setItem('theme', 'light');
-                    
-                    // Update particles for light mode
-                    particlesJS('particles-js', {
-                        particles: {
-                            color: { value: "#4f46e5" },
-                            line_linked: { color: "#4f46e5" }
-                        }
-                    });
                 } else {
                     themeIcon.className = 'fas fa-sun text-white';
                     localStorage.setItem('theme', 'dark');
-                    
-                    // Update particles for dark mode
-                    particlesJS('particles-js', {
-                        particles: {
-                            color: { value: "#FF6B35" },
-                            line_linked: { color: "#FF6B35" }
-                        }
-                    });
                 }
             });
         }
 
-        // Initialize mobile menu
-        function initializeMobileMenu() {
-            const menuBtn = document.getElementById('mobileMenuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                menuBtn.querySelector('i').classList.toggle('fa-bars');
-                menuBtn.querySelector('i').classList.toggle('fa-times');
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-                    mobileMenu.classList.add('hidden');
-                    menuBtn.querySelector('i').classList.remove('fa-times');
-                    menuBtn.querySelector('i').classList.add('fa-bars');
-                }
-            });
-        }
-
-        // Initialize form submission
-        function initializeFormSubmission() {
-            const contactForm = document.getElementById('contactForm');
-            if (!contactForm) return;
-            
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                // Get form data
-                const formData = {
-                    name: document.getElementById('name').value.trim(),
-                    email: document.getElementById('email').value.trim(),
-                    subject: document.getElementById('subject').value.trim() || 'Portfolio Inquiry',
-                    message: document.getElementById('message').value.trim()
-                };
-                
-                // Validate
-                const errors = validateForm(formData);
-                if (errors.length > 0) {
-                    showFormMessage(errors.join('<br>'), 'error');
-                    return;
-                }
-                
-                // Show loading state
-                const submitBtn = document.getElementById('submitBtn');
-                const btnText = document.getElementById('btnText');
-                const btnIcon = document.getElementById('btnIcon');
-                const btnSpinner = document.getElementById('btnSpinner');
-                
-                btnText.textContent = 'Sending...';
-                btnIcon.classList.add('hidden');
-                btnSpinner.classList.remove('hidden');
-                submitBtn.disabled = true;
-                
-                try {
-                    // Submit to GAS
-                    const result = await submitToGAS(formData);
+        // Smooth scrolling
+        function initializeSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
                     
-                    if (result.success) {
-                        showFormMessage(result.message || '✅ Message sent successfully! I\'ll get back to you within 24 hours.', 'success');
-                        contactForm.reset();
-                        
-                        // Google Analytics event
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'form_submit', {
-                                'event_category': 'Contact',
-                                'event_label': 'Portfolio Contact Form'
-                            });
-                        }
-                    } else {
-                        throw new Error(result.message || 'Failed to send message');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
                     }
-                    
-                } catch (error) {
-                    console.error('Form submission error:', error);
-                    
-                    // Fallback: Open email client
-                    const mailtoLink = `mailto:itsmbillah@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}%0AEmail: ${formData.email}%0A%0AMessage: ${formData.message}`)}`;
-                    
-                    showFormMessage(
-                        `⚠️ Form submission failed. <br><br>
-                        <a href="${mailtoLink}" 
-                           style="color: #FF6B35; text-decoration: underline; display: inline-block; margin-top: 10px;">
-                            Click here to email me directly
-                        </a>`, 
-                        'error'
-                    );
-                    
-                } finally {
-                    // Reset button state
-                    btnText.textContent = 'Send Message';
-                    btnIcon.classList.remove('hidden');
-                    btnSpinner.classList.add('hidden');
-                    submitBtn.disabled = false;
-                }
+                });
             });
         }
 
-        // Validate form data
-        function validateForm(formData) {
+        // Handle form submission
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                subject: document.getElementById('subject').value.trim() || 'Portfolio Inquiry',
+                message: document.getElementById('message').value.trim()
+            };
+            
+            // Validate
             const errors = [];
+            if (!formData.name || formData.name.length < 2) errors.push('Name must be at least 2 characters');
+            if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) errors.push('Valid email is required');
+            if (!formData.message || formData.message.length < 10) errors.push('Message must be at least 10 characters');
             
-            if (!formData.name || formData.name.length < 2) {
-                errors.push('Name must be at least 2 characters');
+            if (errors.length > 0) {
+                showFormMessage(errors.join('<br>'), 'error');
+                return;
             }
             
-            if (!formData.email) {
-                errors.push('Email is required');
-            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-                errors.push('Please enter a valid email address');
-            }
+            // Show loading state
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const btnSpinner = document.getElementById('btnSpinner');
             
-            if (!formData.message || formData.message.length < 10) {
-                errors.push('Message must be at least 10 characters');
-            }
+            btnText.textContent = 'Sending...';
+            btnSpinner.classList.remove('hidden');
+            submitBtn.disabled = true;
             
-            return errors;
+            try {
+                // Submit to GAS
+                const result = await submitToGAS(formData);
+                
+                if (result && result.success) {
+                    showFormMessage('✅ Message sent successfully! I\'ll get back to you soon.', 'success');
+                    document.getElementById('contactForm').reset();
+                } else {
+                    throw new Error('Failed to send message');
+                }
+                
+            } catch (error) {
+                console.error('Form error:', error);
+                
+                // Fallback: Show email option
+                const mailtoLink = `mailto:itsmbillah@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}%0AEmail: ${formData.email}%0A%0AMessage: ${formData.message}`)}`;
+                
+                showFormMessage(
+                    `⚠️ Could not send form. <br>
+                    <a href="${mailtoLink}" style="color: #FF6B35; text-decoration: underline;">
+                        Click here to email directly
+                    </a>`,
+                    'error'
+                );
+                
+            } finally {
+                // Reset button
+                btnText.textContent = 'Send Message';
+                btnSpinner.classList.add('hidden');
+                submitBtn.disabled = false;
+            }
         }
 
         // Submit to GAS
         async function submitToGAS(formData) {
             try {
-                console.log('📨 Submitting to GAS:', formData);
-                
+                // GAS expects form-urlencoded
                 const params = new URLSearchParams();
                 params.append('name', formData.name);
                 params.append('email', formData.email);
@@ -1812,15 +899,13 @@
                 });
                 
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    throw new Error(`HTTP error: ${response.status}`);
                 }
                 
-                const result = await response.json();
-                console.log('✅ GAS response:', result);
-                return result;
+                return await response.json();
                 
             } catch (error) {
-                console.error('❌ GAS submission error:', error);
+                console.error('GAS submission error:', error);
                 throw error;
             }
         }
@@ -1829,91 +914,22 @@
         function showFormMessage(message, type) {
             const messageDiv = document.getElementById('formMessage');
             messageDiv.innerHTML = message;
-            messageDiv.className = 'form-message';
-            messageDiv.classList.add(type);
+            messageDiv.className = 'mt-4 p-4 rounded-lg text-center';
+            
+            if (type === 'success') {
+                messageDiv.classList.add('bg-green-500/20', 'text-green-400');
+            } else if (type === 'error') {
+                messageDiv.classList.add('bg-red-500/20', 'text-red-400');
+            }
+            
             messageDiv.classList.remove('hidden');
             
-            // Auto-hide success messages after 5 seconds
+            // Auto-hide success messages
             if (type === 'success') {
                 setTimeout(() => {
                     messageDiv.classList.add('hidden');
                 }, 5000);
             }
-        }
-
-        // Blog modal functions
-        function openBlogModal(title, description, content, category, readTime) {
-            const modal = document.createElement('div');
-            modal.className = 'modal-overlay';
-            modal.innerHTML = `
-                <div class="modal-content">
-                    <button class="modal-close" onclick="this.closest('.modal-overlay').remove()">
-                        <i class="fas fa-times"></i>
-                    </button>
-                    
-                    <article class="blog-article">
-                        <div class="mb-6">
-                            <span class="text-orange-500 font-bold uppercase tracking-widest text-sm">${category}</span>
-                            <span class="text-gray-500 text-sm ml-4"><i class="far fa-clock mr-1"></i>${readTime} min read</span>
-                        </div>
-                        
-                        <h1 class="text-2xl sm:text-3xl font-bold text-white mb-6 leading-tight">${title}</h1>
-                        
-                        <p class="text-gray-300 text-lg mb-6">${description}</p>
-                        
-                        <div class="prose prose-invert max-w-none">
-                            <div class="text-gray-300 leading-relaxed space-y-4">
-                                ${content || '<p>No content available.</p>'}
-                            </div>
-                        </div>
-                        
-                        <div class="mt-12 pt-8 border-t border-white/10">
-                            <div class="flex flex-col sm:flex-row justify-between items-center">
-                                <div class="mb-4 sm:mb-0">
-                                    <p class="text-gray-400 text-sm">Case Study by</p>
-                                    <p class="text-white font-bold">Md. Masum Billah</p>
-                                </div>
-                                <div class="text-sm text-gray-400">
-                                    ${new Date().toLocaleDateString('en-US', { 
-                                        year: 'numeric', 
-                                        month: 'long', 
-                                        day: 'numeric' 
-                                    })}
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            `;
-            
-            document.body.appendChild(modal);
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            
-            // Close modal on overlay click
-            modal.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    this.remove();
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            // Close with Escape key
-            document.addEventListener('keydown', function closeModal(e) {
-                if (e.key === 'Escape') {
-                    modal.remove();
-                    document.body.style.overflow = 'auto';
-                    document.removeEventListener('keydown', closeModal);
-                }
-            });
-        }
-
-        // Google Analytics tracking for page views
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'page_view', {
-                page_title: document.title,
-                page_location: window.location.href
-            });
         }
     </script>
 </body>
