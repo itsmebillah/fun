@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD. MASUM BILLAH | Cyber Data Architect</title>
+    <title>Md. Masum Billah | Data Analyst & Automation Specialist</title>
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-        <rect width='100' height='100' rx='20' fill='%230f172a'/>
-        <text x='50' y='68' font-size='60' text-anchor='middle' fill='%2300ff88'>🧠</text>
+        <rect width='100' height='100' rx='20' fill='%231a237e'/>
+        <text x='50' y='68' font-size='60' text-anchor='middle' fill='white'>📊</text>
     </svg>">
     
     <!-- SEO Meta -->
-    <meta name="description" content="Cyber Data Analyst & Automation Architect transforming raw data into intelligent business systems">
-    <meta name="keywords" content="Data Analyst, Automation, Cyber Analytics, Business Intelligence, Bangladesh">
+    <meta name="description" content="Professional Data Analyst & Automation Developer specializing in business intelligence, data visualization, and workflow automation">
+    <meta name="keywords" content="Data Analyst, Business Intelligence, Automation, Power BI, SQL, Python, Google Apps Script">
     <meta name="author" content="Md. Masum Billah">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="MD. MASUM BILLAH | Cyber Data Architect">
-    <meta property="og:description" content="Transforming data chaos into structured intelligence">
+    <meta property="og:title" content="Md. Masum Billah | Data Analyst & Automation Specialist">
+    <meta property="og:description" content="Transforming data into actionable insights and automating business processes">
     <meta property="og:image" content="https://i.postimg.cc/SRhCysjL/Whats-App-Image-2025-10.jpg">
     <meta property="og:url" content="https://itsmebillah.github.io">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="MD. MASUM BILLAH | Cyber Data Architect">
-    <meta name="twitter:description" content="Data Analyst | Automation Developer | BI Specialist">
+    <meta name="twitter:title" content="Md. Masum Billah | Data Analyst & Automation Specialist">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KDTNVZE7P7"></script>
@@ -44,20 +43,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #00ff88;
-            --secondary: #0088ff;
-            --accent: #ff0088;
-            --dark: #0a0a0f;
-            --darker: #050508;
-            --cyber-blue: #00eeff;
-            --matrix-green: #00ff41;
+            --primary: #1a237e;
+            --secondary: #3949ab;
+            --accent: #00b0ff;
+            --success: #00c853;
+            --light-bg: #f8f9fa;
+            --text-dark: #2d3748;
+            --text-light: #718096;
         }
         
         * {
@@ -67,522 +66,312 @@
         }
         
         body {
-            background-color: var(--darker);
-            color: #ffffff;
             font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 255, 136, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(0, 136, 255, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 50% 50%, rgba(255, 0, 136, 0.03) 0%, transparent 30%);
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.6;
         }
         
-        .cyber-font {
-            font-family: 'Orbitron', monospace;
-            font-weight: 700;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
         }
         
-        /* Cyber Grid Background */
-        .cyber-grid {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: -2;
-            opacity: 0.3;
-        }
-        
-        /* Animated Scan Lines */
-        .scanlines {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                to bottom,
-                transparent 50%,
-                rgba(0, 255, 136, 0.03) 50%
-            );
-            background-size: 100% 4px;
-            z-index: -1;
-            pointer-events: none;
-            animation: scanlines 10s linear infinite;
-        }
-        
-        @keyframes scanlines {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(4px); }
-        }
-        
-        /* Glitch Effect */
-        .glitch {
-            position: relative;
+        /* Professional Header */
+        .professional-header {
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
             color: white;
         }
         
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 var(--accent);
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim 5s infinite linear alternate-reverse;
-        }
-        
-        .glitch::after {
-            left: -2px;
-            text-shadow: 2px 0 var(--primary);
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim2 5s infinite linear alternate-reverse;
-        }
-        
-        @keyframes glitch-anim {
-            0% { clip: rect(42px, 9999px, 44px, 0); }
-            5% { clip: rect(12px, 9999px, 59px, 0); }
-            10% { clip: rect(48px, 9999px, 29px, 0); }
-            15% { clip: rect(42px, 9999px, 73px, 0); }
-            20% { clip: rect(63px, 9999px, 27px, 0); }
-            25% { clip: rect(34px, 9999px, 55px, 0); }
-            30% { clip: rect(86px, 9999px, 73px, 0); }
-            35% { clip: rect(20px, 9999px, 20px, 0); }
-            40% { clip: rect(26px, 9999px, 60px, 0); }
-            45% { clip: rect(25px, 9999px, 66px, 0); }
-            50% { clip: rect(57px, 9999px, 98px, 0); }
-            55% { clip: rect(5px, 9999px, 46px, 0); }
-            60% { clip: rect(82px, 9999px, 31px, 0); }
-            65% { clip: rect(54px, 9999px, 27px, 0); }
-            70% { clip: rect(28px, 9999px, 99px, 0); }
-            75% { clip: rect(45px, 9999px, 69px, 0); }
-            80% { clip: rect(23px, 9999px, 85px, 0); }
-            85% { clip: rect(54px, 9999px, 84px, 0); }
-            90% { clip: rect(45px, 9999px, 47px, 0); }
-            95% { clip: rect(37px, 9999px, 20px, 0); }
-            100% { clip: rect(4px, 9999px, 91px, 0); }
-        }
-        
-        @keyframes glitch-anim2 {
-            0% { clip: rect(65px, 9999px, 100px, 0); }
-            5% { clip: rect(52px, 9999px, 74px, 0); }
-            10% { clip: rect(79px, 9999px, 85px, 0); }
-            15% { clip: rect(75px, 9999px, 5px, 0); }
-            20% { clip: rect(67px, 9999px, 61px, 0); }
-            25% { clip: rect(14px, 9999px, 79px, 0); }
-            30% { clip: rect(1px, 9999px, 66px, 0); }
-            35% { clip: rect(86px, 9999px, 30px, 0); }
-            40% { clip: rect(23px, 9999px, 98px, 0); }
-            45% { clip: rect(85px, 9999px, 72px, 0); }
-            50% { clip: rect(71px, 9999px, 75px, 0); }
-            55% { clip: rect(2px, 9999px, 48px, 0); }
-            60% { clip: rect(30px, 9999px, 16px, 0); }
-            65% { clip: rect(59px, 9999px, 50px, 0); }
-            70% { clip: rect(41px, 9999px, 62px, 0); }
-            75% { clip: rect(2px, 9999px, 82px, 0); }
-            80% { clip: rect(47px, 9999px, 73px, 0); }
-            85% { clip: rect(3px, 9999px, 27px, 0); }
-            90% { clip: rect(40px, 9999px, 86px, 0); }
-            95% { clip: rect(45px, 9999px, 72px, 0); }
-            100% { clip: rect(23px, 9999px, 49px, 0); }
-        }
-        
-        /* Cyber Card */
-        .cyber-card {
-            background: rgba(10, 10, 15, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 255, 136, 0.3);
+        /* Data Card */
+        .data-card {
+            background: white;
             border-radius: 12px;
-            position: relative;
-            overflow: hidden;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
         }
         
-        .cyber-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
-            animation: shine 3s infinite;
-        }
-        
-        .cyber-card:hover {
-            border-color: var(--primary);
+        .data-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            border-color: var(--accent);
         }
         
-        @keyframes shine {
-            0% { left: -100%; }
-            100% { left: 100%; }
+        /* Metric Card */
+        .metric-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
         
-        /* Cyber Button */
-        .cyber-btn {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            padding: 12px 32px;
-            border-radius: 8px;
-            font-family: 'Orbitron', monospace;
-            font-weight: 700;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-transform: uppercase;
+        /* Skill Bar */
+        .skill-container {
+            margin-bottom: 1.5rem;
         }
         
-        .cyber-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
-            transition: 0.5s;
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
         }
         
-        .cyber-btn:hover::before {
-            left: 100%;
-        }
-        
-        .cyber-btn:hover {
-            background: rgba(0, 255, 136, 0.1);
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
-            transform: translateY(-2px);
-        }
-        
-        /* Terminal Style */
-        .terminal {
-            background: rgba(5, 5, 8, 0.9);
-            border: 1px solid var(--matrix-green);
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
-            padding: 20px;
-            position: relative;
-        }
-        
-        .terminal::before {
-            content: '>_';
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            background: var(--dark);
-            color: var(--matrix-green);
-            padding: 0 10px;
-            font-size: 14px;
-        }
-        
-        /* Data Stream Animation */
-        .data-stream {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .data-stream::after {
-            content: '0101010101010101010101010101010101010101';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 200%;
-            height: 100%;
-            color: rgba(0, 255, 136, 0.1);
-            white-space: nowrap;
-            animation: stream 20s linear infinite;
-        }
-        
-        @keyframes stream {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0%); }
-        }
-        
-        /* Progress Bar Cyber */
-        .cyber-progress {
+        .skill-bar {
             height: 8px;
-            background: rgba(255, 255, 255, 0.1);
+            background: #e2e8f0;
             border-radius: 4px;
             overflow: hidden;
-            position: relative;
         }
         
-        .cyber-progress-bar {
+        .skill-progress {
             height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--cyber-blue));
-            position: relative;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 4px;
+            width: 0;
+            transition: width 1.5s ease-in-out;
         }
         
-        .cyber-progress-bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            animation: progressShine 2s infinite;
-        }
-        
-        @keyframes progressShine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        /* Holographic Effect */
-        .holographic {
-            position: relative;
-        }
-        
-        .holographic::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, 
-                var(--primary), 
-                var(--secondary), 
-                var(--accent), 
-                var(--primary));
-            z-index: -1;
-            filter: blur(10px);
-            opacity: 0.5;
-            animation: hologram 3s linear infinite;
-        }
-        
-        @keyframes hologram {
-            0% { filter: hue-rotate(0deg) blur(10px); }
-            100% { filter: hue-rotate(360deg) blur(10px); }
-        }
-        
-        /* Matrix Rain Background */
-        .matrix-rain {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -3;
-            opacity: 0.1;
-        }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: var(--darker);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(var(--primary), var(--cyber-blue));
-            border-radius: 5px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(var(--cyber-blue), var(--primary));
-        }
-        
-        /* Typewriter Effect */
-        .typewriter {
+        /* Project Card */
+        .project-card {
+            background: white;
+            border-radius: 12px;
             overflow: hidden;
-            border-right: 2px solid var(--primary);
-            white-space: nowrap;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
         }
         
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
         
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: var(--primary); }
-        }
-        
-        /* Floating Elements */
-        .float {
-            animation: floating 6s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        /* Particle Container */
-        #particles-js {
-            position: fixed;
+        .project-image {
+            height: 200px;
             width: 100%;
-            height: 100%;
-            z-index: -2;
+            object-fit: cover;
         }
         
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .cyber-grid {
-                background-size: 30px 30px;
-            }
-            
-            .glitch::before,
-            .glitch::after {
-                display: none;
-            }
-            
-            .typewriter {
-                animation: none;
-                white-space: normal;
-                border-right: none;
-            }
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
         }
         
-        /* Loading Screen */
-        .loading-screen {
-            position: fixed;
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--darker);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
         }
         
-        .loading-text {
-            font-family: 'Orbitron', monospace;
-            font-size: 24px;
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+        
+        /* Contact Form */
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 176, 255, 0.1);
+        }
+        
+        /* Button */
+        .primary-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .primary-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 35, 126, 0.2);
+        }
+        
+        .secondary-btn {
+            background: white;
             color: var(--primary);
-            display: flex;
-            gap: 10px;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .secondary-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Navigation */
+        .nav-link {
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+            background: rgba(26, 35, 126, 0.05);
+        }
+        
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: inline-flex;
+            align-items: center;
         }
         
         .loading-dot {
             width: 8px;
             height: 8px;
-            background: var(--primary);
+            background: var(--accent);
             border-radius: 50%;
-            animation: loadingDots 1.4s infinite;
+            margin: 0 4px;
+            animation: loading 1.4s infinite;
         }
         
         .loading-dot:nth-child(2) { animation-delay: 0.2s; }
         .loading-dot:nth-child(3) { animation-delay: 0.4s; }
         
-        @keyframes loadingDots {
+        @keyframes loading {
             0%, 60%, 100% { transform: translateY(0); }
-            30% { transform: translateY(-15px); }
+            30% { transform: translateY(-10px); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .timeline {
+                padding-left: 20px;
+            }
+            
+            .timeline::before {
+                left: 10px;
+            }
+            
+            .timeline-dot {
+                left: -20px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Background Elements -->
-    <div class="cyber-grid"></div>
-    <div class="scanlines"></div>
-    <div id="particles-js"></div>
-    
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loading-text">
-            <span>SYSTEM BOOT</span>
-            <div class="loading-dot"></div>
-            <div class="loading-dot"></div>
-            <div class="loading-dot"></div>
-        </div>
-    </div>
-    
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-[rgba(10,10,15,0.9)] backdrop-blur-lg border-b border-[rgba(0,255,136,0.2)]">
+    <nav class="sticky top-0 bg-white shadow-sm z-50">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <div class="cyber-font text-2xl">
-                    <span class="text-[#00ff88]">&lt;</span>
-                    <span class="text-white">MASUM_BILLAH</span>
-                    <span class="text-[#00ff88]">/&gt;</span>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gradient-to-br from-[#1a237e] to-[#3949ab] rounded-lg flex items-center justify-center mr-3">
+                        <span class="text-white font-bold">MB</span>
+                    </div>
+                    <div>
+                        <div class="font-bold text-lg text-gray-900">Md. Masum Billah</div>
+                        <div class="text-sm text-gray-600">Data Analyst</div>
+                    </div>
                 </div>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="cyber-font text-sm text-gray-300 hover:text-[#00ff88] transition-all duration-300 group">
-                        <span class="text-[#00ff88] mr-1">#</span>HOME
-                        <span class="block h-0.5 bg-[#00ff88] w-0 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    <a href="#about" class="cyber-font text-sm text-gray-300 hover:text-[#00ff88] transition-all duration-300 group">
-                        <span class="text-[#00ff88] mr-1">#</span>ABOUT
-                        <span class="block h-0.5 bg-[#00ff88] w-0 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    <a href="#skills" class="cyber-font text-sm text-gray-300 hover:text-[#00ff88] transition-all duration-300 group">
-                        <span class="text-[#00ff88] mr-1">#</span>SKILLS
-                        <span class="block h-0.5 bg-[#00ff88] w-0 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    <a href="#projects" class="cyber-font text-sm text-gray-300 hover:text-[#00ff88] transition-all duration-300 group">
-                        <span class="text-[#00ff88] mr-1">#</span>PROJECTS
-                        <span class="block h-0.5 bg-[#00ff88] w-0 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    <a href="#experience" class="cyber-font text-sm text-gray-300 hover:text-[#00ff88] transition-all duration-300 group">
-                        <span class="text-[#00ff88] mr-1">#</span>EXPERIENCE
-                        <span class="block h-0.5 bg-[#00ff88] w-0 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    <a href="#contact" class="cyber-font text-sm text-gray-300 hover:text-[#00ff88] transition-all duration-300 group">
-                        <span class="text-[#00ff88] mr-1">#</span>CONTACT
-                        <span class="block h-0.5 bg-[#00ff88] w-0 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    
-                    <!-- CV Button -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#contact" class="nav-link">Contact</a>
                     <a href="https://drive.google.com/file/d/1AGm--2_soUpLvUB1a16xf-w4KHbF1I48/view" 
-                       class="cyber-btn text-sm" target="_blank">
-                        <i class="fas fa-download mr-2"></i>DOWNLOAD CV
+                       target="_blank" 
+                       class="primary-btn text-sm">
+                        <i class="fas fa-download mr-2"></i>Download CV
                     </a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="md:hidden cyber-btn py-2 px-4">
-                    <i class="fas fa-bars"></i>
+                <button id="mobileMenuBtn" class="md:hidden">
+                    <i class="fas fa-bars text-xl text-gray-700"></i>
                 </button>
             </div>
             
             <!-- Mobile Menu -->
             <div id="mobileMenu" class="md:hidden mt-4 hidden">
-                <div class="space-y-4">
-                    <a href="#home" class="block cyber-font text-gray-300 hover:text-[#00ff88] py-2">
-                        <span class="text-[#00ff88] mr-2">></span>HOME
-                    </a>
-                    <a href="#about" class="block cyber-font text-gray-300 hover:text-[#00ff88] py-2">
-                        <span class="text-[#00ff88] mr-2">></span>ABOUT
-                    </a>
-                    <a href="#skills" class="block cyber-font text-gray-300 hover:text-[#00ff88] py-2">
-                        <span class="text-[#00ff88] mr-2">></span>SKILLS
-                    </a>
-                    <a href="#projects" class="block cyber-font text-gray-300 hover:text-[#00ff88] py-2">
-                        <span class="text-[#00ff88] mr-2">></span>PROJECTS
-                    </a>
-                    <a href="#experience" class="block cyber-font text-gray-300 hover:text-[#00ff88] py-2">
-                        <span class="text-[#00ff88] mr-2">></span>EXPERIENCE
-                    </a>
-                    <a href="#contact" class="block cyber-font text-gray-300 hover:text-[#00ff88] py-2">
-                        <span class="text-[#00ff88] mr-2">></span>CONTACT
+                <div class="space-y-3">
+                    <a href="#home" class="block py-2 px-4 rounded-lg hover:bg-gray-50">Home</a>
+                    <a href="#about" class="block py-2 px-4 rounded-lg hover:bg-gray-50">About</a>
+                    <a href="#skills" class="block py-2 px-4 rounded-lg hover:bg-gray-50">Skills</a>
+                    <a href="#projects" class="block py-2 px-4 rounded-lg hover:bg-gray-50">Projects</a>
+                    <a href="#experience" class="block py-2 px-4 rounded-lg hover:bg-gray-50">Experience</a>
+                    <a href="#contact" class="block py-2 px-4 rounded-lg hover:bg-gray-50">Contact</a>
+                    <a href="https://drive.google.com/file/d/1AGm--2_soUpLvUB1a16xf-w4KHbF1I48/view" 
+                       target="_blank"
+                       class="block py-2 px-4 rounded-lg bg-gradient-to-r from-[#1a237e] to-[#3949ab] text-white text-center">
+                        Download CV
                     </a>
                 </div>
             </div>
@@ -590,188 +379,336 @@
     </nav>
     
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center pt-20 px-6 relative overflow-hidden">
-        <div class="container mx-auto">
+    <section id="home" class="professional-header">
+        <div class="container mx-auto px-6 py-20">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Left Content -->
-                <div class="z-10">
-                    <div class="mb-6">
-                        <span class="cyber-font text-[#00ff88] text-sm tracking-widest">// CYBER DATA ANALYST</span>
-                        <h1 class="cyber-font text-5xl md:text-7xl font-bold mt-4 mb-6">
-                            <span class="block text-white">MD. MASUM</span>
-                            <span class="block text-[#00ff88] glitch" data-text="BILLAH">BILLAH</span>
-                        </h1>
-                        <div class="terminal mt-8">
-                            <p class="text-gray-300 mb-2"><span class="text-[#00ff88]">$</span> whoami</p>
-                            <p class="text-white text-lg mb-4"><span class="text-[#00ff88]">></span> Data Analyst | Automation Architect | BI Specialist</p>
-                            
-                            <p class="text-gray-300 mb-2"><span class="text-[#00ff88]">$</span> location</p>
-                            <p class="text-white text-lg"><span class="text-[#00ff88]">></span> Dhaka, Bangladesh</p>
-                            
-                            <div class="mt-6 pt-4 border-t border-[#00ff88]/20">
-                                <p class="text-gray-400 text-sm">"Transforming data chaos into structured intelligence"</p>
-                            </div>
-                        </div>
+                <div data-aos="fade-right">
+                    <div class="inline-flex items-center px-4 py-2 bg-white/10 rounded-full mb-6">
+                        <span class="text-sm text-white/90">Data Analyst & Automation Specialist</span>
                     </div>
                     
-                    <!-- CTA Buttons -->
-                    <div class="flex flex-wrap gap-4 mt-8">
-                        <a href="#projects" class="cyber-btn">
-                            <i class="fas fa-code mr-2"></i> VIEW PROJECTS
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                        Transforming Data Into<br>
+                        <span class="gradient-text">Actionable Insights</span>
+                    </h1>
+                    
+                    <p class="text-xl text-white/80 mb-8">
+                        I help businesses make data-driven decisions through advanced analysis, 
+                        automation, and intuitive visualization.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="primary-btn bg-white text-[#1a237e] hover:bg-gray-100">
+                            <i class="fas fa-chart-bar mr-2"></i>View My Work
                         </a>
-                        <a href="#contact" class="cyber-btn bg-[rgba(0,255,136,0.1)] border-[#00ff88]">
-                            <i class="fas fa-paper-plane mr-2"></i> GET IN TOUCH
+                        <a href="#contact" class="secondary-btn border-white text-white hover:bg-white hover:text-[#1a237e]">
+                            <i class="fas fa-envelope mr-2"></i>Get In Touch
                         </a>
                     </div>
                     
-                    <!-- Stats -->
-                    <div class="grid grid-cols-3 gap-4 mt-12">
-                        <div class="cyber-card p-4 text-center">
-                            <div class="cyber-font text-2xl text-[#00ff88]">24+</div>
-                            <div class="text-gray-400 text-sm">Projects</div>
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-3 gap-6 mt-12">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-white">24+</div>
+                            <div class="text-white/70 text-sm">Projects</div>
                         </div>
-                        <div class="cyber-card p-4 text-center">
-                            <div class="cyber-font text-2xl text-[#00ff88]">18+</div>
-                            <div class="text-gray-400 text-sm">Clients</div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-white">80%</div>
+                            <div class="text-white/70 text-sm">Time Saved</div>
                         </div>
-                        <div class="cyber-card p-4 text-center">
-                            <div class="cyber-font text-2xl text-[#00ff88]">500+</div>
-                            <div class="text-gray-400 text-sm">Hours Saved</div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-white">100%</div>
+                            <div class="text-white/70 text-sm">Client Satisfaction</div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Right Content - Profile -->
-                <div class="relative float">
-                    <div class="cyber-card p-6 relative">
-                        <!-- Profile Image with Holographic Effect -->
-                        <div class="relative">
-                            <div class="holographic rounded-2xl overflow-hidden mb-6">
-                                <img src="https://i.postimg.cc/SRhCysjL/Whats-App-Image-2025-10.jpg" 
-                                     alt="Md. Masum Billah"
-                                     class="w-full h-96 object-cover rounded-2xl">
-                            </div>
-                            
-                            <!-- Status Indicator -->
-                            <div class="absolute bottom-4 right-4 flex items-center">
-                                <div class="w-3 h-3 bg-[#00ff88] rounded-full mr-2 animate-pulse"></div>
-                                <span class="cyber-font text-sm text-[#00ff88]">ACTIVE</span>
-                            </div>
+                <div data-aos="fade-left" class="relative">
+                    <div class="relative max-w-md mx-auto">
+                        <!-- Profile Image -->
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                            <img src="https://i.postimg.cc/SRhCysjL/Whats-App-Image-2025-10.jpg" 
+                                 alt="Md. Masum Billah"
+                                 class="w-full h-auto">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a237e]/50 to-transparent"></div>
                         </div>
                         
-                        <!-- Quick Info -->
-                        <div class="space-y-4">
-                            <div class="flex items-center">
-                                <i class="fas fa-microchip text-[#00ff88] mr-3"></i>
-                                <span class="text-gray-300">Specialization: Data Analytics</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-bolt text-[#00ff88] mr-3"></i>
-                                <span class="text-gray-300">Focus: Automation & Efficiency</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-chart-network text-[#00ff88] mr-3"></i>
-                                <span class="text-gray-300">Current: Data Solution 360</span>
-                            </div>
+                        <!-- Floating Elements -->
+                        <div class="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-[#00b0ff] to-[#1a237e] rounded-2xl flex items-center justify-center shadow-xl">
+                            <i class="fas fa-database text-2xl text-white"></i>
+                        </div>
+                        
+                        <div class="absolute -bottom-6 -left-6 w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-xl">
+                            <i class="fas fa-chart-line text-2xl text-[#1a237e]"></i>
                         </div>
                     </div>
-                    
-                    <!-- Floating Elements -->
-                    <div class="absolute -top-4 -right-4 w-20 h-20 border-2 border-[#00ff88] rounded-full animate-spin" style="animation-duration: 10s;"></div>
-                    <div class="absolute -bottom-4 -left-4 w-16 h-16 border-2 border-[#0088ff] rounded-full animate-spin" style="animation-duration: 8s;"></div>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- About Section -->
-    <section id="about" class="py-20 px-6 relative">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <span class="cyber-font text-[#00ff88] text-sm tracking-widest">// ABOUT THE ARCHITECT</span>
-                <h2 class="cyber-font text-4xl md:text-5xl font-bold mt-4 mb-6">SYSTEM PROFILE</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-[#00ff88] to-[#0088ff] mx-auto"></div>
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Professional Data Analyst with expertise in transforming complex data into business solutions</p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-12">
-                <!-- Left - Bio -->
-                <div class="cyber-card p-8">
-                    <h3 class="cyber-font text-2xl text-[#00ff88] mb-6">CYBER BIO</h3>
+                <!-- About Content -->
+                <div class="data-card" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">My Professional Journey</h3>
                     <div class="space-y-4">
-                        <p class="text-gray-300">
-                            <span class="text-[#00ff88]">></span> I architect intelligent data systems that transform chaotic information streams into structured, actionable intelligence.
+                        <p class="text-gray-700">
+                            I'm <span class="font-semibold text-[#1a237e]">Md. Masum Billah</span>, a passionate Data Analyst and Automation Developer with expertise in transforming complex datasets into actionable business strategies.
                         </p>
-                        <p class="text-gray-300">
-                            <span class="text-[#00ff88]">></span> With expertise in <span class="text-white">data analysis pipelines</span>, <span class="text-white">automation architectures</span>, and <span class="text-white">business intelligence frameworks</span>, I build systems that think for themselves.
+                        <p class="text-gray-700">
+                            My approach combines strong analytical skills with automation logic to streamline reporting, improve decision-making, and unlock efficiency for teams and organizations.
                         </p>
-                        <p class="text-gray-300">
-                            <span class="text-[#00ff88]">></span> My mission: Eliminate manual data processing, unlock hidden insights, and create self-sustaining analytical ecosystems.
+                        <p class="text-gray-700">
+                            Whether it's a Power BI dashboard, Google Apps Script automation, or data-driven business system, I build with precision, scalability, and purpose.
                         </p>
                     </div>
                     
-                    <div class="mt-8 pt-6 border-t border-[#00ff88]/20">
-                        <h4 class="cyber-font text-lg text-white mb-4">CORE DIRECTIVES</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-[rgba(0,255,136,0.1)] text-[#00ff88] rounded text-sm cyber-font">Automate Everything</span>
-                            <span class="px-3 py-1 bg-[rgba(0,255,136,0.1)] text-[#00ff88] rounded text-sm cyber-font">Data-Driven Decisions</span>
-                            <span class="px-3 py-1 bg-[rgba(0,255,136,0.1)] text-[#00ff88] rounded text-sm cyber-font">Scalable Systems</span>
-                            <span class="px-3 py-1 bg-[rgba(0,255,136,0.1)] text-[#00ff88] rounded text-sm cyber-font">Business Intelligence</span>
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <h4 class="font-bold text-gray-900 mb-4">What I Do</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-chart-pie text-[#1a237e] mr-3"></i>
+                                <span class="text-gray-700">Data Analysis</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-robot text-[#1a237e] mr-3"></i>
+                                <span class="text-gray-700">Process Automation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-database text-[#1a237e] mr-3"></i>
+                                <span class="text-gray-700">Business Intelligence</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-chart-line text-[#1a237e] mr-3"></i>
+                                <span class="text-gray-700">Data Visualization</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Right - Tech Stack -->
-                <div class="cyber-card p-8">
-                    <h3 class="cyber-font text-2xl text-[#00ff88] mb-6">TECH STACK</h3>
-                    
-                    <!-- Main Skills -->
-                    <div class="mb-8">
-                        <div class="flex justify-between mb-2">
-                            <span class="text-gray-300 cyber-font">GOOGLE APPS SCRIPT</span>
-                            <span class="text-[#00ff88]">92%</span>
-                        </div>
-                        <div class="cyber-progress">
-                            <div class="cyber-progress-bar" style="width: 92%"></div>
+                <!-- Quick Facts -->
+                <div class="space-y-6" data-aos="fade-left">
+                    <div class="data-card">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Quick Facts</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-[#1a237e] mr-3 w-6"></i>
+                                <div>
+                                    <div class="text-sm text-gray-600">Location</div>
+                                    <div class="font-medium">Dhaka, Bangladesh</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-[#1a237e] mr-3 w-6"></i>
+                                <div>
+                                    <div class="text-sm text-gray-600">Email</div>
+                                    <a href="mailto:itsmbillah@gmail.com" class="font-medium hover:text-[#1a237e] transition-colors">itsmbillah@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-[#1a237e] mr-3 w-6"></i>
+                                <div>
+                                    <div class="text-sm text-gray-600">Phone</div>
+                                    <div class="font-medium">+880 1915-966721</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-briefcase text-[#1a237e] mr-3 w-6"></i>
+                                <div>
+                                    <div class="text-sm text-gray-600">Current Position</div>
+                                    <div class="font-medium">Data Analyst at Data Solution 360</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="mb-8">
-                        <div class="flex justify-between mb-2">
-                            <span class="text-gray-300 cyber-font">POWER BI & SQL</span>
-                            <span class="text-[#00ff88]">88%</span>
+                    <!-- Languages -->
+                    <div class="data-card">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Languages</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">Bengali (Native)</span>
+                                    <span class="text-[#1a237e] font-medium">100%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">English (Professional)</span>
+                                    <span class="text-[#1a237e] font-medium">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="cyber-progress">
-                            <div class="cyber-progress-bar" style="width: 88%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="section-header">
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">Professional expertise in data analysis, automation, and business intelligence tools</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Left Column -->
+                <div class="space-y-6" data-aos="fade-right">
+                    <!-- Technical Skills -->
+                    <div class="data-card">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Technical Skills</h3>
+                        <div class="space-y-6">
+                            <div class="skill-container">
+                                <div class="skill-label">
+                                    <span>Google Apps Script</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="92"></div>
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-label">
+                                    <span>SQL & Database Management</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="88"></div>
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-label">
+                                    <span>Power BI & Data Visualization</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-label">
+                                    <span>Python for Data Analysis</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="mb-8">
-                        <div class="flex justify-between mb-2">
-                            <span class="text-gray-300 cyber-font">PYTHON ANALYTICS</span>
-                            <span class="text-[#00ff88]">85%</span>
+                    <!-- Tools -->
+                    <div class="data-card">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Tools & Technologies</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                <i class="fab fa-google text-[#1a237e] mr-3"></i>
+                                <span>Google Workspace</span>
+                            </div>
+                            <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                <i class="fas fa-chart-bar text-[#1a237e] mr-3"></i>
+                                <span>Power BI</span>
+                            </div>
+                            <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                <i class="fas fa-database text-[#1a237e] mr-3"></i>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                <i class="fab fa-python text-[#1a237e] mr-3"></i>
+                                <span>Python</span>
+                            </div>
                         </div>
-                        <div class="cyber-progress">
-                            <div class="cyber-progress-bar" style="width: 85%"></div>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div class="space-y-6" data-aos="fade-left">
+                    <!-- Professional Skills -->
+                    <div class="data-card">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Professional Skills</h3>
+                        <div class="space-y-6">
+                            <div class="skill-container">
+                                <div class="skill-label">
+                                    <span>Data Analysis & Interpretation</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-label">
+                                    <span>Business Process Automation</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="88"></div>
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-label">
+                                    <span>Dashboard Development</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-container">
+                                <div class="skill-label">
+                                    <span>Project Management</span>
+                                    <span>82%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="82"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Tech Grid -->
-                    <div class="grid grid-cols-4 gap-4 mt-8">
-                        <div class="text-center p-3 bg-[rgba(0,255,136,0.05)] rounded-lg">
-                            <i class="fab fa-google text-2xl text-[#00ff88] mb-2"></i>
-                            <div class="text-xs text-gray-400">G-Suite</div>
-                        </div>
-                        <div class="text-center p-3 bg-[rgba(0,255,136,0.05)] rounded-lg">
-                            <i class="fas fa-database text-2xl text-[#00ff88] mb-2"></i>
-                            <div class="text-xs text-gray-400">SQL</div>
-                        </div>
-                        <div class="text-center p-3 bg-[rgba(0,255,136,0.05)] rounded-lg">
-                            <i class="fab fa-python text-2xl text-[#00ff88] mb-2"></i>
-                            <div class="text-xs text-gray-400">Python</div>
-                        </div>
-                        <div class="text-center p-3 bg-[rgba(0,255,136,0.05)] rounded-lg">
-                            <i class="fas fa-chart-line text-2xl text-[#00ff88] mb-2"></i>
-                            <div class="text-xs text-gray-400">BI Tools</div>
+                    <!-- Certifications -->
+                    <div class="data-card">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Certifications</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-certificate text-[#00c853] mt-1 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">Google Data Analytics</div>
+                                    <div class="text-sm text-gray-600">Professional Certificate</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-certificate text-[#00c853] mt-1 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">Power BI Desktop</div>
+                                    <div class="text-sm text-gray-600">Advanced Visualization</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-certificate text-[#00c853] mt-1 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">SQL for Data Analysis</div>
+                                    <div class="text-sm text-gray-600">Advanced Queries</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -780,73 +717,72 @@
     </section>
     
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-6 bg-[rgba(5,5,8,0.5)]">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <span class="cyber-font text-[#00ff88] text-sm tracking-widest">// MISSION ARCHIVES</span>
-                <h2 class="cyber-font text-4xl md:text-5xl font-bold mt-4 mb-6">CYBER PROJECTS</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-[#00ff88] to-[#0088ff] mx-auto"></div>
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Real-world data analysis and automation projects with measurable impact</p>
             </div>
             
             <!-- Featured Project -->
-            <div class="cyber-card p-8 mb-16 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-[#00ff88] opacity-5 rounded-full -translate-y-16 translate-x-16"></div>
-                <div class="absolute bottom-0 left-0 w-40 h-40 bg-[#0088ff] opacity-5 rounded-full translate-y-20 -translate-x-20"></div>
-                
-                <div class="grid md:grid-cols-2 gap-8 relative z-10">
-                    <div>
-                        <div class="flex items-center mb-4">
-                            <span class="cyber-font text-[#00ff88] mr-4">FEATURED PROJECT</span>
-                            <span class="px-3 py-1 bg-[rgba(0,255,136,0.1)] text-[#00ff88] text-xs rounded cyber-font">LIVE</span>
-                        </div>
-                        
-                        <h3 class="cyber-font text-3xl text-white mb-4">AUTOPILOT BUSINESS SYSTEM</h3>
-                        <p class="text-gray-300 mb-6">
-                            Fully automated Point of Sale & Business Management System built with Google Apps Script. Processes transactions, manages inventory, and generates real-time analytics without human intervention.
-                        </p>
-                        
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-[rgba(0,255,136,0.1)] text-[#00ff88] rounded text-sm cyber-font">Google Apps Script</span>
-                            <span class="px-3 py-1 bg-[rgba(0,255,136,0.1)] text-[#00ff88] rounded text-sm cyber-font">Automation</span>
-                            <span class="px-3 py-1 bg-[rgba(0,255,136,0.1)] text-[#00ff88] rounded text-sm cyber-font">Real-time Analytics</span>
-                        </div>
-                        
-                        <div class="space-y-4 mb-6">
-                            <div class="flex items-center">
-                                <div class="w-2 h-2 bg-[#00ff88] rounded-full mr-3 animate-pulse"></div>
-                                <span class="text-gray-300">Reduced manual work by <span class="text-[#00ff88]">80%</span></span>
+            <div class="mb-16" data-aos="fade-up">
+                <div class="data-card">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1a237e] to-[#3949ab] rounded-full mb-4">
+                                <span class="text-sm text-white">Featured Project</span>
                             </div>
-                            <div class="flex items-center">
-                                <div class="w-2 h-2 bg-[#00ff88] rounded-full mr-3 animate-pulse"></div>
-                                <span class="text-gray-300">Processing time decreased from <span class="text-[#00ff88]">2 hours → 5 minutes</span></span>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Autopilot Business System</h3>
+                            <p class="text-gray-700 mb-6">
+                                A fully automated Point of Sale & Business Management System built using Google Sheets and Apps Script. Processes transactions, manages inventory, and generates real-time analytics without manual intervention.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-blue-100 text-[#1a237e] rounded-full text-sm">Google Apps Script</span>
+                                <span class="px-3 py-1 bg-blue-100 text-[#1a237e] rounded-full text-sm">Automation</span>
+                                <span class="px-3 py-1 bg-blue-100 text-[#1a237e] rounded-full text-sm">Real-time Analytics</span>
                             </div>
-                        </div>
-                        
-                        <a href="https://script.google.com/macros/s/AKfycbze2NXUH8ddcmy7l99wLCbPrsz0v95vu7xO_bR632byfPPi0Yn7uxoZJm_W1Me4k8IH/exec" 
-                           target="_blank" 
-                           class="cyber-btn inline-flex items-center">
-                            <i class="fas fa-external-link-alt mr-2"></i> ACCESS LIVE SYSTEM
-                        </a>
-                    </div>
-                    
-                    <div class="relative">
-                        <div class="cyber-card p-4">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                 alt="Autopilot System"
-                                 class="w-full h-64 object-cover rounded-lg">
-                        </div>
-                        
-                        <!-- Demo Credentials -->
-                        <div class="cyber-card p-4 mt-4">
-                            <h4 class="cyber-font text-[#00ff88] mb-3">DEMO ACCESS</h4>
-                            <div class="space-y-2">
-                                <div class="flex justify-between">
-                                    <span class="text-gray-400 text-sm">Username:</span>
-                                    <span class="text-white text-sm">itsmbillah@gmail.com</span>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-[#00c853] mr-2"></i>
+                                    <span class="text-gray-700">Reduced manual work by <span class="font-semibold">80%</span></span>
                                 </div>
-                                <div class="flex justify-between">
-                                    <span class="text-gray-400 text-sm">Password:</span>
-                                    <span class="text-white text-sm">••••••••</span>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-[#00c853] mr-2"></i>
+                                    <span class="text-gray-700">Processing time: <span class="font-semibold">2 hours → 5 minutes</span></span>
+                                </div>
+                            </div>
+                            
+                            <a href="https://script.google.com/macros/s/AKfycbze2NXUH8ddcmy7l99wLCbPrsz0v95vu7xO_bR632byfPPi0Yn7uxoZJm_W1Me4k8IH/exec" 
+                               target="_blank"
+                               class="primary-btn inline-flex items-center">
+                                <i class="fas fa-external-link-alt mr-2"></i> View Live System
+                            </a>
+                        </div>
+                        
+                        <div>
+                            <div class="rounded-xl overflow-hidden shadow-lg mb-6">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Autopilot Business System"
+                                     class="w-full h-64 object-cover">
+                            </div>
+                            
+                            <!-- Demo Access -->
+                            <div class="bg-white border border-gray-200 rounded-xl p-6">
+                                <h4 class="font-bold text-gray-900 mb-3">Demo Access</h4>
+                                <div class="space-y-3">
+                                    <div>
+                                        <div class="text-sm text-gray-600 mb-1">Email</div>
+                                        <div class="font-mono text-gray-900">itsmbillah@gmail.com</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm text-gray-600 mb-1">Password</div>
+                                        <div class="font-mono text-gray-900">••••••••</div>
+                                    </div>
+                                    <div class="text-xs text-gray-500 mt-2">
+                                        Use these credentials to test the live demo system
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -857,147 +793,171 @@
             <!-- Other Projects Grid -->
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- Project 1 -->
-                <div class="cyber-card p-6 hover:border-[#00ff88] transition-all duration-300">
-                    <div class="mb-4">
-                        <span class="cyber-font text-[#0088ff] text-sm">DATA VISUALIZATION</span>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://i.postimg.cc/Hnp5vTtn/Screenshot-2025-07-28-110516.png" 
+                         alt="Car Sales Analysis"
+                         class="project-image">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Car Sales Analysis</h4>
+                        <p class="text-gray-600 mb-4">
+                            Vehicle sales trends and profitability analysis with interactive Power BI dashboard.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">Power BI</span>
+                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">SQL</span>
+                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">Data Analysis</span>
+                        </div>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiMjBhNzM1MDEtNTZiYy00MGM1LWJhM2MtY2NlZmYyZTA0ZjQ0IiwidCI6IjliOTk0Yjg2LWZmNjctNGEyNC05YTBjLTFkYzgzNWVjOTJjNSIsImMiOjEwfQ%3D%3D" 
+                           target="_blank"
+                           class="text-[#1a237e] font-medium inline-flex items-center">
+                            View Dashboard <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
-                    <h4 class="cyber-font text-xl text-white mb-3">CAR SALES ANALYTICS</h4>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Vehicle sales trends and profitability analysis with interactive Power BI dashboard.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-2 py-1 bg-[rgba(0,136,255,0.1)] text-[#0088ff] text-xs rounded">Power BI</span>
-                        <span class="px-2 py-1 bg-[rgba(0,136,255,0.1)] text-[#0088ff] text-xs rounded">SQL</span>
-                    </div>
-                    <a href="#" class="text-[#00ff88] text-sm cyber-font inline-flex items-center">
-                        VIEW DASHBOARD <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                    </a>
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="cyber-card p-6 hover:border-[#00ff88] transition-all duration-300">
-                    <div class="mb-4">
-                        <span class="cyber-font text-[#ff0088] text-sm">HR ANALYTICS</span>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://i.postimg.cc/bNZdyGd8/Screenshot-2025-07-28-110453.png" 
+                         alt="HR Analytics Dashboard"
+                         class="project-image">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">HR Analytics Dashboard</h4>
+                        <p class="text-gray-600 mb-4">
+                            Employee performance and retention analysis with advanced SQL queries and visualization.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">HR Analytics</span>
+                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">Dashboard</span>
+                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">SQL</span>
+                        </div>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiMjBhNzM1MDEtNTZiYy00MGM1LWJhM2MtY2NlZmYyZTA0ZjQ0IiwidCI6IjliOTk0Yjg2LWZmNjctNGEyNC05YTBjLTFkYzgzNWVjOTJjNSIsImMiOjEwfQ%3D%3D" 
+                           target="_blank"
+                           class="text-[#1a237e] font-medium inline-flex items-center">
+                            View Report <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
-                    <h4 class="cyber-font text-xl text-white mb-3">EMPLOYEE PERFORMANCE DASHBOARD</h4>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Employee retention and performance analysis with advanced SQL queries and visualization.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-2 py-1 bg-[rgba(255,0,136,0.1)] text-[#ff0088] text-xs rounded">HR Analytics</span>
-                        <span class="px-2 py-1 bg-[rgba(255,0,136,0.1)] text-[#ff0088] text-xs rounded">Dashboard</span>
-                    </div>
-                    <a href="#" class="text-[#00ff88] text-sm cyber-font inline-flex items-center">
-                        VIEW REPORT <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                    </a>
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="cyber-card p-6 hover:border-[#00ff88] transition-all duration-300">
-                    <div class="mb-4">
-                        <span class="cyber-font text-[#00eeff] text-sm">SALES ANALYTICS</span>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://i.postimg.cc/xqVrVFcX/Screenshot-2025-07-28-111331.png" 
+                         alt="Toy Store Sales Analytics"
+                         class="project-image">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Toy Store Sales Analytics</h4>
+                        <p class="text-gray-600 mb-4">
+                            Deep-dive analysis of $14.44M in sales across multiple stores with predictive insights.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">Sales Analytics</span>
+                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">Predictive</span>
+                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">Power BI</span>
+                        </div>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiMjQ4MjhjZDAtNzNiZC00OGUzLTgwN2ItMjEyOGU4MmRkMjQ1IiwidCI6IjliOTk0Yjg2LWZmNjctNGEyNC05YTBjLTFkYzgzNWVjOTJjNSIsImMiOjEwfQ%3D%3D" 
+                           target="_blank"
+                           class="text-[#1a237e] font-medium inline-flex items-center">
+                            View Insights <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
-                    <h4 class="cyber-font text-xl text-white mb-3">TOY STORE SALES ANALYSIS</h4>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Deep-dive analysis of $14.44M in sales across multiple stores with predictive insights.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-2 py-1 bg-[rgba(0,238,255,0.1)] text-[#00eeff] text-xs rounded">Sales Analytics</span>
-                        <span class="px-2 py-1 bg-[rgba(0,238,255,0.1)] text-[#00eeff] text-xs rounded">Predictive</span>
-                    </div>
-                    <a href="#" class="text-[#00ff88] text-sm cyber-font inline-flex items-center">
-                        VIEW INSIGHTS <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Experience Section -->
-    <section id="experience" class="py-20 px-6">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <span class="cyber-font text-[#00ff88] text-sm tracking-widest">// MISSION LOG</span>
-                <h2 class="cyber-font text-4xl md:text-5xl font-bold mt-4 mb-6">OPERATIONS TIMELINE</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-[#00ff88] to-[#0088ff] mx-auto"></div>
+    <section id="experience" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="section-header">
+                <h2 class="section-title">Experience & Education</h2>
+                <p class="section-subtitle">Professional journey and academic background</p>
             </div>
             
-            <div class="max-w-4xl mx-auto">
-                <!-- Timeline Item 1 -->
-                <div class="flex mb-12">
-                    <div class="flex-shrink-0 w-16">
-                        <div class="w-12 h-12 bg-[rgba(0,255,136,0.1)] rounded-full flex items-center justify-center">
-                            <i class="fas fa-briefcase text-[#00ff88]"></i>
-                        </div>
-                        <div class="h-full w-1 bg-gradient-to-b from-[#00ff88] to-transparent mx-auto mt-2"></div>
-                    </div>
-                    <div class="ml-6 cyber-card p-6 flex-1">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <span class="cyber-font text-[#00ff88] text-sm">ACTIVE MISSION</span>
-                                <h3 class="cyber-font text-xl text-white mt-1">DATA ANALYST</h3>
+            <div class="max-w-3xl mx-auto">
+                <!-- Experience Timeline -->
+                <div class="mb-12" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Work Experience</h3>
+                    
+                    <div class="timeline">
+                        <!-- Current Job -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="data-card">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h4 class="text-xl font-bold text-gray-900">Data Analyst</h4>
+                                        <p class="text-[#1a237e] font-medium">Data Solution 360</p>
+                                    </div>
+                                    <span class="px-3 py-1 bg-blue-50 text-[#1a237e] rounded-full text-sm">June 2025 – Present</span>
+                                </div>
+                                <p class="text-gray-700">
+                                    Developed automated data pipelines reducing manual reporting time by 70%. Designed Google Apps Script automations for seamless business workflows. Built custom automation for certificate generation and CRM email triggers.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Data Pipelines</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Automation</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Google Apps Script</span>
+                                </div>
                             </div>
-                            <span class="px-3 py-1 bg-[rgba(0,255,136,0.1)] text-[#00ff88] text-xs rounded cyber-font">2025 - PRESENT</span>
                         </div>
-                        <p class="text-gray-300 mb-3">Data Solution 360</p>
-                        <p class="text-gray-400">
-                            Developed automated data pipelines reducing manual reporting by 70%. Designed Google Apps Script automations for seamless business workflows. Built custom automation for certificate generation and CRM email triggers.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="px-2 py-1 bg-[rgba(0,255,136,0.05)] text-gray-400 text-xs rounded">Data Pipelines</span>
-                            <span class="px-2 py-1 bg-[rgba(0,255,136,0.05)] text-gray-400 text-xs rounded">Automation</span>
-                            <span class="px-2 py-1 bg-[rgba(0,255,136,0.05)] text-gray-400 text-xs rounded">Google Apps Script</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Timeline Item 2 -->
-                <div class="flex mb-12">
-                    <div class="flex-shrink-0 w-16">
-                        <div class="w-12 h-12 bg-[rgba(0,136,255,0.1)] rounded-full flex items-center justify-center">
-                            <i class="fas fa-chart-line text-[#0088ff]"></i>
-                        </div>
-                        <div class="h-full w-1 bg-gradient-to-b from-[#0088ff] to-transparent mx-auto mt-2"></div>
-                    </div>
-                    <div class="ml-6 cyber-card p-6 flex-1">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <span class="cyber-font text-[#0088ff] text-sm">PREVIOUS MISSION</span>
-                                <h3 class="cyber-font text-xl text-white mt-1">ACCOUNTS EXECUTIVE</h3>
+                        
+                        <!-- Previous Job -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="data-card">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h4 class="text-xl font-bold text-gray-900">Accounts Executive</h4>
+                                        <p class="text-[#1a237e] font-medium">Orient Button Ltd.</p>
+                                    </div>
+                                    <span class="px-3 py-1 bg-blue-50 text-[#1a237e] rounded-full text-sm">2023 – 2025</span>
+                                </div>
+                                <p class="text-gray-700">
+                                    Created advanced Excel dashboards for financial KPIs and variance trends. Automated recurring monthly reporting using VBA and Google Sheets. Managed and analyzed sales and expense data across departments.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Excel Dashboards</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">VBA</span>
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Financial Analysis</span>
+                                </div>
                             </div>
-                            <span class="px-3 py-1 bg-[rgba(0,136,255,0.1)] text-[#0088ff] text-xs rounded cyber-font">2023 - 2025</span>
-                        </div>
-                        <p class="text-gray-300 mb-3">Orient Button Ltd.</p>
-                        <p class="text-gray-400">
-                            Created advanced Excel dashboards for financial KPIs and variance trends. Automated recurring monthly reporting using VBA and Google Sheets. Managed and analyzed sales and expense data across departments.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="px-2 py-1 bg-[rgba(0,136,255,0.05)] text-gray-400 text-xs rounded">Excel Dashboards</span>
-                            <span class="px-2 py-1 bg-[rgba(0,136,255,0.05)] text-gray-400 text-xs rounded">VBA</span>
-                            <span class="px-2 py-1 bg-[rgba(0,136,255,0.05)] text-gray-400 text-xs rounded">Financial Analysis</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Education -->
-                <div class="flex">
-                    <div class="flex-shrink-0 w-16">
-                        <div class="w-12 h-12 bg-[rgba(255,0,136,0.1)] rounded-full flex items-center justify-center">
-                            <i class="fas fa-graduation-cap text-[#ff0088]"></i>
-                        </div>
-                    </div>
-                    <div class="ml-6 cyber-card p-6 flex-1">
-                        <div class="flex justify-between items-start mb-4">
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Education</h3>
+                    
+                    <div class="data-card">
+                        <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <span class="cyber-font text-[#ff0088] text-sm">TRAINING COMPLETE</span>
-                                <h3 class="cyber-font text-xl text-white mt-1">BACHELOR OF BUSINESS ADMINISTRATION</h3>
+                                <h4 class="text-lg font-bold text-gray-900 mb-2">Bachelor of Business Administration (BBA)</h4>
+                                <p class="text-[#1a237e] font-medium mb-3">Mohammadpur Kendriya College</p>
+                                <span class="px-3 py-1 bg-blue-50 text-[#1a237e] rounded-full text-sm inline-block mb-4">2018 – 2022</span>
+                                <p class="text-gray-700">
+                                    Specialized in Marketing with coursework in business analytics, statistics, and strategic management.
+                                </p>
                             </div>
-                            <span class="px-3 py-1 bg-[rgba(255,0,136,0.1)] text-[#ff0088] text-xs rounded cyber-font">2018 - 2022</span>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900 mb-2">Certifications</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <i class="fas fa-certificate text-[#00c853] mt-1 mr-3"></i>
+                                        <div>
+                                            <div class="font-medium">Google Data Analytics Professional Certificate</div>
+                                            <div class="text-sm text-gray-600">2023 – 2024</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-certificate text-[#00c853] mt-1 mr-3"></i>
+                                        <div>
+                                            <div class="font-medium">Data Analysis with Python</div>
+                                            <div class="text-sm text-gray-600">Coursera</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="text-gray-300 mb-3">Mohammadpur Kendriya College</p>
-                        <p class="text-gray-400">
-                            Specialized in Marketing with coursework in business analytics, statistics, and strategic management. Graduated with honors and completed a thesis on data-driven marketing strategies.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -1005,122 +965,128 @@
     </section>
     
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-6 bg-[rgba(5,5,8,0.5)]">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <span class="cyber-font text-[#00ff88] text-sm tracking-widest">// INITIATE CONNECTION</span>
-                <h2 class="cyber-font text-4xl md:text-5xl font-bold mt-4 mb-6">TRANSMISSION CHANNELS</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-[#00ff88] to-[#0088ff] mx-auto"></div>
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's discuss how data analysis and automation can transform your business</p>
             </div>
             
             <div class="max-w-4xl mx-auto">
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- Contact Form -->
-                    <div class="cyber-card p-8">
-                        <h3 class="cyber-font text-2xl text-[#00ff88] mb-6">SEND TRANSMISSION</h3>
+                    <div class="data-card" data-aos="fade-right">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Send Message</h3>
                         
                         <form id="contactForm" class="space-y-6">
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-gray-400 text-sm mb-2 cyber-font">IDENTITY</label>
                                     <input type="text" 
-                                           class="w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(0,255,136,0.2)] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#00ff88] transition-all"
-                                           placeholder="Your Name">
+                                           class="form-input"
+                                           placeholder="Your Name"
+                                           required>
                                 </div>
                                 <div>
-                                    <label class="block text-gray-400 text-sm mb-2 cyber-font">FREQUENCY</label>
                                     <input type="email" 
-                                           class="w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(0,255,136,0.2)] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#00ff88] transition-all"
-                                           placeholder="Email Address">
+                                           class="form-input"
+                                           placeholder="Email Address"
+                                           required>
                                 </div>
                             </div>
                             
                             <div>
-                                <label class="block text-gray-400 text-sm mb-2 cyber-font">SUBJECT LINE</label>
                                 <input type="text" 
-                                       class="w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(0,255,136,0.2)] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#00ff88] transition-all"
-                                       placeholder="Message Subject">
+                                       class="form-input"
+                                       placeholder="Subject"
+                                       required>
                             </div>
                             
                             <div>
-                                <label class="block text-gray-400 text-sm mb-2 cyber-font">MESSAGE CONTENT</label>
                                 <textarea rows="5"
-                                          class="w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(0,255,136,0.2)] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#00ff88] transition-all"
-                                          placeholder="Type your message here..."></textarea>
+                                          class="form-input"
+                                          placeholder="Your Message"
+                                          required></textarea>
                             </div>
                             
-                            <button type="submit" class="cyber-btn w-full">
-                                <i class="fas fa-paper-plane mr-2"></i> INITIATE TRANSMISSION
+                            <button type="submit" class="primary-btn w-full">
+                                <span id="btnText">Send Message</span>
+                                <span id="btnLoading" class="hidden">
+                                    <span class="loading">
+                                        <span class="loading-dot"></span>
+                                        <span class="loading-dot"></span>
+                                        <span class="loading-dot"></span>
+                                    </span>
+                                </span>
                             </button>
                         </form>
                         
-                        <div id="formMessage" class="mt-4 p-4 bg-[rgba(0,255,136,0.1)] border border-[#00ff88] rounded-lg hidden">
-                            <p class="text-[#00ff88] text-center">Transmission sent successfully!</p>
-                        </div>
+                        <div id="formMessage" class="mt-4 p-4 rounded-lg hidden"></div>
                     </div>
                     
                     <!-- Contact Info -->
-                    <div class="cyber-card p-8">
-                        <h3 class="cyber-font text-2xl text-[#00ff88] mb-6">DIRECT CHANNELS</h3>
-                        
-                        <div class="space-y-6">
-                            <!-- Email -->
-                            <div class="flex items-center p-4 bg-[rgba(0,255,136,0.05)] rounded-lg">
-                                <div class="w-12 h-12 bg-[rgba(0,255,136,0.1)] rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-envelope text-[#00ff88]"></i>
-                                </div>
-                                <div>
-                                    <div class="cyber-font text-gray-400 text-sm">PRIMARY CHANNEL</div>
-                                    <a href="mailto:itsmbillah@gmail.com" class="text-white hover:text-[#00ff88] transition-colors">itsmbillah@gmail.com</a>
-                                </div>
-                            </div>
+                    <div class="space-y-6" data-aos="fade-left">
+                        <div class="data-card">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
                             
-                            <!-- Phone -->
-                            <div class="flex items-center p-4 bg-[rgba(0,136,255,0.05)] rounded-lg">
-                                <div class="w-12 h-12 bg-[rgba(0,136,255,0.1)] rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-phone text-[#0088ff]"></i>
+                            <div class="space-y-6">
+                                <!-- Email -->
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-[#1a237e] to-[#3949ab] rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-gray-900">Email</div>
+                                        <a href="mailto:itsmbillah@gmail.com" class="text-gray-700 hover:text-[#1a237e] transition-colors">itsmbillah@gmail.com</a>
+                                    </div>
                                 </div>
-                                <div>
-                                    <div class="cyber-font text-gray-400 text-sm">VOICE CHANNEL</div>
-                                    <a href="tel:+8801915966721" class="text-white hover:text-[#0088ff] transition-colors">+880 1915 966 721</a>
+                                
+                                <!-- Phone -->
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-[#1a237e] to-[#3949ab] rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fas fa-phone text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-gray-900">Phone</div>
+                                        <a href="tel:+8801915966721" class="text-gray-700 hover:text-[#1a237e] transition-colors">+880 1915-966721</a>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <!-- Location -->
-                            <div class="flex items-center p-4 bg-[rgba(255,0,136,0.05)] rounded-lg">
-                                <div class="w-12 h-12 bg-[rgba(255,0,136,0.1)] rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-map-marker-alt text-[#ff0088]"></i>
-                                </div>
-                                <div>
-                                    <div class="cyber-font text-gray-400 text-sm">COORDINATES</div>
-                                    <div class="text-white">Dhaka, Bangladesh</div>
+                                
+                                <!-- Location -->
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-[#1a237e] to-[#3949ab] rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fas fa-map-marker-alt text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-gray-900">Location</div>
+                                        <div class="text-gray-700">Dhaka, Bangladesh</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- Social Links -->
-                        <div class="mt-8 pt-6 border-t border-[#00ff88]/20">
-                            <h4 class="cyber-font text-gray-400 text-sm mb-4">NETWORK NODES</h4>
+                        <div class="data-card">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Connect With Me</h3>
                             <div class="flex space-x-4">
                                 <a href="https://linkedin.com/in/itsmebillah" 
                                    target="_blank"
-                                   class="w-10 h-10 bg-[rgba(0,255,136,0.1)] rounded-lg flex items-center justify-center text-[#00ff88] hover:bg-[rgba(0,255,136,0.2)] transition-all">
-                                    <i class="fab fa-linkedin-in"></i>
+                                   class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-[#1a237e] hover:bg-blue-100 transition-colors">
+                                    <i class="fab fa-linkedin-in text-xl"></i>
                                 </a>
                                 <a href="https://github.com/itsmbillah" 
                                    target="_blank"
-                                   class="w-10 h-10 bg-[rgba(0,255,136,0.1)] rounded-lg flex items-center justify-center text-[#00ff88] hover:bg-[rgba(0,255,136,0.2)] transition-all">
-                                    <i class="fab fa-github"></i>
+                                   class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-[#1a237e] hover:bg-blue-100 transition-colors">
+                                    <i class="fab fa-github text-xl"></i>
                                 </a>
                                 <a href="https://www.facebook.com/itsmebillah" 
                                    target="_blank"
-                                   class="w-10 h-10 bg-[rgba(0,255,136,0.1)] rounded-lg flex items-center justify-center text-[#00ff88] hover:bg-[rgba(0,255,136,0.2)] transition-all">
-                                    <i class="fab fa-facebook-f"></i>
+                                   class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-[#1a237e] hover:bg-blue-100 transition-colors">
+                                    <i class="fab fa-facebook-f text-xl"></i>
                                 </a>
                                 <a href="https://wa.me/8801915966721" 
                                    target="_blank"
-                                   class="w-10 h-10 bg-[rgba(0,255,136,0.1)] rounded-lg flex items-center justify-center text-[#00ff88] hover:bg-[rgba(0,255,136,0.2)] transition-all">
-                                    <i class="fab fa-whatsapp"></i>
+                                   class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-[#1a237e] hover:bg-blue-100 transition-colors">
+                                    <i class="fab fa-whatsapp text-xl"></i>
                                 </a>
                             </div>
                         </div>
@@ -1131,46 +1097,51 @@
     </section>
     
     <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-[rgba(0,255,136,0.1)]">
-        <div class="container mx-auto">
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
-                    <div class="cyber-font text-2xl mb-4">
-                        <span class="text-[#00ff88]">&lt;</span>
-                        <span class="text-white">MASUM_BILLAH</span>
-                        <span class="text-[#00ff88]">/&gt;</span>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-[#3949ab] to-[#1a237e] rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold">MB</span>
+                        </div>
+                        <div>
+                            <div class="font-bold text-lg">Md. Masum Billah</div>
+                            <div class="text-gray-400">Data Analyst & Automation Specialist</div>
+                        </div>
                     </div>
                     <p class="text-gray-400">
-                        Architecting intelligent data systems and automation solutions for the digital age.
+                        Transforming data into actionable insights and automating business processes for better decision-making.
                     </p>
                 </div>
                 
                 <div>
-                    <h4 class="cyber-font text-white mb-4">QUICK ACCESS</h4>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
                     <div class="space-y-2">
-                        <a href="#home" class="block text-gray-400 hover:text-[#00ff88] transition-colors cyber-font text-sm">> HOME</a>
-                        <a href="#projects" class="block text-gray-400 hover:text-[#00ff88] transition-colors cyber-font text-sm">> PROJECTS</a>
-                        <a href="#experience" class="block text-gray-400 hover:text-[#00ff88] transition-colors cyber-font text-sm">> EXPERIENCE</a>
-                        <a href="#contact" class="block text-gray-400 hover:text-[#00ff88] transition-colors cyber-font text-sm">> CONTACT</a>
+                        <a href="#home" class="block text-gray-400 hover:text-white transition-colors">Home</a>
+                        <a href="#projects" class="block text-gray-400 hover:text-white transition-colors">Projects</a>
+                        <a href="#skills" class="block text-gray-400 hover:text-white transition-colors">Skills</a>
+                        <a href="#experience" class="block text-gray-400 hover:text-white transition-colors">Experience</a>
+                        <a href="#contact" class="block text-gray-400 hover:text-white transition-colors">Contact</a>
                     </div>
                 </div>
                 
                 <div>
-                    <h4 class="cyber-font text-white mb-4">CURRENT STATUS</h4>
-                    <div class="flex items-center">
-                        <div class="w-3 h-3 bg-[#00ff88] rounded-full mr-2 animate-pulse"></div>
-                        <span class="text-[#00ff88] cyber-font text-sm">AVAILABLE FOR MISSIONS</span>
+                    <h4 class="font-bold text-lg mb-4">Availability</h4>
+                    <div class="flex items-center mb-2">
+                        <div class="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                        <span class="text-green-400 font-medium">Available for Projects</span>
                     </div>
-                    <p class="text-gray-400 text-sm mt-2">Response time: &lt; 24 hours</p>
+                    <p class="text-gray-400 text-sm">Typically respond within 24 hours</p>
                 </div>
             </div>
             
-            <div class="pt-8 border-t border-[rgba(0,255,136,0.1)] text-center">
-                <p class="text-gray-500 text-sm cyber-font">
-                    © 2025 MD. MASUM BILLAH. ALL SYSTEMS OPERATIONAL.
+            <div class="pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-500 text-sm">
+                    © 2025 Md. Masum Billah. All rights reserved.
                 </p>
-                <p class="text-gray-600 text-xs mt-2 cyber-font">
-                    SYSTEM VERSION: CYBER_ARCHITECT_v2.0
+                <p class="text-gray-600 text-xs mt-2">
+                    Built with professionalism and precision
                 </p>
             </div>
         </div>
@@ -1178,7 +1149,6 @@
     
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <script>
         // Initialize everything when DOM is loaded
@@ -1189,41 +1159,6 @@
                 once: true,
                 offset: 100
             });
-            
-            // Initialize Particles.js
-            particlesJS('particles-js', {
-                particles: {
-                    number: { value: 80, density: { enable: true, value_area: 800 } },
-                    color: { value: "#00ff88" },
-                    shape: { type: "circle" },
-                    opacity: { value: 0.5, random: true },
-                    size: { value: 2, random: true },
-                    line_linked: {
-                        enable: true,
-                        distance: 150,
-                        color: "#00ff88",
-                        opacity: 0.2,
-                        width: 1
-                    },
-                    move: {
-                        enable: true,
-                        speed: 1,
-                        direction: "none",
-                        random: true,
-                        straight: false,
-                        out_mode: "out",
-                        bounce: false
-                    }
-                }
-            });
-            
-            // Hide loading screen
-            setTimeout(() => {
-                document.getElementById('loadingScreen').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('loadingScreen').style.display = 'none';
-                }, 500);
-            }, 1500);
             
             // Mobile menu toggle
             document.getElementById('mobileMenuBtn').addEventListener('click', function() {
@@ -1252,24 +1187,89 @@
             });
             
             // Form submission
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
+            document.getElementById('contactForm').addEventListener('submit', async function(e) {
                 e.preventDefault();
                 
-                // Show success message
-                const messageDiv = document.getElementById('formMessage');
-                messageDiv.classList.remove('hidden');
+                const btnText = document.getElementById('btnText');
+                const btnLoading = document.getElementById('btnLoading');
+                const formMessage = document.getElementById('formMessage');
                 
-                // Reset form
-                this.reset();
+                // Show loading state
+                btnText.classList.add('hidden');
+                btnLoading.classList.remove('hidden');
                 
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    messageDiv.classList.add('hidden');
-                }, 5000);
+                try {
+                    // Simulate API call
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    // Show success message
+                    formMessage.innerHTML = `
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <div>
+                                <div class="font-medium text-green-800">Message sent successfully!</div>
+                                <div class="text-green-600 text-sm">I'll get back to you within 24 hours.</div>
+                            </div>
+                        </div>
+                    `;
+                    formMessage.classList.remove('hidden');
+                    formMessage.classList.add('bg-green-50', 'border', 'border-green-200');
+                    
+                    // Reset form
+                    this.reset();
+                    
+                } catch (error) {
+                    // Show error message
+                    formMessage.innerHTML = `
+                        <div class="flex items-center">
+                            <i class="fas fa-exclamation-circle text-red-500 mr-3"></i>
+                            <div>
+                                <div class="font-medium text-red-800">Error sending message</div>
+                                <div class="text-red-600 text-sm">Please email me directly at itsmbillah@gmail.com</div>
+                            </div>
+                        </div>
+                    `;
+                    formMessage.classList.remove('hidden');
+                    formMessage.classList.add('bg-red-50', 'border', 'border-red-200');
+                    
+                } finally {
+                    // Reset button state
+                    btnText.classList.remove('hidden');
+                    btnLoading.classList.add('hidden');
+                    
+                    // Hide message after 5 seconds
+                    setTimeout(() => {
+                        formMessage.classList.add('hidden');
+                    }, 5000);
+                }
             });
             
-            // Add hover effects to cyber cards
-            document.querySelectorAll('.cyber-card').forEach(card => {
+            // Animate skill bars on scroll
+            function animateSkillBars() {
+                const skillBars = document.querySelectorAll('.skill-progress');
+                skillBars.forEach(bar => {
+                    const width = bar.getAttribute('data-width');
+                    if (width) {
+                        bar.style.width = width + '%';
+                    }
+                });
+            }
+            
+            // Animate skill bars when they come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateSkillBars();
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            document.querySelectorAll('.skill-progress').forEach(bar => {
+                observer.observe(bar);
+            });
+            
+            // Add hover effects to data cards
+            document.querySelectorAll('.data-card').forEach(card => {
                 card.addEventListener('mouseenter', function() {
                     this.style.transform = 'translateY(-5px)';
                 });
@@ -1278,25 +1278,6 @@
                     this.style.transform = 'translateY(0)';
                 });
             });
-            
-            // Typewriter effect for terminal text
-            const terminalText = document.querySelector('.terminal p:nth-child(2)');
-            if (terminalText) {
-                const originalText = terminalText.textContent;
-                terminalText.textContent = '';
-                let i = 0;
-                
-                function typeWriter() {
-                    if (i < originalText.length) {
-                        terminalText.textContent += originalText.charAt(i);
-                        i++;
-                        setTimeout(typeWriter, 50);
-                    }
-                }
-                
-                // Start typewriter after loading
-                setTimeout(typeWriter, 2000);
-            }
         });
         
         // Google Analytics
