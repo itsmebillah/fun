@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md. Masum Billah | Data Analyst & Automation Specialist</title>
+    <title>Md. Masum Billah | Data Analyst & Automation Developer</title>
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-        <rect width='100' height='100' rx='20' fill='%231a237e'/>
+        <rect width='100' height='100' rx='20' fill='%230f172a'/>
         <text x='50' y='68' font-size='60' text-anchor='middle' fill='white'>📊</text>
     </svg>">
     
-    <!-- SEO Meta -->
-    <meta name="description" content="Professional Data Analyst & Automation Developer specializing in business intelligence, data visualization, and workflow automation">
-    <meta name="keywords" content="Data Analyst, Business Intelligence, Automation, Power BI, SQL, Python, Google Apps Script">
+    <!-- Meta Tags -->
+    <meta name="description" content="Data Analyst at Data Solution 360 with expertise in data analysis, automation, and business intelligence.">
+    <meta name="keywords" content="Data Analyst, Automation Developer, Business Intelligence, Google Apps Script, Power BI, SQL, Python, Bangladesh">
     <meta name="author" content="Md. Masum Billah">
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="Md. Masum Billah | Data Analyst & Automation Specialist">
-    <meta property="og:description" content="Transforming data into actionable insights and automating business processes">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://itsmebillah.github.io/itsmebillah/">
+    <meta property="og:title" content="Md. Masum Billah | Data Analyst & Automation Developer">
+    <meta property="og:description" content="Data Analyst at Data Solution 360 with expertise in data analysis, automation, and business intelligence.">
     <meta property="og:image" content="https://i.postimg.cc/SRhCysjL/Whats-App-Image-2025-10.jpg">
-    <meta property="og:url" content="https://itsmebillah.github.io">
     
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Md. Masum Billah | Data Analyst & Automation Specialist">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://itsmebillah.github.io/itsmebillah/">
+    <meta property="twitter:title" content="Md. Masum Billah | Data Analyst & Automation Developer">
+    <meta property="twitter:description" content="Data Analyst at Data Solution 360 with expertise in data analysis, automation, and business intelligence.">
+    <meta property="twitter:image" content="https://i.postimg.cc/SRhCysjL/Whats-App-Image-2025-10.jpg">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KDTNVZE7P7"></script>
@@ -43,20 +47,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #1a237e;
-            --secondary: #3949ab;
-            --accent: #00b0ff;
-            --success: #00c853;
-            --light-bg: #f8f9fa;
-            --text-dark: #2d3748;
-            --text-light: #718096;
+            --primary: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --accent: #8b5cf6;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+        }
+        
+        .dark-theme {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --card-bg: #1e293b;
+            --border-color: #334155;
+        }
+        
+        .light-theme {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
         }
         
         * {
@@ -67,63 +90,131 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-            background-color: #ffffff;
-            line-height: 1.6;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-        }
-        
-        /* Professional Header */
-        .professional-header {
-            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
-            color: white;
-        }
-        
-        /* Data Card */
-        .data-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
             transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
+            overflow-x: hidden;
         }
         
-        .data-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-            border-color: var(--accent);
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
         }
         
-        /* Metric Card */
-        .metric-card {
-            background: white;
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Glass Morphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .light-theme .glass {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .light-theme .card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Button Styles */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 12px 32px;
             border-radius: 10px;
-            padding: 1.5rem;
-            text-align: center;
-            border-left: 4px solid var(--accent);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         
-        /* Skill Bar */
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 12px 32px;
+            border-radius: 10px;
+            font-weight: 600;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Skill Progress Bar */
         .skill-container {
-            margin-bottom: 1.5rem;
+            margin-bottom: 24px;
         }
         
-        .skill-label {
+        .skill-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .skill-percentage {
+            color: var(--primary);
+            font-weight: 600;
         }
         
         .skill-bar {
             height: 8px;
-            background: #e2e8f0;
+            background: var(--border-color);
             border-radius: 4px;
             overflow: hidden;
         }
@@ -136,36 +227,17 @@
             transition: width 1.5s ease-in-out;
         }
         
-        /* Project Card */
-        .project-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-        
-        .project-image {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-        }
-        
         /* Timeline */
-        .timeline {
+        .timeline-container {
             position: relative;
-            padding-left: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
         
-        .timeline::before {
+        .timeline-container::before {
             content: '';
             position: absolute;
-            left: 15px;
+            left: 30px;
             top: 0;
             bottom: 0;
             width: 2px;
@@ -174,123 +246,65 @@
         
         .timeline-item {
             position: relative;
-            margin-bottom: 2rem;
+            margin-bottom: 40px;
+            padding-left: 80px;
         }
         
         .timeline-dot {
             position: absolute;
-            left: -30px;
+            left: 20px;
             top: 5px;
-            width: 12px;
-            height: 12px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             background: var(--primary);
-            border: 3px solid white;
-            box-shadow: 0 0 0 2px var(--primary);
+            border: 4px solid var(--card-bg);
+            z-index: 2;
         }
         
-        /* Contact Form */
-        .form-input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid #cbd5e0;
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.3s ease;
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
         }
         
-        .form-input:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(0, 176, 255, 0.1);
-        }
-        
-        /* Button */
-        .primary-btn {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 8px;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .primary-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(26, 35, 126, 0.2);
-        }
-        
-        .secondary-btn {
-            background: white;
-            color: var(--primary);
-            padding: 0.75rem 2rem;
-            border-radius: 8px;
-            font-weight: 500;
-            border: 2px solid var(--primary);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .secondary-btn:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        /* Navigation */
-        .nav-link {
-            color: var(--text-dark);
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: var(--primary);
-            background: rgba(26, 35, 126, 0.05);
-        }
-        
-        /* Section Header */
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .section-subtitle {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        /* Gradient Text */
-        .gradient-text {
+        .timeline-period {
+            display: inline-block;
             background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        /* Project Tags */
+        .project-tag {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-right: 8px;
+            margin-bottom: 8px;
         }
         
         /* Loading Animation */
         .loading {
             display: inline-flex;
             align-items: center;
+            gap: 4px;
         }
         
         .loading-dot {
             width: 8px;
             height: 8px;
-            background: var(--accent);
+            background: var(--primary);
             border-radius: 50%;
-            margin: 0 4px;
             animation: loading 1.4s infinite;
         }
         
@@ -302,253 +316,519 @@
             30% { transform: translateY(-10px); }
         }
         
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Certificate Card */
+        .certificate-card {
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .certificate-card img {
+            transition: transform 0.5s ease;
+        }
+        
+        .certificate-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .certificate-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .certificate-card:hover .certificate-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Blog Card */
+        .blog-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-image {
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .blog-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-footer {
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        /* Form Styles */
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
-            .section-title {
-                font-size: 2rem;
+            .timeline-container::before {
+                left: 20px;
             }
             
-            .timeline {
-                padding-left: 20px;
-            }
-            
-            .timeline::before {
-                left: 10px;
+            .timeline-item {
+                padding-left: 60px;
             }
             
             .timeline-dot {
-                left: -20px;
+                left: 10px;
+                width: 16px;
+                height: 16px;
             }
+        }
+        
+        /* Section Spacing */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        .nav-link {
+            color: var(--text-secondary);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 16px;
+            right: 16px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
         }
     </style>
 </head>
-<body>
+<body class="dark-theme">
+    <!-- Loader -->
+    <div id="loader" class="fixed inset-0 bg-dark flex flex-col items-center justify-center z-50 transition-opacity duration-500">
+        <div class="relative">
+            <div class="w-20 h-20 border-4 border-gray-200 rounded-full"></div>
+            <div class="w-20 h-20 border-4 border-primary border-t-transparent rounded-full absolute top-0 left-0 animate-spin"></div>
+        </div>
+        <div class="mt-6 text-gray-400 font-medium">
+            <span class="loading">
+                <span>Loading Portfolio</span>
+                <span class="loading-dot"></span>
+                <span class="loading-dot"></span>
+                <span class="loading-dot"></span>
+            </span>
+        </div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="sticky top-0 bg-white shadow-sm z-50">
-        <div class="container mx-auto px-6 py-4">
+    <nav class="fixed top-0 left-0 right-0 z-40 glass py-4">
+        <div class="container mx-auto px-6">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <div class="flex items-center">
-                    <div class="w-10 h-10 bg-gradient-to-br from-[#1a237e] to-[#3949ab] rounded-lg flex items-center justify-center mr-3">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
                         <span class="text-white font-bold">MB</span>
                     </div>
                     <div>
-                        <div class="font-bold text-lg text-gray-900">Md. Masum Billah</div>
-                        <div class="text-sm text-gray-600">Data Analyst</div>
+                        <div class="font-bold text-lg text-white">Md. Masum Billah</div>
+                        <div class="text-gray-400 text-sm">Data Analyst</div>
                     </div>
                 </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#home" class="nav-link active">Home</a>
                     <a href="#about" class="nav-link">About</a>
                     <a href="#skills" class="nav-link">Skills</a>
                     <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#certificates" class="nav-link">Certificates</a>
+                    <a href="#blogs" class="nav-link">Case Studies</a>
                     <a href="#experience" class="nav-link">Experience</a>
                     <a href="#contact" class="nav-link">Contact</a>
+                    
+                    <!-- CV Download -->
                     <a href="https://drive.google.com/file/d/1AGm--2_soUpLvUB1a16xf-w4KHbF1I48/view" 
-                       target="_blank" 
-                       class="primary-btn text-sm">
-                        <i class="fas fa-download mr-2"></i>Download CV
+                       target="_blank"
+                       class="btn-secondary">
+                        <i class="fas fa-download"></i> CV
                     </a>
+                    
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle" class="w-10 h-10 rounded-lg bg-card-bg border border-border-color flex items-center justify-center hover:border-primary transition-colors">
+                        <i class="fas fa-sun text-yellow-500"></i>
+                    </button>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="md:hidden">
-                    <i class="fas fa-bars text-xl text-gray-700"></i>
+                <button id="mobileMenuBtn" class="md:hidden w-10 h-10 rounded-lg bg-card-bg border border-border-color flex items-center justify-center">
+                    <i class="fas fa-bars"></i>
                 </button>
             </div>
             
             <!-- Mobile Menu -->
             <div id="mobileMenu" class="md:hidden mt-4 hidden">
                 <div class="space-y-3">
-                    <a href="#home" class="block py-2 px-4 rounded-lg hover:bg-gray-50">Home</a>
-                    <a href="#about" class="block py-2 px-4 rounded-lg hover:bg-gray-50">About</a>
-                    <a href="#skills" class="block py-2 px-4 rounded-lg hover:bg-gray-50">Skills</a>
-                    <a href="#projects" class="block py-2 px-4 rounded-lg hover:bg-gray-50">Projects</a>
-                    <a href="#experience" class="block py-2 px-4 rounded-lg hover:bg-gray-50">Experience</a>
-                    <a href="#contact" class="block py-2 px-4 rounded-lg hover:bg-gray-50">Contact</a>
-                    <a href="https://drive.google.com/file/d/1AGm--2_soUpLvUB1a16xf-w4KHbF1I48/view" 
-                       target="_blank"
-                       class="block py-2 px-4 rounded-lg bg-gradient-to-r from-[#1a237e] to-[#3949ab] text-white text-center">
-                        Download CV
-                    </a>
+                    <a href="#home" class="block py-3 px-4 rounded-lg hover:bg-card-bg">Home</a>
+                    <a href="#about" class="block py-3 px-4 rounded-lg hover:bg-card-bg">About</a>
+                    <a href="#skills" class="block py-3 px-4 rounded-lg hover:bg-card-bg">Skills</a>
+                    <a href="#projects" class="block py-3 px-4 rounded-lg hover:bg-card-bg">Projects</a>
+                    <a href="#certificates" class="block py-3 px-4 rounded-lg hover:bg-card-bg">Certificates</a>
+                    <a href="#blogs" class="block py-3 px-4 rounded-lg hover:bg-card-bg">Case Studies</a>
+                    <a href="#experience" class="block py-3 px-4 rounded-lg hover:bg-card-bg">Experience</a>
+                    <a href="#contact" class="block py-3 px-4 rounded-lg hover:bg-card-bg">Contact</a>
+                    <div class="flex items-center justify-between py-3 px-4">
+                        <a href="https://drive.google.com/file/d/1AGm--2_soUpLvUB1a16xf-w4KHbF1I48/view" 
+                           target="_blank"
+                           class="btn-secondary text-sm">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                        <button id="mobileThemeToggle" class="w-10 h-10 rounded-lg bg-card-bg border border-border-color flex items-center justify-center">
+                            <i class="fas fa-sun text-yellow-500"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
-    
+
     <!-- Hero Section -->
-    <section id="home" class="professional-header">
-        <div class="container mx-auto px-6 py-20">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+    <section id="home" class="pt-24 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Left Content -->
                 <div data-aos="fade-right">
-                    <div class="inline-flex items-center px-4 py-2 bg-white/10 rounded-full mb-6">
-                        <span class="text-sm text-white/90">Data Analyst & Automation Specialist</span>
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 mb-6">
+                        <span class="text-primary font-medium">Data Analyst & Automation Developer</span>
                     </div>
                     
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Transforming Data Into<br>
-                        <span class="gradient-text">Actionable Insights</span>
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                        <span class="block">Md. Masum</span>
+                        <span class="block gradient-text">Billah</span>
                     </h1>
                     
-                    <p class="text-xl text-white/80 mb-8">
-                        I help businesses make data-driven decisions through advanced analysis, 
-                        automation, and intuitive visualization.
+                    <p class="text-xl text-text-secondary mb-8 max-w-lg">
+                        "Transforming raw data into actionable insights and building intelligent automation systems that drive business growth."
                     </p>
                     
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="primary-btn bg-white text-[#1a237e] hover:bg-gray-100">
-                            <i class="fas fa-chart-bar mr-2"></i>View My Work
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap gap-4 mb-12">
+                        <a href="#projects" class="btn-primary">
+                            <i class="fas fa-briefcase"></i> View Projects
                         </a>
-                        <a href="#contact" class="secondary-btn border-white text-white hover:bg-white hover:text-[#1a237e]">
-                            <i class="fas fa-envelope mr-2"></i>Get In Touch
+                        <a href="#contact" class="btn-secondary">
+                            <i class="fas fa-paper-plane"></i> Contact Me
                         </a>
                     </div>
                     
-                    <!-- Quick Stats -->
-                    <div class="grid grid-cols-3 gap-6 mt-12">
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6">
                         <div class="text-center">
-                            <div class="text-3xl font-bold text-white">24+</div>
-                            <div class="text-white/70 text-sm">Projects</div>
+                            <div class="text-3xl font-bold gradient-text">24+</div>
+                            <div class="text-text-secondary">Projects Completed</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-3xl font-bold text-white">80%</div>
-                            <div class="text-white/70 text-sm">Time Saved</div>
+                            <div class="text-3xl font-bold gradient-text">80%</div>
+                            <div class="text-text-secondary">Avg. Time Saved</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-3xl font-bold text-white">100%</div>
-                            <div class="text-white/70 text-sm">Client Satisfaction</div>
+                            <div class="text-3xl font-bold gradient-text">100%</div>
+                            <div class="text-text-secondary">Client Satisfaction</div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Right Content - Profile -->
+                <!-- Right Content - Profile Image -->
                 <div data-aos="fade-left" class="relative">
                     <div class="relative max-w-md mx-auto">
-                        <!-- Profile Image -->
-                        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <!-- Main Image -->
+                        <div class="card overflow-hidden p-2">
                             <img src="https://i.postimg.cc/SRhCysjL/Whats-App-Image-2025-10.jpg" 
                                  alt="Md. Masum Billah"
-                                 class="w-full h-auto">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#1a237e]/50 to-transparent"></div>
+                                 class="w-full h-auto rounded-xl">
                         </div>
                         
                         <!-- Floating Elements -->
-                        <div class="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-[#00b0ff] to-[#1a237e] rounded-2xl flex items-center justify-center shadow-xl">
-                            <i class="fas fa-database text-2xl text-white"></i>
+                        <div class="absolute -top-6 -right-6 floating">
+                            <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center shadow-2xl">
+                                <i class="fas fa-database text-2xl text-white"></i>
+                            </div>
                         </div>
                         
-                        <div class="absolute -bottom-6 -left-6 w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-xl">
-                            <i class="fas fa-chart-line text-2xl text-[#1a237e]"></i>
+                        <div class="absolute -bottom-6 -left-6 floating" style="animation-delay: 2s;">
+                            <div class="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-2xl flex items-center justify-center shadow-2xl">
+                                <i class="fas fa-chart-line text-xl text-white"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Status Badge -->
+                        <div class="absolute bottom-6 right-6">
+                            <div class="flex items-center space-x-2 px-4 py-2 bg-green-500/10 border border-green-500/20 rounded-full">
+                                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                <span class="text-green-500 font-medium">Available for projects</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-50">
+    <section id="about" class="bg-secondary/5">
         <div class="container mx-auto px-6">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Professional Data Analyst with expertise in transforming complex data into business solutions</p>
+                <p class="section-subtitle">Passionate Data Analyst with expertise in transforming complex data into business solutions</p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="grid lg:grid-cols-2 gap-12">
                 <!-- About Content -->
-                <div class="data-card" data-aos="fade-right">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">My Professional Journey</h3>
+                <div class="card p-8" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-6">My Journey</h3>
                     <div class="space-y-4">
-                        <p class="text-gray-700">
-                            I'm <span class="font-semibold text-[#1a237e]">Md. Masum Billah</span>, a passionate Data Analyst and Automation Developer with expertise in transforming complex datasets into actionable business strategies.
+                        <p class="text-text-secondary">
+                            I'm <span class="font-semibold text-primary">Md. Masum Billah</span>, a passionate Data Analyst and Automation Developer with expertise in transforming complex datasets into actionable business strategies and building systems that run themselves.
                         </p>
-                        <p class="text-gray-700">
-                            My approach combines strong analytical skills with automation logic to streamline reporting, improve decision-making, and unlock efficiency for teams and organizations.
+                        <p class="text-text-secondary">
+                            I combine strong analytical skills with automation logic to streamline reporting, improve decision-making, and unlock efficiency for teams and organizations.
                         </p>
-                        <p class="text-gray-700">
+                        <p class="text-text-secondary">
                             Whether it's a Power BI dashboard, Google Apps Script automation, or data-driven business system, I build with precision, scalability, and purpose.
                         </p>
                     </div>
                     
-                    <div class="mt-8 pt-6 border-t border-gray-200">
-                        <h4 class="font-bold text-gray-900 mb-4">What I Do</h4>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="flex items-center">
-                                <i class="fas fa-chart-pie text-[#1a237e] mr-3"></i>
-                                <span class="text-gray-700">Data Analysis</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-robot text-[#1a237e] mr-3"></i>
-                                <span class="text-gray-700">Process Automation</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-database text-[#1a237e] mr-3"></i>
-                                <span class="text-gray-700">Business Intelligence</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-chart-line text-[#1a237e] mr-3"></i>
-                                <span class="text-gray-700">Data Visualization</span>
-                            </div>
+                    <!-- Core Expertise -->
+                    <div class="mt-8 pt-8 border-t border-border-color">
+                        <h4 class="text-lg font-bold mb-4">Core Expertise</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-primary/10 text-primary rounded-full font-medium">Data Analysis</span>
+                            <span class="px-4 py-2 bg-primary/10 text-primary rounded-full font-medium">Business Intelligence</span>
+                            <span class="px-4 py-2 bg-primary/10 text-primary rounded-full font-medium">Automation</span>
+                            <span class="px-4 py-2 bg-primary/10 text-primary rounded-full font-medium">Google Apps Script</span>
+                            <span class="px-4 py-2 bg-primary/10 text-primary rounded-full font-medium">Power BI</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Quick Facts -->
+                <!-- Quick Facts & Contact -->
                 <div class="space-y-6" data-aos="fade-left">
-                    <div class="data-card">
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Quick Facts</h3>
-                        <div class="space-y-4">
+                    <!-- Quick Facts Card -->
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold mb-6">Quick Facts</h3>
+                        <div class="space-y-6">
                             <div class="flex items-center">
-                                <i class="fas fa-map-marker-alt text-[#1a237e] mr-3 w-6"></i>
+                                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </div>
                                 <div>
-                                    <div class="text-sm text-gray-600">Location</div>
+                                    <div class="text-text-secondary text-sm">Location</div>
                                     <div class="font-medium">Dhaka, Bangladesh</div>
                                 </div>
                             </div>
                             <div class="flex items-center">
-                                <i class="fas fa-envelope text-[#1a237e] mr-3 w-6"></i>
+                                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
                                 <div>
-                                    <div class="text-sm text-gray-600">Email</div>
-                                    <a href="mailto:itsmbillah@gmail.com" class="font-medium hover:text-[#1a237e] transition-colors">itsmbillah@gmail.com</a>
+                                    <div class="text-text-secondary text-sm">Email</div>
+                                    <a href="mailto:itsmbillah@gmail.com" class="font-medium hover:text-primary transition-colors">itsmbillah@gmail.com</a>
                                 </div>
                             </div>
                             <div class="flex items-center">
-                                <i class="fas fa-phone text-[#1a237e] mr-3 w-6"></i>
+                                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-primary"></i>
+                                </div>
                                 <div>
-                                    <div class="text-sm text-gray-600">Phone</div>
+                                    <div class="text-text-secondary text-sm">Phone</div>
                                     <div class="font-medium">+880 1915-966721</div>
                                 </div>
                             </div>
                             <div class="flex items-center">
-                                <i class="fas fa-briefcase text-[#1a237e] mr-3 w-6"></i>
+                                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-briefcase text-primary"></i>
+                                </div>
                                 <div>
-                                    <div class="text-sm text-gray-600">Current Position</div>
+                                    <div class="text-text-secondary text-sm">Current Position</div>
                                     <div class="font-medium">Data Analyst at Data Solution 360</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
+                    <!-- Social Links -->
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold mb-6">Connect With Me</h3>
+                        <div class="grid grid-cols-4 gap-4">
+                            <a href="https://linkedin.com/in/itsmebillah" target="_blank" 
+                               class="h-16 rounded-xl bg-card-bg border border-border-color flex flex-col items-center justify-center hover:border-primary transition-colors group">
+                                <i class="fab fa-linkedin text-xl text-primary mb-1"></i>
+                                <span class="text-xs text-text-secondary group-hover:text-primary">LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/itsmbillah" target="_blank"
+                               class="h-16 rounded-xl bg-card-bg border border-border-color flex flex-col items-center justify-center hover:border-primary transition-colors group">
+                                <i class="fab fa-github text-xl text-primary mb-1"></i>
+                                <span class="text-xs text-text-secondary group-hover:text-primary">GitHub</span>
+                            </a>
+                            <a href="https://www.facebook.com/itsmebillah" target="_blank"
+                               class="h-16 rounded-xl bg-card-bg border border-border-color flex flex-col items-center justify-center hover:border-primary transition-colors group">
+                                <i class="fab fa-facebook text-xl text-primary mb-1"></i>
+                                <span class="text-xs text-text-secondary group-hover:text-primary">Facebook</span>
+                            </a>
+                            <a href="https://wa.me/8801915966721" target="_blank"
+                               class="h-16 rounded-xl bg-card-bg border border-border-color flex flex-col items-center justify-center hover:border-primary transition-colors group">
+                                <i class="fab fa-whatsapp text-xl text-primary mb-1"></i>
+                                <span class="text-xs text-text-secondary group-hover:text-primary">WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container mx-auto px-6">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">Professional expertise in data analysis, automation, and business intelligence</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Left Column - Technical Skills -->
+                <div data-aos="fade-right">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold mb-8">Technical Proficiency</h3>
+                        <div id="skillsContainer">
+                            <!-- Skills will be loaded here -->
+                            <div class="text-center py-12">
+                                <div class="loading inline-block">
+                                    <span>Loading skills</span>
+                                    <div class="loading-dot"></div>
+                                    <div class="loading-dot"></div>
+                                    <div class="loading-dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Skill Categories -->
+                <div data-aos="fade-left">
+                    <div class="card p-8 mb-8">
+                        <h3 class="text-2xl font-bold mb-8">Skill Categories</h3>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center p-6 rounded-xl border border-border-color hover:border-primary transition-colors group cursor-pointer">
+                                <i class="fas fa-database text-4xl text-primary mb-4 group-hover:scale-110 transition-transform"></i>
+                                <h4 class="font-bold mb-2">Data Analysis</h4>
+                                <p class="text-text-secondary text-sm">SQL, Python, Advanced Excel</p>
+                            </div>
+                            <div class="text-center p-6 rounded-xl border border-border-color hover:border-primary transition-colors group cursor-pointer">
+                                <i class="fas fa-robot text-4xl text-primary mb-4 group-hover:scale-110 transition-transform"></i>
+                                <h4 class="font-bold mb-2">Automation</h4>
+                                <p class="text-text-secondary text-sm">Google Apps Script, APIs</p>
+                            </div>
+                            <div class="text-center p-6 rounded-xl border border-border-color hover:border-primary transition-colors group cursor-pointer">
+                                <i class="fas fa-chart-bar text-4xl text-primary mb-4 group-hover:scale-110 transition-transform"></i>
+                                <h4 class="font-bold mb-2">BI & Visualization</h4>
+                                <p class="text-text-secondary text-sm">Power BI, Tableau, Dashboards</p>
+                            </div>
+                            <div class="text-center p-6 rounded-xl border border-border-color hover:border-primary transition-colors group cursor-pointer">
+                                <i class="fas fa-code text-4xl text-primary mb-4 group-hover:scale-110 transition-transform"></i>
+                                <h4 class="font-bold mb-2">Development</h4>
+                                <p class="text-text-secondary text-sm">JavaScript, HTML, CSS, Apps Script</p>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <!-- Languages -->
-                    <div class="data-card">
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Languages</h3>
-                        <div class="space-y-3">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold mb-6">Languages</h3>
+                        <div class="space-y-6">
                             <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">Bengali (Native)</span>
-                                    <span class="text-[#1a237e] font-medium">100%</span>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Bengali (Native)</span>
+                                    <span class="text-primary font-semibold">100%</span>
                                 </div>
                                 <div class="skill-bar">
                                     <div class="skill-progress" style="width: 100%"></div>
                                 </div>
                             </div>
                             <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">English (Professional)</span>
-                                    <span class="text-[#1a237e] font-medium">90%</span>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">English (Professional)</span>
+                                    <span class="text-primary font-semibold">90%</span>
                                 </div>
                                 <div class="skill-bar">
                                     <div class="skill-progress" style="width: 90%"></div>
@@ -560,227 +840,75 @@
             </div>
         </div>
     </section>
-    
-    <!-- Skills Section -->
-    <section id="skills" class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="section-header">
-                <h2 class="section-title">Technical Skills</h2>
-                <p class="section-subtitle">Professional expertise in data analysis, automation, and business intelligence tools</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Left Column -->
-                <div class="space-y-6" data-aos="fade-right">
-                    <!-- Technical Skills -->
-                    <div class="data-card">
-                        <h3 class="text-xl font-bold text-gray-900 mb-6">Technical Skills</h3>
-                        <div class="space-y-6">
-                            <div class="skill-container">
-                                <div class="skill-label">
-                                    <span>Google Apps Script</span>
-                                    <span>92%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="92"></div>
-                                </div>
-                            </div>
-                            <div class="skill-container">
-                                <div class="skill-label">
-                                    <span>SQL & Database Management</span>
-                                    <span>88%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="88"></div>
-                                </div>
-                            </div>
-                            <div class="skill-container">
-                                <div class="skill-label">
-                                    <span>Power BI & Data Visualization</span>
-                                    <span>85%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-container">
-                                <div class="skill-label">
-                                    <span>Python for Data Analysis</span>
-                                    <span>80%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="80"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Tools -->
-                    <div class="data-card">
-                        <h3 class="text-xl font-bold text-gray-900 mb-6">Tools & Technologies</h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="flex items-center p-3 bg-gray-50 rounded-lg">
-                                <i class="fab fa-google text-[#1a237e] mr-3"></i>
-                                <span>Google Workspace</span>
-                            </div>
-                            <div class="flex items-center p-3 bg-gray-50 rounded-lg">
-                                <i class="fas fa-chart-bar text-[#1a237e] mr-3"></i>
-                                <span>Power BI</span>
-                            </div>
-                            <div class="flex items-center p-3 bg-gray-50 rounded-lg">
-                                <i class="fas fa-database text-[#1a237e] mr-3"></i>
-                                <span>MySQL</span>
-                            </div>
-                            <div class="flex items-center p-3 bg-gray-50 rounded-lg">
-                                <i class="fab fa-python text-[#1a237e] mr-3"></i>
-                                <span>Python</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Right Column -->
-                <div class="space-y-6" data-aos="fade-left">
-                    <!-- Professional Skills -->
-                    <div class="data-card">
-                        <h3 class="text-xl font-bold text-gray-900 mb-6">Professional Skills</h3>
-                        <div class="space-y-6">
-                            <div class="skill-container">
-                                <div class="skill-label">
-                                    <span>Data Analysis & Interpretation</span>
-                                    <span>90%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="90"></div>
-                                </div>
-                            </div>
-                            <div class="skill-container">
-                                <div class="skill-label">
-                                    <span>Business Process Automation</span>
-                                    <span>88%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="88"></div>
-                                </div>
-                            </div>
-                            <div class="skill-container">
-                                <div class="skill-label">
-                                    <span>Dashboard Development</span>
-                                    <span>85%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-container">
-                                <div class="skill-label">
-                                    <span>Project Management</span>
-                                    <span>82%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="82"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Certifications -->
-                    <div class="data-card">
-                        <h3 class="text-xl font-bold text-gray-900 mb-6">Certifications</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <i class="fas fa-certificate text-[#00c853] mt-1 mr-3"></i>
-                                <div>
-                                    <div class="font-medium">Google Data Analytics</div>
-                                    <div class="text-sm text-gray-600">Professional Certificate</div>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-certificate text-[#00c853] mt-1 mr-3"></i>
-                                <div>
-                                    <div class="font-medium">Power BI Desktop</div>
-                                    <div class="text-sm text-gray-600">Advanced Visualization</div>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-certificate text-[#00c853] mt-1 mr-3"></i>
-                                <div>
-                                    <div class="font-medium">SQL for Data Analysis</div>
-                                    <div class="text-sm text-gray-600">Advanced Queries</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
+    <section id="projects" class="bg-secondary/5">
         <div class="container mx-auto px-6">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Real-world data analysis and automation projects with measurable impact</p>
+                <p class="section-subtitle">Real-world data analysis and automation solutions with measurable impact</p>
             </div>
             
             <!-- Featured Project -->
             <div class="mb-16" data-aos="fade-up">
-                <div class="data-card">
-                    <div class="grid md:grid-cols-2 gap-8">
+                <div class="card p-8">
+                    <div class="grid lg:grid-cols-2 gap-12">
                         <div>
-                            <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#1a237e] to-[#3949ab] rounded-full mb-4">
-                                <span class="text-sm text-white">Featured Project</span>
+                            <div class="inline-flex items-center space-x-2 mb-6">
+                                <span class="px-4 py-2 bg-primary/10 text-primary rounded-full font-medium">Featured Project</span>
+                                <span class="px-4 py-2 bg-green-500/10 text-green-500 rounded-full font-medium">Live Demo</span>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Autopilot Business System</h3>
-                            <p class="text-gray-700 mb-6">
-                                A fully automated Point of Sale & Business Management System built using Google Sheets and Apps Script. Processes transactions, manages inventory, and generates real-time analytics without manual intervention.
+                            
+                            <h3 class="text-3xl font-bold mb-6">Autopilot Business System</h3>
+                            <p class="text-text-secondary mb-6">
+                                Fully automated Point of Sale & Business Management System built using Google Sheets and Apps Script. Processes transactions, manages inventory, and generates real-time analytics without manual intervention.
                             </p>
                             
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-3 py-1 bg-blue-100 text-[#1a237e] rounded-full text-sm">Google Apps Script</span>
-                                <span class="px-3 py-1 bg-blue-100 text-[#1a237e] rounded-full text-sm">Automation</span>
-                                <span class="px-3 py-1 bg-blue-100 text-[#1a237e] rounded-full text-sm">Real-time Analytics</span>
+                            <div class="flex flex-wrap gap-3 mb-8">
+                                <span class="project-tag">Google Apps Script</span>
+                                <span class="project-tag">Automation</span>
+                                <span class="project-tag">Google Sheets API</span>
+                                <span class="project-tag">Real-time Analytics</span>
                             </div>
                             
-                            <div class="space-y-3 mb-6">
+                            <div class="space-y-4 mb-8">
                                 <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-[#00c853] mr-2"></i>
-                                    <span class="text-gray-700">Reduced manual work by <span class="font-semibold">80%</span></span>
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Reduced manual work by <span class="font-bold text-primary">80%</span></span>
                                 </div>
                                 <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-[#00c853] mr-2"></i>
-                                    <span class="text-gray-700">Processing time: <span class="font-semibold">2 hours → 5 minutes</span></span>
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Processing time decreased from <span class="font-bold text-primary">2 hours → 5 minutes</span></span>
                                 </div>
                             </div>
                             
                             <a href="https://script.google.com/macros/s/AKfycbze2NXUH8ddcmy7l99wLCbPrsz0v95vu7xO_bR632byfPPi0Yn7uxoZJm_W1Me4k8IH/exec" 
                                target="_blank"
-                               class="primary-btn inline-flex items-center">
-                                <i class="fas fa-external-link-alt mr-2"></i> View Live System
+                               class="btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Access Live System
                             </a>
                         </div>
                         
                         <div>
-                            <div class="rounded-xl overflow-hidden shadow-lg mb-6">
+                            <div class="rounded-xl overflow-hidden mb-8">
                                 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                                      alt="Autopilot Business System"
                                      class="w-full h-64 object-cover">
                             </div>
                             
-                            <!-- Demo Access -->
-                            <div class="bg-white border border-gray-200 rounded-xl p-6">
-                                <h4 class="font-bold text-gray-900 mb-3">Demo Access</h4>
-                                <div class="space-y-3">
+                            <!-- Demo Credentials -->
+                            <div class="card p-6">
+                                <h4 class="text-lg font-bold mb-4">Demo Access</h4>
+                                <div class="space-y-4">
                                     <div>
-                                        <div class="text-sm text-gray-600 mb-1">Email</div>
-                                        <div class="font-mono text-gray-900">itsmbillah@gmail.com</div>
+                                        <div class="text-text-secondary text-sm mb-1">Email</div>
+                                        <div class="font-mono bg-card-bg p-3 rounded-lg">itsmbillah@gmail.com</div>
                                     </div>
                                     <div>
-                                        <div class="text-sm text-gray-600 mb-1">Password</div>
-                                        <div class="font-mono text-gray-900">••••••••</div>
+                                        <div class="text-text-secondary text-sm mb-1">Password</div>
+                                        <div class="font-mono bg-card-bg p-3 rounded-lg">••••••••</div>
                                     </div>
-                                    <div class="text-xs text-gray-500 mt-2">
+                                    <div class="text-text-secondary text-xs">
                                         Use these credentials to test the live demo system
                                     </div>
                                 </div>
@@ -791,224 +919,103 @@
             </div>
             
             <!-- Other Projects Grid -->
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Project 1 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://i.postimg.cc/Hnp5vTtn/Screenshot-2025-07-28-110516.png" 
-                         alt="Car Sales Analysis"
-                         class="project-image">
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">Car Sales Analysis</h4>
-                        <p class="text-gray-600 mb-4">
-                            Vehicle sales trends and profitability analysis with interactive Power BI dashboard.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">Power BI</span>
-                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">SQL</span>
-                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">Data Analysis</span>
-                        </div>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiMjBhNzM1MDEtNTZiYy00MGM1LWJhM2MtY2NlZmYyZTA0ZjQ0IiwidCI6IjliOTk0Yjg2LWZmNjctNGEyNC05YTBjLTFkYzgzNWVjOTJjNSIsImMiOjEwfQ%3D%3D" 
-                           target="_blank"
-                           class="text-[#1a237e] font-medium inline-flex items-center">
-                            View Dashboard <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://i.postimg.cc/bNZdyGd8/Screenshot-2025-07-28-110453.png" 
-                         alt="HR Analytics Dashboard"
-                         class="project-image">
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">HR Analytics Dashboard</h4>
-                        <p class="text-gray-600 mb-4">
-                            Employee performance and retention analysis with advanced SQL queries and visualization.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">HR Analytics</span>
-                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">Dashboard</span>
-                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">SQL</span>
-                        </div>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiMjBhNzM1MDEtNTZiYy00MGM1LWJhM2MtY2NlZmYyZTA0ZjQ0IiwidCI6IjliOTk0Yjg2LWZmNjctNGEyNC05YTBjLTFkYzgzNWVjOTJjNSIsImMiOjEwfQ%3D%3D" 
-                           target="_blank"
-                           class="text-[#1a237e] font-medium inline-flex items-center">
-                            View Report <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://i.postimg.cc/xqVrVFcX/Screenshot-2025-07-28-111331.png" 
-                         alt="Toy Store Sales Analytics"
-                         class="project-image">
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">Toy Store Sales Analytics</h4>
-                        <p class="text-gray-600 mb-4">
-                            Deep-dive analysis of $14.44M in sales across multiple stores with predictive insights.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">Sales Analytics</span>
-                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">Predictive</span>
-                            <span class="px-2 py-1 bg-blue-50 text-[#1a237e] text-xs rounded">Power BI</span>
-                        </div>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiMjQ4MjhjZDAtNzNiZC00OGUzLTgwN2ItMjEyOGU4MmRkMjQ1IiwidCI6IjliOTk0Yjg2LWZmNjctNGEyNC05YTBjLTFkYzgzNWVjOTJjNSIsImMiOjEwfQ%3D%3D" 
-                           target="_blank"
-                           class="text-[#1a237e] font-medium inline-flex items-center">
-                            View Insights <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
+            <div class="grid md:grid-cols-3 gap-6" id="otherProjectsContainer" data-aos="fade-up" data-aos-delay="200">
+                <!-- Projects will be loaded here -->
             </div>
         </div>
     </section>
-    
-    <!-- Experience Section -->
-    <section id="experience" class="py-20">
+
+    <!-- Certificates Section -->
+    <section id="certificates">
         <div class="container mx-auto px-6">
-            <div class="section-header">
-                <h2 class="section-title">Experience & Education</h2>
-                <p class="section-subtitle">Professional journey and academic background</p>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Certifications</h2>
+                <p class="section-subtitle">Professional certifications and credentials in data analytics</p>
             </div>
             
-            <div class="max-w-3xl mx-auto">
-                <!-- Experience Timeline -->
-                <div class="mb-12" data-aos="fade-right">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Work Experience</h3>
-                    
-                    <div class="timeline">
-                        <!-- Current Job -->
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="data-card">
-                                <div class="flex justify-between items-start mb-4">
-                                    <div>
-                                        <h4 class="text-xl font-bold text-gray-900">Data Analyst</h4>
-                                        <p class="text-[#1a237e] font-medium">Data Solution 360</p>
-                                    </div>
-                                    <span class="px-3 py-1 bg-blue-50 text-[#1a237e] rounded-full text-sm">June 2025 – Present</span>
-                                </div>
-                                <p class="text-gray-700">
-                                    Developed automated data pipelines reducing manual reporting time by 70%. Designed Google Apps Script automations for seamless business workflows. Built custom automation for certificate generation and CRM email triggers.
-                                </p>
-                                <div class="flex flex-wrap gap-2 mt-4">
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Data Pipelines</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Automation</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Google Apps Script</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Previous Job -->
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="data-card">
-                                <div class="flex justify-between items-start mb-4">
-                                    <div>
-                                        <h4 class="text-xl font-bold text-gray-900">Accounts Executive</h4>
-                                        <p class="text-[#1a237e] font-medium">Orient Button Ltd.</p>
-                                    </div>
-                                    <span class="px-3 py-1 bg-blue-50 text-[#1a237e] rounded-full text-sm">2023 – 2025</span>
-                                </div>
-                                <p class="text-gray-700">
-                                    Created advanced Excel dashboards for financial KPIs and variance trends. Automated recurring monthly reporting using VBA and Google Sheets. Managed and analyzed sales and expense data across departments.
-                                </p>
-                                <div class="flex flex-wrap gap-2 mt-4">
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Excel Dashboards</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">VBA</span>
-                                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Financial Analysis</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Education -->
-                <div data-aos="fade-left">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Education</h3>
-                    
-                    <div class="data-card">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <h4 class="text-lg font-bold text-gray-900 mb-2">Bachelor of Business Administration (BBA)</h4>
-                                <p class="text-[#1a237e] font-medium mb-3">Mohammadpur Kendriya College</p>
-                                <span class="px-3 py-1 bg-blue-50 text-[#1a237e] rounded-full text-sm inline-block mb-4">2018 – 2022</span>
-                                <p class="text-gray-700">
-                                    Specialized in Marketing with coursework in business analytics, statistics, and strategic management.
-                                </p>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-bold text-gray-900 mb-2">Certifications</h4>
-                                <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <i class="fas fa-certificate text-[#00c853] mt-1 mr-3"></i>
-                                        <div>
-                                            <div class="font-medium">Google Data Analytics Professional Certificate</div>
-                                            <div class="text-sm text-gray-600">2023 – 2024</div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <i class="fas fa-certificate text-[#00c853] mt-1 mr-3"></i>
-                                        <div>
-                                            <div class="font-medium">Data Analysis with Python</div>
-                                            <div class="text-sm text-gray-600">Coursera</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="grid md:grid-cols-3 gap-6" id="certificatesContainer" data-aos="fade-up">
+                <!-- Certificates will be loaded here -->
             </div>
         </div>
     </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
+
+    <!-- Blogs/Case Studies Section -->
+    <section id="blogs" class="bg-secondary/5">
         <div class="container mx-auto px-6">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Case Studies</h2>
+                <p class="section-subtitle">In-depth analysis of real-world data challenges and solutions</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6" id="blogsContainer" data-aos="fade-up">
+                <!-- Blogs will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience">
+        <div class="container mx-auto px-6">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Experience & Education</h2>
+                <p class="section-subtitle">Professional journey and academic achievements</p>
+            </div>
+            
+            <div class="timeline-container" data-aos="fade-up">
+                <!-- Experience will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-secondary/5">
+        <div class="container mx-auto px-6">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Get In Touch</h2>
                 <p class="section-subtitle">Let's discuss how data analysis and automation can transform your business</p>
             </div>
             
             <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-8">
+                <div class="grid lg:grid-cols-2 gap-12">
                     <!-- Contact Form -->
-                    <div class="data-card" data-aos="fade-right">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Send Message</h3>
+                    <div class="card p-8" data-aos="fade-right">
+                        <h3 class="text-2xl font-bold mb-6">Send Message</h3>
                         
                         <form id="contactForm" class="space-y-6">
-                            <div class="grid grid-cols-2 gap-4">
+                            <div class="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <input type="text" 
+                                           id="name"
                                            class="form-input"
                                            placeholder="Your Name"
                                            required>
                                 </div>
                                 <div>
                                     <input type="email" 
+                                           id="email"
                                            class="form-input"
-                                           placeholder="Email Address"
+                                           placeholder="Your Email"
                                            required>
                                 </div>
                             </div>
                             
                             <div>
                                 <input type="text" 
+                                       id="subject"
                                        class="form-input"
                                        placeholder="Subject"
                                        required>
                             </div>
                             
                             <div>
-                                <textarea rows="5"
+                                <textarea id="message"
+                                          rows="5"
                                           class="form-input"
                                           placeholder="Your Message"
                                           required></textarea>
                             </div>
                             
-                            <button type="submit" class="primary-btn w-full">
+                            <button type="submit" id="submitBtn" class="btn-primary w-full">
                                 <span id="btnText">Send Message</span>
                                 <span id="btnLoading" class="hidden">
                                     <span class="loading">
@@ -1023,268 +1030,836 @@
                         <div id="formMessage" class="mt-4 p-4 rounded-lg hidden"></div>
                     </div>
                     
-                    <!-- Contact Info -->
+                    <!-- Contact Information -->
                     <div class="space-y-6" data-aos="fade-left">
-                        <div class="data-card">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                        <!-- Contact Cards -->
+                        <div class="card p-8">
+                            <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
                             
                             <div class="space-y-6">
                                 <!-- Email -->
-                                <div class="flex items-start">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-[#1a237e] to-[#3949ab] rounded-lg flex items-center justify-center mr-4">
-                                        <i class="fas fa-envelope text-white"></i>
+                                <a href="mailto:itsmbillah@gmail.com" 
+                                   class="flex items-center p-4 rounded-xl border border-border-color hover:border-primary transition-colors group">
+                                    <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors">
+                                        <i class="fas fa-envelope text-primary"></i>
                                     </div>
                                     <div>
-                                        <div class="font-bold text-gray-900">Email</div>
-                                        <a href="mailto:itsmbillah@gmail.com" class="text-gray-700 hover:text-[#1a237e] transition-colors">itsmbillah@gmail.com</a>
+                                        <div class="text-text-secondary text-sm">Email</div>
+                                        <div class="font-medium">itsmbillah@gmail.com</div>
                                     </div>
-                                </div>
+                                </a>
                                 
                                 <!-- Phone -->
-                                <div class="flex items-start">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-[#1a237e] to-[#3949ab] rounded-lg flex items-center justify-center mr-4">
-                                        <i class="fas fa-phone text-white"></i>
+                                <a href="tel:+8801915966721" 
+                                   class="flex items-center p-4 rounded-xl border border-border-color hover:border-primary transition-colors group">
+                                    <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors">
+                                        <i class="fas fa-phone text-primary"></i>
                                     </div>
                                     <div>
-                                        <div class="font-bold text-gray-900">Phone</div>
-                                        <a href="tel:+8801915966721" class="text-gray-700 hover:text-[#1a237e] transition-colors">+880 1915-966721</a>
+                                        <div class="text-text-secondary text-sm">Phone</div>
+                                        <div class="font-medium">+880 1915-966721</div>
                                     </div>
-                                </div>
+                                </a>
                                 
                                 <!-- Location -->
-                                <div class="flex items-start">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-[#1a237e] to-[#3949ab] rounded-lg flex items-center justify-center mr-4">
-                                        <i class="fas fa-map-marker-alt text-white"></i>
+                                <div class="flex items-center p-4 rounded-xl border border-border-color">
+                                    <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
+                                        <i class="fas fa-map-marker-alt text-primary"></i>
                                     </div>
                                     <div>
-                                        <div class="font-bold text-gray-900">Location</div>
-                                        <div class="text-gray-700">Dhaka, Bangladesh</div>
+                                        <div class="text-text-secondary text-sm">Location</div>
+                                        <div class="font-medium">Dhaka, Bangladesh</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Social Links -->
-                        <div class="data-card">
-                            <h3 class="text-xl font-bold text-gray-900 mb-4">Connect With Me</h3>
-                            <div class="flex space-x-4">
-                                <a href="https://linkedin.com/in/itsmebillah" 
-                                   target="_blank"
-                                   class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-[#1a237e] hover:bg-blue-100 transition-colors">
-                                    <i class="fab fa-linkedin-in text-xl"></i>
-                                </a>
-                                <a href="https://github.com/itsmbillah" 
-                                   target="_blank"
-                                   class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-[#1a237e] hover:bg-blue-100 transition-colors">
-                                    <i class="fab fa-github text-xl"></i>
-                                </a>
-                                <a href="https://www.facebook.com/itsmebillah" 
-                                   target="_blank"
-                                   class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-[#1a237e] hover:bg-blue-100 transition-colors">
-                                    <i class="fab fa-facebook-f text-xl"></i>
-                                </a>
-                                <a href="https://wa.me/8801915966721" 
-                                   target="_blank"
-                                   class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-[#1a237e] hover:bg-blue-100 transition-colors">
-                                    <i class="fab fa-whatsapp text-xl"></i>
-                                </a>
+                        <!-- Quick Response -->
+                        <div class="card p-8">
+                            <div class="flex items-center mb-4">
+                                <div class="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></div>
+                                <span class="font-bold">Quick Response</span>
                             </div>
+                            <p class="text-text-secondary">
+                                I typically respond to messages within 24 hours. For urgent inquiries, please call or message on WhatsApp.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-dark py-12">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-br from-[#3949ab] to-[#1a237e] rounded-lg flex items-center justify-center mr-3">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
                             <span class="text-white font-bold">MB</span>
                         </div>
                         <div>
-                            <div class="font-bold text-lg">Md. Masum Billah</div>
-                            <div class="text-gray-400">Data Analyst & Automation Specialist</div>
+                            <div class="font-bold text-lg text-white">Md. Masum Billah</div>
+                            <div class="text-gray-400">Data Analyst & Automation Developer</div>
                         </div>
                     </div>
                     <p class="text-gray-400">
-                        Transforming data into actionable insights and automating business processes for better decision-making.
+                        Transforming data into intelligence and automation into impact.
                     </p>
                 </div>
                 
                 <div>
-                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
                     <div class="space-y-2">
                         <a href="#home" class="block text-gray-400 hover:text-white transition-colors">Home</a>
                         <a href="#projects" class="block text-gray-400 hover:text-white transition-colors">Projects</a>
-                        <a href="#skills" class="block text-gray-400 hover:text-white transition-colors">Skills</a>
-                        <a href="#experience" class="block text-gray-400 hover:text-white transition-colors">Experience</a>
+                        <a href="#certificates" class="block text-gray-400 hover:text-white transition-colors">Certificates</a>
+                        <a href="#blogs" class="block text-gray-400 hover:text-white transition-colors">Case Studies</a>
                         <a href="#contact" class="block text-gray-400 hover:text-white transition-colors">Contact</a>
                     </div>
                 </div>
                 
                 <div>
-                    <h4 class="font-bold text-lg mb-4">Availability</h4>
-                    <div class="flex items-center mb-2">
-                        <div class="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                        <span class="text-green-400 font-medium">Available for Projects</span>
+                    <h4 class="text-white font-bold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://linkedin.com/in/itsmebillah" target="_blank" 
+                           class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/itsmbillah" target="_blank"
+                           class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.facebook.com/itsmebillah" target="_blank"
+                           class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="mailto:itsmbillah@gmail.com"
+                           class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center text-gray-400 hover:text-primary transition-colors">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
-                    <p class="text-gray-400 text-sm">Typically respond within 24 hours</p>
                 </div>
             </div>
             
             <div class="pt-8 border-t border-gray-800 text-center">
-                <p class="text-gray-500 text-sm">
-                    © 2025 Md. Masum Billah. All rights reserved.
-                </p>
-                <p class="text-gray-600 text-xs mt-2">
-                    Built with professionalism and precision
-                </p>
+                <p class="text-gray-500">© 2025 Md. Masum Billah. All rights reserved.</p>
+                <p class="text-gray-600 text-sm mt-2">Built with Google Apps Script & Tailwind CSS</p>
             </div>
         </div>
     </footer>
-    
+
+    <!-- Blog Modal -->
+    <div id="blogModal" class="fixed inset-0 bg-black/90 z-50 hidden overflow-y-auto p-6">
+        <div class="max-w-4xl mx-auto mt-20">
+            <div class="card relative">
+                <button onclick="closeBlogModal()" 
+                        class="absolute top-4 right-4 w-10 h-10 rounded-full bg-card-bg border border-border-color flex items-center justify-center hover:border-primary transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <div id="modalBody" class="p-8">
+                    <!-- Blog content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <script>
-        // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS animations
-            AOS.init({
-                duration: 1000,
-                once: true,
-                offset: 100
-            });
-            
-            // Mobile menu toggle
-            document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-                const menu = document.getElementById('mobileMenu');
-                menu.classList.toggle('hidden');
-            });
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        // Close mobile menu if open
-                        document.getElementById('mobileMenu').classList.add('hidden');
-                        
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-            
-            // Form submission
-            document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Theme Management
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        const html = document.documentElement;
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            html.classList.remove('dark-theme');
+            html.classList.add('light-theme');
+            themeToggle.innerHTML = '<i class="fas fa-moon text-gray-700"></i>';
+            if (mobileThemeToggle) {
+                mobileThemeToggle.innerHTML = '<i class="fas fa-moon text-gray-700"></i>';
+            }
+        }
+
+        // Theme toggle function
+        function toggleTheme() {
+            if (html.classList.contains('dark-theme')) {
+                html.classList.remove('dark-theme');
+                html.classList.add('light-theme');
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon text-gray-700"></i>';
+                if (mobileThemeToggle) {
+                    mobileThemeToggle.innerHTML = '<i class="fas fa-moon text-gray-700"></i>';
+                }
+            } else {
+                html.classList.remove('light-theme');
+                html.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun text-yellow-500"></i>';
+                if (mobileThemeToggle) {
+                    mobileThemeToggle.innerHTML = '<i class="fas fa-sun text-yellow-500"></i>';
+                }
+            }
+        }
+
+        // Event listeners
+        themeToggle.addEventListener('click', toggleTheme);
+        if (mobileThemeToggle) {
+            mobileThemeToggle.addEventListener('click', toggleTheme);
+        }
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
                 
-                const btnText = document.getElementById('btnText');
-                const btnLoading = document.getElementById('btnLoading');
-                const formMessage = document.getElementById('formMessage');
-                
-                // Show loading state
-                btnText.classList.add('hidden');
-                btnLoading.classList.remove('hidden');
-                
-                try {
-                    // Simulate API call
-                    await new Promise(resolve => setTimeout(resolve, 1500));
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu
+                    mobileMenu.classList.add('hidden');
                     
-                    // Show success message
-                    formMessage.innerHTML = `
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            <div>
-                                <div class="font-medium text-green-800">Message sent successfully!</div>
-                                <div class="text-green-600 text-sm">I'll get back to you within 24 hours.</div>
-                            </div>
-                        </div>
-                    `;
-                    formMessage.classList.remove('hidden');
-                    formMessage.classList.add('bg-green-50', 'border', 'border-green-200');
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                     
-                    // Reset form
-                    this.reset();
-                    
-                } catch (error) {
-                    // Show error message
-                    formMessage.innerHTML = `
-                        <div class="flex items-center">
-                            <i class="fas fa-exclamation-circle text-red-500 mr-3"></i>
-                            <div>
-                                <div class="font-medium text-red-800">Error sending message</div>
-                                <div class="text-red-600 text-sm">Please email me directly at itsmbillah@gmail.com</div>
-                            </div>
-                        </div>
-                    `;
-                    formMessage.classList.remove('hidden');
-                    formMessage.classList.add('bg-red-50', 'border', 'border-red-200');
-                    
-                } finally {
-                    // Reset button state
-                    btnText.classList.remove('hidden');
-                    btnLoading.classList.add('hidden');
-                    
-                    // Hide message after 5 seconds
-                    setTimeout(() => {
-                        formMessage.classList.add('hidden');
-                    }, 5000);
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
                 }
             });
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPos = window.scrollY + 100;
             
-            // Animate skill bars on scroll
-            function animateSkillBars() {
-                const skillBars = document.querySelectorAll('.skill-progress');
-                skillBars.forEach(bar => {
-                    const width = bar.getAttribute('data-width');
-                    if (width) {
-                        bar.style.width = width + '%';
-                    }
-                });
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnLoading = document.getElementById('btnLoading');
+        const formMessage = document.getElementById('formMessage');
+
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                subject: document.getElementById('subject').value.trim(),
+                message: document.getElementById('message').value.trim()
+            };
+            
+            // Validation
+            if (!formData.name || !formData.email || !formData.message) {
+                showFormMessage('Please fill in all required fields', 'error');
+                return;
             }
             
-            // Animate skill bars when they come into view
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateSkillBars();
-                    }
-                });
-            }, { threshold: 0.5 });
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.email)) {
+                showFormMessage('Please enter a valid email address', 'error');
+                return;
+            }
             
-            document.querySelectorAll('.skill-progress').forEach(bar => {
-                observer.observe(bar);
-            });
+            // Show loading state
+            btnText.classList.add('hidden');
+            btnLoading.classList.remove('hidden');
+            submitBtn.disabled = true;
             
-            // Add hover effects to data cards
-            document.querySelectorAll('.data-card').forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px)';
+            try {
+                // Use GET request with URL parameters
+                const params = new URLSearchParams();
+                params.append('name', formData.name);
+                params.append('email', formData.email);
+                params.append('subject', formData.subject || 'No Subject');
+                params.append('message', formData.message);
+                
+                const GAS_URL = 'https://script.google.com/macros/s/AKfycbwM263dREny57y2nXBCrAvgesWLdITWPHJLjqv2NmALXkCMIK016bZ819bMwzX0hn4t2g/exec';
+                
+                const response = await fetch(GAS_URL + '?' + params.toString(), {
+                    method: 'GET',
+                    mode: 'no-cors'
                 });
                 
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
+                // Since we're using no-cors mode, we assume success
+                showFormMessage('Message sent successfully! I will contact you soon.', 'success');
+                contactForm.reset();
+                
+            } catch (error) {
+                console.error('Form submission error:', error);
+                showFormMessage('Sending via form failed. Please email me directly at itsmbillah@gmail.com', 'error');
+            } finally {
+                // Reset button state
+                setTimeout(() => {
+                    btnText.classList.remove('hidden');
+                    btnLoading.classList.add('hidden');
+                    submitBtn.disabled = false;
+                }, 2000);
+            }
+        });
+
+        function showFormMessage(message, type) {
+            formMessage.innerHTML = message;
+            formMessage.className = 'mt-4 p-4 rounded-lg';
+            
+            if (type === 'success') {
+                formMessage.classList.add('bg-green-500/10', 'text-green-500', 'border', 'border-green-500/20');
+            } else if (type === 'error') {
+                formMessage.classList.add('bg-red-500/10', 'text-red-500', 'border', 'border-red-500/20');
+            }
+            
+            formMessage.classList.remove('hidden');
+            
+            // Auto-hide after 5 seconds
+            if (type === 'success') {
+                setTimeout(() => {
+                    formMessage.classList.add('hidden');
+                }, 5000);
+            }
+        }
+
+        // Load portfolio data
+        async function loadPortfolioData() {
+            try {
+                const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbwM263dREny57y2nXBCrAvgesWLdITWPHJLjqv2NmALXkCMIK016bZ819bMwzX0hn4t2g/exec';
+                const response = await fetch(`${GAS_API_URL}?action=getAllData`);
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        // Update UI with loaded data
+                        updateUIWithData(result.data);
+                    } else {
+                        useStaticData();
+                    }
+                } else {
+                    useStaticData();
+                }
+            } catch (error) {
+                console.error('Error loading portfolio data:', error);
+                useStaticData();
+            } finally {
+                // Hide loader
+                setTimeout(() => {
+                    document.getElementById('loader').style.opacity = '0';
+                    setTimeout(() => {
+                        document.getElementById('loader').style.display = 'none';
+                    }, 500);
+                }, 1000);
+            }
+        }
+
+        // Static data as fallback
+        function useStaticData() {
+            const staticData = {
+                config: {
+                    name: "Md. Masum Billah",
+                    title: "Data Analyst | Automation Developer | Business Intelligence Specialist",
+                    email: "itsmbillah@gmail.com",
+                    phone: "+880 1915-966721",
+                    location: "Dhaka, Bangladesh",
+                    social: {
+                        linkedin: "https://linkedin.com/in/itsmebillah",
+                        github: "https://github.com/itsmbillah",
+                        facebook: "https://www.facebook.com/itsmebillah",
+                        whatsapp: "https://wa.me/8801915966721"
+                    }
+                },
+                skills: [
+                    { name: "Google Apps Script", level: 90, category: "Automation" },
+                    { name: "SQL", level: 85, category: "Data Analysis" },
+                    { name: "Python", level: 80, category: "Programming" },
+                    { name: "Excel", level: 95, category: "Data Analysis" },
+                    { name: "Power BI", level: 85, category: "Data Visualization" },
+                    { name: "Data Analysis", level: 88, category: "Analytics" },
+                    { name: "Automation", level: 92, category: "Technical" },
+                    { name: "Marketing Analytics", level: 75, category: "Business" }
+                ],
+                projects: [
+                    {
+                        name: "Autopilot Business System",
+                        description: "Fully automated Point of Sale & Business Management System built using Google Sheets and Apps Script",
+                        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&w=400",
+                        tags: ["Google Apps Script", "Automation", "Google Sheets API"],
+                        liveUrl: "https://script.google.com/macros/s/AKfycbzJwA27QizVfbsVt3uJl1_mdJxAaU5dU0qFvUvESSNS1Fv277UCerV5-1qiP9dU0aY5/exec",
+                        featured: true,
+                        demoCredentials: {
+                            email: "itsmbillah@gmail.com",
+                            password: "123456"
+                        }
+                    },
+                    {
+                        name: "Car Sales Analysis",
+                        description: "Vehicle sales trends and profitability analysis with Power BI dashboard",
+                        image: "https://i.postimg.cc/Hnp5vTtn/Screenshot-2025-07-28-110516.png",
+                        tags: ["Power BI", "SQL", "Data Analysis", "Dashboard"],
+                        liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiMjBhNzM1MDEtNTZiYy00MGM1LWJhM2MtY2NlZmYyZTA0ZjQ0IiwidCI6IjliOTk0Yjg2LWZmNjctNGEyNC05YTBjLTFkYzgzNWVjOTJjNSIsImMiOjEwfQ%3D%3D",
+                        featured: false
+                    },
+                    {
+                        name: "HR Analytics Dashboard",
+                        description: "Employee performance and retention analysis with advanced SQL queries",
+                        image: "https://i.postimg.cc/bNZdyGd8/Screenshot-2025-07-28-110453.png",
+                        tags: ["Power BI", "SQL", "HR Analytics", "Dashboard"],
+                        liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiMjBhNzM1MDEtNTZiYy00MGM1LWJhM2MtY2NlZmYyZTA0ZjQ0IiwidCI6IjliOTk0Yjg2LWZmNjctNGEyNC05YTBjLTFkYzgzNWVjOTJjNSIsImMiOjEwfQ%3D%3D",
+                        featured: false
+                    }
+                ],
+                certificates: [
+                    {
+                        name: "Google Data Analytics Professional Certificate",
+                        org: "Google",
+                        date: "2024",
+                        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&w=400",
+                        verify: "#",
+                        skills: ["Data Analysis", "SQL", "R", "Tableau"]
+                    },
+                    {
+                        name: "Power BI Advanced Visualization",
+                        org: "Microsoft",
+                        date: "2023",
+                        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&w=400",
+                        verify: "#",
+                        skills: ["Power BI", "Data Visualization", "Dashboard"]
+                    }
+                ],
+                blogs: [
+                    {
+                        title: "Automating Business Processes with Google Apps Script",
+                        description: "How I reduced manual work by 80% using Google Apps Script automation",
+                        content: "Case study about business process automation...",
+                        thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&w=400",
+                        category: "Automation",
+                        readTime: 5,
+                        date: "2024-01-15"
+                    },
+                    {
+                        title: "Data Visualization Best Practices",
+                        description: "Creating effective dashboards that drive business decisions",
+                        content: "Guide to data visualization...",
+                        thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&w=400",
+                        category: "Data Visualization",
+                        readTime: 7,
+                        date: "2024-02-20"
+                    }
+                ],
+                experience: [
+                    {
+                        title: "Data Analyst",
+                        company: "Data Solution 360",
+                        period: "June 2025 – Present",
+                        description: "Developed automated data pipelines reducing manual reporting time by 70%. Designed Google Apps Script automations for seamless business workflows.",
+                        icon: "fa-briefcase"
+                    },
+                    {
+                        title: "Accounts Executive",
+                        company: "Orient Button Ltd.",
+                        period: "2023 – 2025",
+                        description: "Created advanced Excel dashboards for financial KPIs and variance trends. Automated recurring monthly reporting using VBA and Google Sheets.",
+                        icon: "fa-chart-line"
+                    }
+                ],
+                education: [
+                    {
+                        degree: "Bachelor of Business Administration (BBA)",
+                        institution: "Mohammadpur Kendriya College",
+                        period: "2018 – 2022",
+                        description: "Specialized in Marketing with coursework in business analytics, statistics, and strategic management.",
+                        icon: "fa-graduation-cap"
+                    }
+                ]
+            };
+            
+            updateUIWithData(staticData);
+        }
+
+        // Update UI with data
+        function updateUIWithData(data) {
+            // Update basic info
+            if (data.config) {
+                document.querySelectorAll('#heroName, #aboutName').forEach(el => {
+                    el.textContent = data.config.name;
                 });
+                
+                if (data.config.email) {
+                    document.querySelectorAll('[href^="mailto:"]').forEach(el => {
+                        if (el.textContent.includes('@') || el.getAttribute('href').includes('mailto:')) {
+                            el.href = `mailto:${data.config.email}`;
+                            if (el.id !== 'contactEmailCard' && !el.classList.contains('social-icon')) {
+                                el.textContent = data.config.email;
+                            }
+                        }
+                    });
+                }
+            }
+            
+            // Render skills
+            if (data.skills) {
+                renderSkills(data.skills);
+            }
+            
+            // Render projects
+            if (data.projects) {
+                renderProjects(data.projects);
+            }
+            
+            // Render certificates
+            if (data.certificates) {
+                renderCertificates(data.certificates);
+            }
+            
+            // Render blogs
+            if (data.blogs) {
+                renderBlogs(data.blogs);
+            }
+            
+            // Render experience & education
+            if (data.experience || data.education) {
+                renderTimeline([...(data.experience || []), ...(data.education || [])]);
+            }
+            
+            // Animate skill bars
+            setTimeout(animateSkillBars, 500);
+        }
+
+        // Render skills
+        function renderSkills(skills) {
+            const container = document.getElementById('skillsContainer');
+            if (!container || !skills.length) return;
+            
+            const firstHalf = skills.slice(0, Math.ceil(skills.length / 2));
+            const secondHalf = skills.slice(Math.ceil(skills.length / 2));
+            
+            container.innerHTML = `
+                <div>
+                    ${firstHalf.map(skill => `
+                        <div class="skill-container">
+                            <div class="skill-header">
+                                <span class="skill-name">${skill.name}</span>
+                                <span class="skill-percentage">${skill.level}%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="${skill.level}"></div>
+                            </div>
+                            <div class="text-text-secondary text-sm mt-1">${skill.category}</div>
+                        </div>
+                    `).join('')}
+                </div>
+                <div>
+                    ${secondHalf.map(skill => `
+                        <div class="skill-container">
+                            <div class="skill-header">
+                                <span class="skill-name">${skill.name}</span>
+                                <span class="skill-percentage">${skill.level}%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="${skill.level}"></div>
+                            </div>
+                            <div class="text-text-secondary text-sm mt-1">${skill.category}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Render projects
+        function renderProjects(projects) {
+            const featuredContainer = document.querySelector('#featuredProject');
+            const otherContainer = document.getElementById('otherProjectsContainer');
+            
+            if (!projects.length) return;
+            
+            const featuredProjects = projects.filter(p => p.featured);
+            const otherProjects = projects.filter(p => !p.featured);
+            
+            // Render other projects
+            if (otherContainer && otherProjects.length) {
+                otherContainer.innerHTML = otherProjects.map(project => `
+                    <div class="card blog-card">
+                        <img src="${project.image}" 
+                             alt="${project.name}"
+                             class="blog-image">
+                        <div class="p-6 blog-content">
+                            <h4 class="text-xl font-bold mb-3">${project.name}</h4>
+                            <p class="text-text-secondary mb-4">${project.description}</p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                ${project.tags.slice(0, 3).map(tag => `
+                                    <span class="project-tag">${tag}</span>
+                                `).join('')}
+                            </div>
+                            
+                            ${project.liveUrl ? `
+                                <div class="blog-footer">
+                                    <a href="${project.liveUrl}" 
+                                       target="_blank"
+                                       class="text-primary font-medium inline-flex items-center">
+                                        View Project <i class="fas fa-arrow-right ml-2"></i>
+                                    </a>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Render certificates
+        function renderCertificates(certificates) {
+            const container = document.getElementById('certificatesContainer');
+            if (!container || !certificates.length) return;
+            
+            container.innerHTML = certificates.map(cert => `
+                <div class="certificate-card card">
+                    <img src="${cert.image}" 
+                         alt="${cert.name}"
+                         class="w-full h-64 object-cover rounded-t-xl">
+                    
+                    <div class="certificate-overlay">
+                        <h4 class="font-bold text-white mb-2">${cert.name}</h4>
+                        <p class="text-gray-300 text-sm mb-2">${cert.org} • ${cert.date}</p>
+                        
+                        ${cert.verify ? `
+                            <a href="${cert.verify}" 
+                               target="_blank"
+                               class="inline-flex items-center text-primary font-medium">
+                                Verify Certificate <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        ` : ''}
+                    </div>
+                    
+                    <div class="p-6">
+                        <h4 class="font-bold mb-2">${cert.name}</h4>
+                        <p class="text-text-secondary text-sm mb-3">${cert.org} • ${cert.date}</p>
+                        
+                        ${cert.skills && cert.skills.length ? `
+                            <div class="flex flex-wrap gap-2">
+                                ${cert.skills.slice(0, 3).map(skill => `
+                                    <span class="text-xs px-2 py-1 bg-primary/10 text-primary rounded">${skill}</span>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render blogs
+        function renderBlogs(blogs) {
+            const container = document.getElementById('blogsContainer');
+            if (!container || !blogs.length) return;
+            
+            container.innerHTML = blogs.map((blog, index) => `
+                <div class="card blog-card">
+                    <img src="${blog.thumbnail}" 
+                         alt="${blog.title}"
+                         class="blog-image">
+                    
+                    <div class="p-6 blog-content">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                                ${blog.category}
+                            </span>
+                            <span class="text-text-secondary text-sm">
+                                <i class="far fa-clock mr-1"></i>${blog.readTime} min read
+                            </span>
+                        </div>
+                        
+                        <h4 class="text-xl font-bold mb-3">${blog.title}</h4>
+                        <p class="text-text-secondary mb-4">${blog.description}</p>
+                        
+                        <div class="blog-footer flex justify-between items-center">
+                            <span class="text-text-secondary text-sm">${blog.date}</span>
+                            
+                            <button onclick="openBlogModal(${index})" 
+                                    class="text-primary font-medium inline-flex items-center">
+                                Read Case Study <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render timeline
+        function renderTimeline(items) {
+            const container = document.querySelector('.timeline-container');
+            if (!container || !items.length) return;
+            
+            container.innerHTML = items.map(item => `
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">${item.period}</span>
+                        <h4 class="text-xl font-bold mb-2">${item.title || item.degree}</h4>
+                        <p class="text-primary font-medium mb-3">${item.company || item.institution}</p>
+                        <p class="text-text-secondary">${item.description}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Animate skill bars
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width + '%';
             });
+        }
+
+        // Blog modal functions
+        let allBlogs = [];
+
+        function openBlogModal(index) {
+            if (!allBlogs[index]) return;
+            
+            const blog = allBlogs[index];
+            const modal = document.getElementById('blogModal');
+            const modalBody = document.getElementById('modalBody');
+            
+            modalBody.innerHTML = `
+                <article>
+                    <div class="flex items-center space-x-4 mb-6">
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full font-medium">
+                            ${blog.category}
+                        </span>
+                        <span class="text-text-secondary">
+                            <i class="far fa-clock mr-1"></i>${blog.readTime} min read
+                        </span>
+                        <span class="text-text-secondary">${blog.date}</span>
+                    </div>
+                    
+                    <h2 class="text-3xl font-bold mb-6">${blog.title}</h2>
+                    
+                    <div class="mb-8">
+                        <img src="${blog.thumbnail}" 
+                             alt="${blog.title}"
+                             class="w-full h-96 object-cover rounded-xl">
+                    </div>
+                    
+                    <div class="prose prose-invert max-w-none">
+                        <div class="text-text-secondary leading-relaxed space-y-4">
+                            ${blog.content || blog.description}
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 pt-8 border-t border-border-color">
+                        <div class="flex items-center">
+                            <div class="mr-4">
+                                <div class="text-text-secondary text-sm">Case Study by</div>
+                                <div class="font-bold">Md. Masum Billah</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            `;
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBlogModal() {
+            document.getElementById('blogModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on overlay click
+        document.getElementById('blogModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeBlogModal();
+            }
         });
-        
-        // Google Analytics
-        gtag('event', 'page_view', {
-            page_title: document.title,
-            page_location: window.location.href
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeBlogModal();
+            }
         });
+
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 40, density: { enable: true, value_area: 800 } },
+                color: { value: "#3b82f6" },
+                shape: { type: "circle" },
+                opacity: { value: 0.3, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#3b82f6",
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
+                }
+            }
+        });
+
+        // Load data when DOM is loaded
+        document.addEventListener('DOMContentLoaded', loadPortfolioData);
     </script>
 </body>
 </html>
