@@ -13,26 +13,88 @@
             font-size='60'
             text-anchor='middle'
             fill='white'>
-        🧑‍💻
+        MB
       </text>
     </svg>">
     
     <!-- Meta Tags -->
     <meta name="description" content="Professional Data Analyst & Automation Developer with expertise in Google Apps Script, Power BI, SQL, Python">
-    <meta name="keywords" content="Data Analyst, Automation Developer, Business Intelligence, Google Apps Script, Power BI, SQL, Python">
+    <meta name="keywords" content="Data Analyst, Automation Developer, Business Intelligence">
     <meta name="author" content="Md. Masum Billah">
-    <meta name="theme-color" content="#FF6B35">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B35',
+                        secondary: '#1E293B',
+                        accent: '#FF8B35',
+                        dark: '#0F172A',
+                        light: '#F8FAFC'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'gradient': 'gradient 3s ease infinite',
+                        'typing': 'typing 3.5s steps(40, end)',
+                        'blink': 'blink 1s step-end infinite',
+                        'glitch': 'glitch 0.3s linear infinite',
+                        'neon': 'neon 1.5s ease-in-out infinite alternate'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' }
+                        },
+                        typing: {
+                            'from': { width: '0' },
+                            'to': { width: '100%' }
+                        },
+                        blink: {
+                            'from, to': { borderColor: 'transparent' },
+                            '50%': { borderColor: 'white' }
+                        },
+                        glitch: {
+                            '0%': { transform: 'translate(0)' },
+                            '20%': { transform: 'translate(-2px, 2px)' },
+                            '40%': { transform: 'translate(-2px, -2px)' },
+                            '60%': { transform: 'translate(2px, 2px)' },
+                            '80%': { transform: 'translate(2px, -2px)' },
+                            '100%': { transform: 'translate(0)' }
+                        },
+                        neon: {
+                            'from': { 
+                                textShadow: '0 0 10px #FF6B35, 0 0 20px #FF6B35, 0 0 30px #FF6B35'
+                            },
+                            'to': { 
+                                textShadow: '0 0 5px #FF6B35, 0 0 15px #FF6B35, 0 0 25px #FF6B35'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- AOS Animation -->
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Typed.js -->
@@ -41,21 +103,42 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
-    <!-- Lottie -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <style>
+        :root {
+            --primary-color: #FF6B35;
+            --secondary-color: #1E293B;
+            --accent-color: #FF8B35;
+            --gradient: linear-gradient(135deg, #FF6B35 0%, #FF8B35 50%, #FF9E35 100%);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #0B1120 0%, #1a202c 100%);
-            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            background: #0F172A;
+            color: #FFFFFF;
             overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        /* 3D Scene Container */
+        #scene-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
         }
         
         /* Custom Scrollbar */
@@ -64,236 +147,167 @@
         }
         
         ::-webkit-scrollbar-track {
-            background: #1a202c;
+            background: #1E293B;
         }
         
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(45deg, #FF6B35, #FF8B35);
+            background: var(--gradient);
             border-radius: 5px;
         }
         
         /* Glass Effect */
         .glass {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
         
         /* Gradient Text */
         .gradient-text {
-            background: linear-gradient(45deg, #FF6B35, #FF8B35, #FF6B9D);
+            background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            background-size: 300% 300%;
+            animation: gradient 3s ease infinite;
+        }
+        
+        /* Neon Effect */
+        .neon-text {
+            color: #fff;
+            text-shadow: 
+                0 0 5px var(--primary-color),
+                0 0 10px var(--primary-color),
+                0 0 20px var(--primary-color);
+            animation: neon 1.5s ease-in-out infinite alternate;
+        }
+        
+        /* 3D Card Hover */
+        .card-3d {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card-3d:hover {
+            transform: rotateY(15deg) rotateX(10deg) translateZ(50px);
         }
         
         /* Floating Animation */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-20px); }
         }
         
         .floating {
             animation: float 6s ease-in-out infinite;
         }
         
-        /* Magnetic Button Effect */
-        .magnetic-btn {
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .magnetic-btn:hover {
-            transform: translateY(-3px);
-        }
-        
-        .magnetic-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-        
-        .magnetic-btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-        
-        /* Skills Section Fix */
-        .skill-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
-            padding: 20px;
-            transition: all 0.3s ease;
+        /* Particle Background */
+        .particles-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
+            z-index: -2;
         }
         
-        .skill-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 107, 53, 0.1);
-            border-color: rgba(255, 107, 53, 0.3);
+        /* Navigation */
+        .nav-glass {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 107, 53, 0.2);
         }
         
+        /* Skills Progress */
         .skill-progress {
             height: 8px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 4px;
             overflow: hidden;
-            margin-top: 10px;
+            position: relative;
         }
         
         .skill-fill {
             height: 100%;
-            background: linear-gradient(90deg, #FF6B35, #FF8B35);
+            background: var(--gradient);
             border-radius: 4px;
             width: 0;
             transition: width 1.5s ease-in-out;
         }
         
-        /* Timeline Fix */
-        .timeline-container {
+        /* Timeline */
+        .timeline {
             position: relative;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px 0;
         }
         
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-            padding-left: 60px;
-        }
-        
-        .timeline-item::before {
+        .timeline::after {
             content: '';
             position: absolute;
-            left: 25px;
+            width: 4px;
+            background: var(--gradient);
             top: 0;
-            bottom: -40px;
-            width: 2px;
-            background: linear-gradient(to bottom, #FF6B35, #FF8B35);
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
         }
         
-        .timeline-item:last-child::before {
-            display: none;
+        /* Chatbot */
+        .chatbot-container {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            z-index: 1000;
         }
         
-        .timeline-icon {
-            position: absolute;
-            left: 15px;
-            top: 5px;
-            width: 20px;
-            height: 20px;
-            background: #FF6B35;
-            border-radius: 50%;
-            z-index: 2;
+        .chatbot-window {
+            width: 350px;
+            height: 500px;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid var(--primary-color);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.3);
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
         }
         
-        .timeline-content {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .chatbot-window.active {
+            transform: translateY(0);
+            opacity: 1;
         }
         
         /* Music Player */
         .music-player {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 15px;
             position: fixed;
-            bottom: 20px;
-            left: 20px;
+            bottom: 100px;
+            left: 30px;
             z-index: 1000;
             width: 300px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
         }
         
-        .music-controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .music-progress {
-            flex: 1;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 2px;
-            overflow: hidden;
-            cursor: pointer;
-        }
-        
-        .music-progress-fill {
-            height: 100%;
-            background: #FF6B35;
-            width: 0;
-            transition: width 0.1s;
-        }
-        
-        /* Particle Background */
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-        
-        /* Glitch Effect */
-        @keyframes glitch {
-            0% { transform: translate(0) }
-            20% { transform: translate(-2px, 2px) }
-            40% { transform: translate(-2px, -2px) }
-            60% { transform: translate(2px, 2px) }
-            80% { transform: translate(2px, -2px) }
-            100% { transform: translate(0) }
-        }
-        
-        .glitch-text {
-            animation: glitch 0.5s infinite;
-        }
-        
-        /* 3D Card Effect */
-        .card-3d {
-            transform-style: preserve-3d;
-            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        .card-3d:hover {
-            transform: rotateY(10deg) rotateX(5deg);
-        }
-        
-        /* Neon Text */
-        .neon-text {
-            text-shadow: 
-                0 0 5px #FF6B35,
-                0 0 10px #FF6B35,
-                0 0 20px #FF6B35,
-                0 0 40px #FF6B35;
-            animation: neon-pulse 2s infinite alternate;
-        }
-        
-        @keyframes neon-pulse {
-            from { text-shadow: 0 0 5px #FF6B35; }
-            to { text-shadow: 0 0 20px #FF6B35, 0 0 30px #FF6B35; }
+        .music-player.hidden {
+            transform: translateX(-100%);
+            opacity: 0;
         }
         
         /* Loading Animation */
-        .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(255, 107, 53, 0.3);
+        .spinner {
+            width: 70px;
+            height: 70px;
+            border: 5px solid rgba(255, 107, 53, 0.3);
+            border-top-color: var(--primary-color);
             border-radius: 50%;
-            border-top-color: #FF6B35;
             animation: spin 1s linear infinite;
         }
         
@@ -301,151 +315,298 @@
             to { transform: rotate(360deg); }
         }
         
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
+            .chatbot-window {
+                width: calc(100vw - 40px);
+                right: 20px;
+                left: 20px;
+                bottom: 80px;
+            }
+            
             .music-player {
-                width: calc(100% - 40px);
-                bottom: 10px;
+                width: calc(100vw - 40px);
                 left: 20px;
                 right: 20px;
             }
-            
-            .timeline-item {
-                padding-left: 40px;
-            }
-            
-            .timeline-item::before {
-                left: 15px;
-            }
-            
-            .timeline-icon {
-                left: 5px;
-                width: 15px;
-                height: 15px;
-            }
+        }
+        
+        /* Cursor Effect */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s;
+        }
+        
+        .cursor-ring {
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--accent-color);
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        
+        /* Hover Effects */
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(255, 107, 53, 0.5);
         }
     </style>
 </head>
 <body>
+    <!-- 3D Scene -->
+    <div id="scene-container"></div>
+    
     <!-- Particle Background -->
-    <div id="particles-js"></div>
+    <div class="particles-bg" id="particles-js"></div>
     
-    <!-- Music Player -->
-    <div class="music-player glass hidden" id="musicPlayer">
-        <div class="flex justify-between items-center mb-3">
-            <div class="text-sm font-semibold gradient-text">Background Music</div>
-            <button id="closeMusic" class="text-gray-400 hover:text-white">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="music-controls">
-            <button id="playPauseBtn" class="text-white hover:text-orange-400">
-                <i class="fas fa-play"></i>
-            </button>
-            <div class="music-progress" id="musicProgress">
-                <div class="music-progress-fill" id="musicProgressFill"></div>
-            </div>
-            <div class="text-xs text-gray-400" id="currentTime">0:00</div>
-            <button id="volumeBtn" class="text-white hover:text-orange-400 ml-2">
-                <i class="fas fa-volume-up"></i>
-            </button>
-        </div>
-        <div class="text-xs text-gray-400 mt-2 text-center" id="songTitle">Relaxing Background Music</div>
-    </div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
     
-    <!-- Music Toggle Button -->
-    <button id="musicToggle" class="fixed bottom-20 left-6 w-12 h-12 rounded-full glass flex items-center justify-center z-50 hover:bg-white/10 transition-all">
-        <i class="fas fa-music text-orange-400"></i>
-    </button>
-    
-    <!-- Loader -->
+    <!-- Loading Screen -->
     <div id="loader" class="fixed inset-0 bg-dark z-50 flex flex-col items-center justify-center">
-        <div class="loading-spinner"></div>
-        <div class="mt-6 text-gray-400 font-medium">Loading Portfolio...</div>
+        <div class="spinner mb-8"></div>
+        <h2 class="text-3xl font-bold gradient-text mb-4">Loading Portfolio</h2>
+        <div class="text-gray-400">Preparing 3D Experience...</div>
+        <div class="w-64 h-1 bg-gray-800 rounded-full mt-8 overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-primary to-accent loading-bar"></div>
+        </div>
     </div>
     
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-40 glass border-b border-white/10">
-        <div class="container mx-auto px-6 py-4">
+    <nav class="nav-glass fixed top-0 left-0 right-0 z-40 py-4">
+        <div class="container mx-auto px-6">
             <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold gradient-text">Md. Masum Billah</div>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-300 hover:text-white transition-colors magnetic-btn">Home</a>
-                    <a href="#about" class="text-gray-300 hover:text-white transition-colors magnetic-btn">About</a>
-                    <a href="#skills" class="text-gray-300 hover:text-white transition-colors magnetic-btn">Skills</a>
-                    <a href="#projects" class="text-gray-300 hover:text-white transition-colors magnetic-btn">Projects</a>
-                    <a href="#experience" class="text-gray-300 hover:text-white transition-colors magnetic-btn">Experience</a>
-                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors magnetic-btn">Contact</a>
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                        <span class="text-white font-bold">MB</span>
+                    </div>
+                    <div class="text-xl font-bold gradient-text">Md. Masum Billah</div>
                 </div>
                 
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-300 hover:text-primary transition-colors">Home</a>
+                    <a href="#about" class="text-gray-300 hover:text-primary transition-colors">About</a>
+                    <a href="#skills" class="text-gray-300 hover:text-primary transition-colors">Skills</a>
+                    <a href="#projects" class="text-gray-300 hover:text-primary transition-colors">Projects</a>
+                    <a href="#experience" class="text-gray-300 hover:text-primary transition-colors">Experience</a>
+                    <a href="#contact" class="text-gray-300 hover:text-primary transition-colors">Contact</a>
+                    
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle" class="w-10 h-10 rounded-lg glass flex items-center justify-center">
+                        <i class="fas fa-sun text-yellow-400"></i>
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
                 <button id="mobileMenuBtn" class="md:hidden">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="md:hidden mt-4 hidden glass p-4 rounded-lg">
-                <div class="space-y-3">
-                    <a href="#home" class="block py-2">Home</a>
-                    <a href="#about" class="block py-2">About</a>
-                    <a href="#skills" class="block py-2">Skills</a>
-                    <a href="#projects" class="block py-2">Projects</a>
-                    <a href="#experience" class="block py-2">Experience</a>
-                    <a href="#contact" class="block py-2">Contact</a>
-                </div>
-            </div>
         </div>
     </nav>
     
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-6">
-        <div class="container mx-auto text-center">
-            <!-- Profile Image -->
-            <div class="relative mx-auto w-64 h-64 mb-8 floating">
-                <img src="https://i.postimg.cc/SRhCysjL/Whats-App-Image-2025-10.jpg" 
-                     alt="Md. Masum Billah" 
-                     class="w-60 h-60 rounded-full object-cover mx-auto border-4 border-white/20 shadow-2xl">
-                <div class="absolute -top-2 -right-2 w-12 h-12 bg-gradient-to-br from-orange-500 to-pink-500 rounded-full flex items-center justify-center shadow-xl">
-                    <i class="fas fa-chart-line text-white"></i>
+    <!-- Music Player -->
+    <div class="music-player glass hidden">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="font-bold gradient-text">Background Music</h3>
+            <button id="closeMusic" class="text-gray-400 hover:text-white">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="space-y-4">
+            <!-- Song List -->
+            <div class="space-y-2 max-h-48 overflow-y-auto">
+                <div class="song-item p-3 rounded-lg hover:bg-white/5 cursor-pointer" data-src="https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="font-medium">Tech House Vibes</div>
+                            <div class="text-xs text-gray-400">Relaxing electronic</div>
+                        </div>
+                        <i class="fas fa-play text-primary"></i>
+                    </div>
+                </div>
+                
+                <div class="song-item p-3 rounded-lg hover:bg-white/5 cursor-pointer" data-src="https://assets.mixkit.co/music/preview/mixkit-driving-ambition-32.mp3">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="font-medium">Driving Ambition</div>
+                            <div class="text-xs text-gray-400">Motivational beats</div>
+                        </div>
+                        <i class="fas fa-play text-primary"></i>
+                    </div>
+                </div>
+                
+                <div class="song-item p-3 rounded-lg hover:bg-white/5 cursor-pointer" data-src="https://assets.mixkit.co/music/preview/mixkit-simple-tech-1104.mp3">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="font-medium">Simple Tech</div>
+                            <div class="text-xs text-gray-400">Focus music</div>
+                        </div>
+                        <i class="fas fa-play text-primary"></i>
+                    </div>
                 </div>
             </div>
             
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 gradient-text">Md. Masum Billah</h1>
+            <!-- Controls -->
+            <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                    <button id="prevBtn" class="text-gray-400 hover:text-white">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    
+                    <button id="playPauseBtn" class="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center hover:scale-110 transition-transform">
+                        <i class="fas fa-play text-white"></i>
+                    </button>
+                    
+                    <button id="nextBtn" class="text-gray-400 hover:text-white">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                </div>
+                
+                <!-- Progress -->
+                <div class="space-y-1">
+                    <div class="flex justify-between text-xs text-gray-400">
+                        <span id="currentTime">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                    <div class="h-1 bg-gray-800 rounded-full overflow-hidden cursor-pointer" id="progressBar">
+                        <div class="h-full bg-gradient-to-r from-primary to-accent progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                
+                <!-- Volume -->
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-volume-up text-gray-400"></i>
+                    <input type="range" min="0" max="100" value="50" class="flex-1" id="volumeSlider">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Music Toggle Button -->
+    <button id="musicToggle" class="fixed bottom-6 left-6 w-12 h-12 rounded-full glass flex items-center justify-center z-30 hover:bg-white/10 transition-all">
+        <i class="fas fa-music text-primary"></i>
+    </button>
+    
+    <!-- Chatbot Toggle Button -->
+    <button id="chatbotToggle" class="fixed bottom-6 right-6 w-12 h-12 rounded-full glass flex items-center justify-center z-30 hover:bg-white/10 transition-all">
+        <i class="fas fa-robot text-primary"></i>
+    </button>
+    
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-window glass">
+            <!-- Header -->
+            <div class="p-4 border-b border-white/10 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center">
+                        <i class="fas fa-robot text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold">DataBot AI</div>
+                        <div class="text-xs text-gray-400">Online</div>
+                    </div>
+                </div>
+                <button id="closeChatbot" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
             
-            <div class="text-xl md:text-2xl text-gray-300 mb-6">
+            <!-- Messages -->
+            <div class="flex-1 overflow-y-auto p-4 h-96" id="chatMessages">
+                <div class="message bot mb-4">
+                    <div class="inline-block max-w-xs bg-white/10 rounded-2xl rounded-bl-none px-4 py-2">
+                        <div class="font-bold text-primary text-sm mb-1">DataBot:</div>
+                        Hello! I'm your AI assistant. How can I help you today?
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Input -->
+            <div class="p-4 border-t border-white/10">
+                <div class="flex space-x-2">
+                    <input type="text" 
+                           id="chatInput" 
+                           placeholder="Type your message..."
+                           class="flex-1 bg-white/5 border border-white/10 rounded-full px-4 py-2 focus:outline-none focus:border-primary">
+                    <button id="sendMessage" class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center hover:scale-110 transition-transform">
+                        <i class="fas fa-paper-plane text-white"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative px-6 pt-20">
+        <div class="container mx-auto text-center">
+            <!-- Profile Image with 3D Effect -->
+            <div class="relative mx-auto w-72 h-72 mb-12 floating">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full opacity-20 blur-3xl"></div>
+                <img src="https://i.postimg.cc/SRhCysjL/Whats-App-Image-2025-10.jpg" 
+                     alt="Md. Masum Billah"
+                     class="relative w-64 h-64 rounded-full object-cover mx-auto border-4 border-white/20 shadow-2xl">
+                
+                <!-- Floating Elements -->
+                <div class="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center shadow-xl floating">
+                    <i class="fas fa-chart-line text-white"></i>
+                </div>
+                
+                <div class="absolute -bottom-4 -left-4 w-14 h-14 rounded-full bg-gradient-to-r from-accent to-primary flex items-center justify-center shadow-xl floating" style="animation-delay: 2s;">
+                    <i class="fas fa-robot text-white"></i>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text">Md. Masum Billah</h1>
+            
+            <div class="text-2xl md:text-3xl text-gray-300 mb-8">
                 <span id="typed-text"></span>
                 <span class="typing-cursor">|</span>
             </div>
             
-            <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-                "Transforming data into intelligence and automation into impact."
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                Transforming complex data into actionable insights and building intelligent automation systems that drive business growth.
             </p>
             
-            <!-- CTA Buttons -->
-            <div class="flex flex-wrap gap-4 justify-center">
-                <a href="#projects" class="px-6 py-3 bg-gradient-to-r from-orange-500 to-pink-500 rounded-lg text-white font-semibold magnetic-btn">
-                    <i class="fas fa-briefcase mr-2"></i>View Projects
-                </a>
-                <a href="#contact" class="px-6 py-3 glass rounded-lg text-white font-semibold magnetic-btn">
-                    <i class="fas fa-paper-plane mr-2"></i>Contact Me
-                </a>
+            <!-- Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2 counter" data-target="28">0</div>
+                    <div class="text-gray-400">Projects Completed</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2 counter" data-target="80">0</div>
+                    <div class="text-gray-400">Time Saved %</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2 counter" data-target="100">0</div>
+                    <div class="text-gray-400">Client Satisfaction</div>
+                </div>
             </div>
             
-            <!-- Stats -->
-            <div class="grid grid-cols-3 gap-6 mt-12 max-w-md mx-auto">
-                <div class="text-center">
-                    <div class="text-3xl font-bold gradient-text">24+</div>
-                    <div class="text-gray-400">Projects</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold gradient-text">80%</div>
-                    <div class="text-gray-400">Time Saved</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold gradient-text">100%</div>
-                    <div class="text-gray-400">Satisfaction</div>
-                </div>
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#projects" 
+                   class="px-8 py-4 bg-gradient-to-r from-primary to-accent rounded-xl text-white font-bold hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover-glow">
+                    <i class="fas fa-briefcase mr-2"></i>View Projects
+                </a>
+                <a href="#contact" 
+                   class="px-8 py-4 glass rounded-xl text-white font-bold hover:bg-white/10 transition-all duration-300 hover-glow">
+                    <i class="fas fa-paper-plane mr-2"></i>Contact Me
+                </a>
             </div>
         </div>
     </section>
@@ -453,33 +614,85 @@
     <!-- About Section -->
     <section id="about" class="py-20 px-6">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">About Me</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">About Me</h2>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass rounded-2xl p-8">
-                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">My Journey</h3>
-                    <p class="text-gray-300 mb-4">
-                        I'm <span class="gradient-text font-semibold">Md. Masum Billah</span>, a passionate Data Analyst and Automation Developer with expertise in transforming complex datasets into actionable business strategies.
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="glass rounded-3xl p-8 card-3d">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-user-circle text-primary mr-3"></i>
+                        Professional Profile
+                    </h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        I'm <span class="gradient-text font-bold">Md. Masum Billah</span>, a passionate Data Analyst and Automation Developer with expertise in transforming complex datasets into actionable business strategies.
                     </p>
-                    <p class="text-gray-300">
-                        I combine strong analytical skills with automation logic to streamline reporting, improve decision-making, and unlock efficiency for teams and organizations.
+                    <p class="text-gray-300 leading-relaxed">
+                        With a strong foundation in data analysis, business intelligence, and process automation, I help organizations make data-driven decisions and optimize their operations through intelligent automation solutions.
                     </p>
+                    
+                    <!-- Personal Info -->
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="flex items-center p-3 rounded-lg bg-white/5">
+                            <i class="fas fa-map-marker-alt text-primary mr-3"></i>
+                            <div>
+                                <div class="text-sm text-gray-400">Location</div>
+                                <div class="font-medium">Dhaka, Bangladesh</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 rounded-lg bg-white/5">
+                            <i class="fas fa-envelope text-primary mr-3"></i>
+                            <div>
+                                <div class="text-sm text-gray-400">Email</div>
+                                <div class="font-medium">itsmbillah@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="glass rounded-2xl p-8">
-                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">Quick Facts</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-orange-500 mr-3"></i>
-                            <span>Dhaka, Bangladesh</span>
+                <!-- Right Content - Skills Preview -->
+                <div class="space-y-6">
+                    <div class="glass rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">Core Expertise</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                                <i class="fas fa-database text-3xl text-primary mb-3"></i>
+                                <div class="font-medium">Data Analysis</div>
+                            </div>
+                            <div class="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                                <i class="fas fa-robot text-3xl text-primary mb-3"></i>
+                                <div class="font-medium">Automation</div>
+                            </div>
+                            <div class="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                                <i class="fas fa-chart-bar text-3xl text-primary mb-3"></i>
+                                <div class="font-medium">Power BI</div>
+                            </div>
+                            <div class="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                                <i class="fab fa-google text-3xl text-primary mb-3"></i>
+                                <div class="font-medium">Apps Script</div>
+                            </div>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-envelope text-orange-500 mr-3"></i>
-                            <a href="mailto:itsmbillah@gmail.com" class="hover:text-orange-400">itsmbillah@gmail.com</a>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-phone text-orange-500 mr-3"></i>
-                            <span>+880 1915-966721</span>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="glass rounded-3xl p-6">
+                        <h4 class="font-bold mb-4">Connect With Me</h4>
+                        <div class="flex justify-center space-x-6">
+                            <a href="https://linkedin.com/in/itsmebillah" target="_blank" 
+                               class="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <i class="fab fa-linkedin-in text-xl text-primary"></i>
+                            </a>
+                            <a href="https://github.com/itsmbillah" target="_blank"
+                               class="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <i class="fab fa-github text-xl text-primary"></i>
+                            </a>
+                            <a href="https://www.facebook.com/itsmebillah" target="_blank"
+                               class="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <i class="fab fa-facebook-f text-xl text-primary"></i>
+                            </a>
+                            <a href="mailto:itsmbillah@gmail.com"
+                               class="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <i class="fas fa-envelope text-xl text-primary"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -487,21 +700,71 @@
         </div>
     </section>
     
-    <!-- Skills Section (FIXED) -->
-    <section id="skills" class="py-20 px-6 bg-gradient-to-b from-transparent to-dark/50">
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 bg-gradient-to-b from-transparent to-dark/30">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Technical Skills</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Technical Skills</h2>
             
-            <!-- Skills Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="skillsContainer">
-                <!-- Skills will be loaded here -->
-            </div>
-            
-            <!-- Skills Chart -->
-            <div class="mt-16 glass rounded-2xl p-8">
-                <h3 class="text-2xl font-semibold mb-8 text-center">Skills Radar Chart</h3>
-                <div class="max-w-2xl mx-auto">
-                    <canvas id="skillsChart"></canvas>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Left Column - Technical Skills -->
+                <div>
+                    <div class="glass rounded-3xl p-8 mb-8">
+                        <h3 class="text-2xl font-bold mb-8">Technical Skills</h3>
+                        <div class="space-y-8" id="skillsList">
+                            <!-- Skills will be dynamically added -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Tools & Languages -->
+                <div class="space-y-8">
+                    <!-- Tools -->
+                    <div class="glass rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">Tools & Technologies</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                                <i class="fab fa-google text-2xl text-primary mb-2"></i>
+                                <div class="font-medium">Google Apps Script</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                                <i class="fas fa-chart-bar text-2xl text-primary mb-2"></i>
+                                <div class="font-medium">Power BI</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                                <i class="fas fa-database text-2xl text-primary mb-2"></i>
+                                <div class="font-medium">SQL</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                                <i class="fab fa-python text-2xl text-primary mb-2"></i>
+                                <div class="font-medium">Python</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Languages -->
+                    <div class="glass rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">Languages</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Bengali (Native)</span>
+                                    <span class="text-primary font-bold">100%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-fill" data-width="100"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">English (Professional)</span>
+                                    <span class="text-primary font-bold">90%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-fill" data-width="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -510,50 +773,118 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20 px-6">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Featured Projects</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsContainer">
-                <!-- Projects will be loaded here -->
+            <!-- Projects Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
+                <!-- Projects will be dynamically added -->
             </div>
         </div>
     </section>
     
     <!-- Experience Section -->
-    <section id="experience" class="py-20 px-6 bg-gradient-to-b from-transparent to-dark/50">
+    <section id="experience" class="py-20 px-6 bg-gradient-to-b from-transparent to-dark/30">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Experience & Education</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Experience & Education</h2>
             
-            <div class="timeline-container">
-                <!-- Timeline items will be loaded here -->
+            <div class="timeline" id="timelineContainer">
+                <!-- Timeline items will be dynamically added -->
             </div>
         </div>
     </section>
     
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-6">
-        <div class="container mx-auto max-w-2xl">
-            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Get In Touch</h2>
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Get In Touch</h2>
             
-            <div class="glass rounded-2xl p-8">
-                <form id="contactForm" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <input type="text" id="name" placeholder="Your Name" 
-                               class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500">
-                        <input type="email" id="email" placeholder="Your Email" 
-                               class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="glass rounded-3xl p-8 card-3d">
+                    <h3 class="text-2xl font-bold mb-8">Send Message</h3>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="text" 
+                                   id="name" 
+                                   placeholder="Your Name" 
+                                   class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors">
+                            
+                            <input type="email" 
+                                   id="email" 
+                                   placeholder="Your Email" 
+                                   class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors">
+                        </div>
+                        
+                        <input type="text" 
+                               id="subject" 
+                               placeholder="Subject" 
+                               class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors">
+                        
+                        <textarea id="message" 
+                                  rows="5" 
+                                  placeholder="Your Message" 
+                                  class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors"></textarea>
+                        
+                        <button type="submit" 
+                                class="w-full py-4 bg-gradient-to-r from-primary to-accent rounded-xl text-white font-bold hover:shadow-xl hover:shadow-primary/30 transition-all duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <!-- Contact Cards -->
+                    <div class="glass rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold mb-8">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                                <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-primary/20 to-accent/20 flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-400">Email</div>
+                                    <a href="mailto:itsmbillah@gmail.com" class="font-medium hover:text-primary transition-colors">
+                                        itsmbillah@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                                <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-primary/20 to-accent/20 flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-primary"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-400">Phone</div>
+                                    <div class="font-medium">+880 1915-966721</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                                <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-primary/20 to-accent/20 flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-400">Location</div>
+                                    <div class="font-medium">Dhaka, Bangladesh</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <input type="text" id="subject" placeholder="Subject" 
-                           class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500">
-                    
-                    <textarea id="message" placeholder="Your Message" rows="5" 
-                              class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500"></textarea>
-                    
-                    <button type="submit" 
-                            class="w-full py-3 bg-gradient-to-r from-orange-500 to-pink-500 rounded-lg text-white font-semibold magnetic-btn">
-                        Send Message
-                    </button>
-                </form>
+                    <!-- Availability -->
+                    <div class="glass rounded-3xl p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></div>
+                            <span class="font-bold">Available for Projects</span>
+                        </div>
+                        <p class="text-gray-400 text-sm">
+                            I typically respond to messages within 24 hours. For urgent inquiries, please call or message on WhatsApp.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -563,22 +894,26 @@
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
-                    <div class="text-2xl font-bold gradient-text">Md. Masum Billah</div>
-                    <div class="text-gray-400">Data Analyst & Automation Developer</div>
+                    <div class="text-2xl font-bold gradient-text mb-2">Md. Masum Billah</div>
+                    <p class="text-gray-400">Data Analyst & Automation Developer</p>
                 </div>
                 
                 <div class="flex space-x-6">
                     <a href="https://linkedin.com/in/itsmebillah" target="_blank" 
-                       class="text-gray-400 hover:text-white">
-                        <i class="fab fa-linkedin text-xl"></i>
+                       class="text-gray-400 hover:text-primary transition-colors">
+                        <i class="fab fa-linkedin-in text-xl"></i>
                     </a>
                     <a href="https://github.com/itsmbillah" target="_blank"
-                       class="text-gray-400 hover:text-white">
+                       class="text-gray-400 hover:text-primary transition-colors">
                         <i class="fab fa-github text-xl"></i>
                     </a>
                     <a href="https://www.facebook.com/itsmebillah" target="_blank"
-                       class="text-gray-400 hover:text-white">
-                        <i class="fab fa-facebook text-xl"></i>
+                       class="text-gray-400 hover:text-primary transition-colors">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="mailto:itsmbillah@gmail.com"
+                       class="text-gray-400 hover:text-primary transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
                     </a>
                 </div>
             </div>
@@ -591,314 +926,258 @@
     
     <!-- Back to Top -->
     <button id="backToTop" 
-            class="fixed bottom-6 right-6 w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-all hidden">
+            class="fixed bottom-6 right-20 w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-all opacity-0 pointer-events-none">
         <i class="fas fa-arrow-up"></i>
     </button>
-    
+
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <script>
         // ============================
-        // GOOGLE SHEETS DATA LOADING
+        // PORTFOLIO DATA
         // ============================
         
-        const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbwM263dREny57y2nXBCrAvgesWLdITWPHJLjqv2NmALXkCMIK016bZ819bMwzX0hn4t2g/exec';
-        
-        async function loadPortfolioData() {
-            try {
-                // Load from Google Sheets API
-                const response = await fetch(`${GAS_API_URL}?action=getAllData`);
-                const result = await response.json();
-                
-                if (result.success) {
-                    // Load skills
-                    if (result.data.skills) {
-                        renderSkills(result.data.skills);
-                    }
-                    
-                    // Load projects
-                    if (result.data.projects) {
-                        renderProjects(result.data.projects);
-                    }
-                    
-                    // Load experience
-                    if (result.data.experience || result.data.education) {
-                        const experience = result.data.experience || [];
-                        const education = result.data.education || [];
-                        renderTimeline([...experience, ...education]);
-                    }
-                    
-                    // Animate skill bars
-                    setTimeout(animateSkillBars, 500);
-                    
-                } else {
-                    // Fallback to static data
-                    loadStaticData();
-                }
-                
-            } catch (error) {
-                console.error('Error loading data:', error);
-                loadStaticData();
-            }
-        }
-        
-        function loadStaticData() {
-            // Static skills data
-            const skills = [
-                { name: "Google Apps Script", level: 92, category: "Automation" },
-                { name: "SQL", level: 88, category: "Data Analysis" },
-                { name: "Power BI", level: 85, category: "Visualization" },
-                { name: "Python", level: 80, category: "Programming" },
+        const portfolioData = {
+            skills: [
+                { name: "Google Apps Script", level: 95, category: "Automation" },
+                { name: "SQL", level: 90, category: "Database" },
+                { name: "Power BI", level: 88, category: "Visualization" },
+                { name: "Python", level: 85, category: "Programming" },
                 { name: "Excel", level: 95, category: "Data Analysis" },
-                { name: "Data Analysis", level: 90, category: "Analytics" },
-                { name: "Automation", level: 92, category: "Technical" },
-                { name: "Business Intelligence", level: 87, category: "Analytics" }
-            ];
+                { name: "JavaScript", level: 80, category: "Programming" },
+                { name: "Data Analysis", level: 92, category: "Analytics" },
+                { name: "Automation", level: 94, category: "Technical" }
+            ],
             
-            renderSkills(skills);
-            
-            // Static projects
-            const projects = [
+            projects: [
                 {
                     name: "Autopilot Business System",
-                    description: "Fully automated POS system with Google Apps Script",
-                    tags: ["Automation", "Google Apps Script", "Business"],
-                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+                    description: "Fully automated POS system with real-time analytics and inventory management",
+                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&w=400",
+                    tags: ["Google Apps Script", "Automation", "Business Intelligence"],
                     liveUrl: "https://script.google.com/macros/s/AKfycbzJwA27QizVfbsVt3uJl1_mdJxAaU5dU0qFvUvESSNS1Fv277UCerV5-1qiP9dU0aY5/exec"
                 },
                 {
-                    name: "Car Sales Analysis",
-                    description: "Power BI dashboard for sales analytics",
-                    tags: ["Power BI", "Dashboard", "Analytics"],
+                    name: "Car Sales Analytics",
+                    description: "Interactive Power BI dashboard for vehicle sales analysis and trends",
                     image: "https://i.postimg.cc/Hnp5vTtn/Screenshot-2025-07-28-110516.png",
+                    tags: ["Power BI", "Data Visualization", "Analytics"],
                     liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiMjBhNzM1MDEtNTZiYy00MGM1LWJhM2MtY2NlZmYyZTA0ZjQ0IiwidCI6IjliOTk0Yjg2LWZmNjctNGEyNC05YTBjLTFkYzgzNWVjOTJjNSIsImMiOjEwfQ%3D%3D"
                 },
                 {
                     name: "HR Analytics Dashboard",
-                    description: "Employee performance analytics dashboard",
-                    tags: ["Power BI", "HR", "Analytics"],
+                    description: "Employee performance and retention analysis with predictive insights",
                     image: "https://i.postimg.cc/bNZdyGd8/Screenshot-2025-07-28-110453.png",
+                    tags: ["Power BI", "HR Analytics", "Dashboard"],
                     liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiMjBhNzM1MDEtNTZiYy00MGM1LWJhM2MtY2NlZmYyZTA0ZjQ0IiwidCI6IjliOTk0Yjg2LWZmNjcastNGEyNC05YTBjLTFkYzgzNWVjOTJjNSIsImMiOjEwfQ%3D%3D"
                 }
-            ];
+            ],
             
-            renderProjects(projects);
-            
-            // Static experience
-            const experience = [
+            experience: [
                 {
                     title: "Data Analyst",
                     company: "Data Solution 360",
                     period: "June 2025 – Present",
-                    description: "Developed automated data pipelines reducing manual reporting time by 70%"
+                    description: "Developed automated data pipelines reducing manual reporting time by 70%. Designed Google Apps Script automations for business workflows.",
+                    type: "work"
                 },
                 {
                     title: "Accounts Executive",
                     company: "Orient Button Ltd.",
                     period: "2023 – 2025",
-                    description: "Created advanced Excel dashboards and automated reporting"
+                    description: "Created advanced Excel dashboards for financial KPIs. Automated monthly reporting using VBA and Google Sheets.",
+                    type: "work"
                 },
                 {
-                    title: "Bachelor of Business Administration",
+                    title: "Bachelor of Business Administration (BBA)",
                     company: "Mohammadpur Kendriya College",
                     period: "2018 – 2022",
-                    description: "Specialized in Marketing with focus on data analytics"
-                }
-            ];
-            
-            renderTimeline(experience);
-            
-            setTimeout(animateSkillBars, 500);
-        }
-        
-        function renderSkills(skills) {
-            const container = document.getElementById('skillsContainer');
-            if (!container) return;
-            
-            container.innerHTML = skills.map(skill => `
-                <div class="skill-card glass">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-semibold text-lg">${skill.name}</h3>
-                        <span class="text-orange-400 font-bold">${skill.level}%</span>
-                    </div>
-                    <div class="text-sm text-gray-400 mb-3">${skill.category}</div>
-                    <div class="skill-progress">
-                        <div class="skill-fill" data-width="${skill.level}"></div>
-                    </div>
-                </div>
-            `).join('');
-            
-            // Create radar chart
-            createSkillsChart(skills);
-        }
-        
-        function createSkillsChart(skills) {
-            const ctx = document.getElementById('skillsChart').getContext('2d');
-            
-            // Extract top 6 skills for chart
-            const topSkills = skills.slice(0, 6);
-            const labels = topSkills.map(s => s.name);
-            const data = topSkills.map(s => s.level);
-            
-            new Chart(ctx, {
-                type: 'radar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Skill Level',
-                        data: data,
-                        backgroundColor: 'rgba(255, 107, 53, 0.2)',
-                        borderColor: '#FF6B35',
-                        borderWidth: 2,
-                        pointBackgroundColor: '#FF6B35',
-                        pointBorderColor: '#fff',
-                        pointBorderWidth: 2
-                    }]
+                    description: "Specialized in Marketing with coursework in business analytics, statistics, and strategic management.",
+                    type: "education"
                 },
-                options: {
-                    scales: {
-                        r: {
-                            beginAtZero: true,
-                            max: 100,
-                            ticks: { display: false },
-                            pointLabels: { color: '#fff' },
-                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
-                            angleLines: { color: 'rgba(255, 255, 255, 0.1)' }
-                        }
-                    },
-                    plugins: {
-                        legend: { display: false }
-                    }
+                {
+                    title: "Google Data Analytics Professional Certificate",
+                    company: "Google",
+                    period: "2023 – 2024",
+                    description: "Comprehensive training in data analysis, visualization, SQL, R, and advanced Excel functions.",
+                    type: "education"
                 }
-            });
-        }
+            ]
+        };
         
-        function renderProjects(projects) {
-            const container = document.getElementById('projectsContainer');
-            if (!container) return;
+        // ============================
+        // 3D SCENE INITIALIZATION
+        // ============================
+        
+        class ThreeDScene {
+            constructor() {
+                this.container = document.getElementById('scene-container');
+                this.scene = new THREE.Scene();
+                this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+                
+                this.particles = null;
+                this.clock = new THREE.Clock();
+                
+                this.init();
+                this.animate();
+            }
             
-            container.innerHTML = projects.map(project => `
-                <div class="glass rounded-2xl overflow-hidden card-3d">
-                    <img src="${project.image}" 
-                         alt="${project.name}"
-                         class="w-full h-48 object-cover">
+            init() {
+                // Setup renderer
+                this.renderer.setSize(window.innerWidth, window.innerHeight);
+                this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                this.container.appendChild(this.renderer.domElement);
+                
+                // Setup camera
+                this.camera.position.z = 5;
+                
+                // Add lights
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+                this.scene.add(ambientLight);
+                
+                const directionalLight = new THREE.DirectionalLight(0xff6b35, 1);
+                directionalLight.position.set(5, 5, 5);
+                this.scene.add(directionalLight);
+                
+                // Create particles
+                this.createParticles();
+                
+                // Handle window resize
+                window.addEventListener('resize', () => this.onWindowResize());
+            }
+            
+            createParticles() {
+                const particlesGeometry = new THREE.BufferGeometry();
+                const count = 2000;
+                
+                const positions = new Float32Array(count * 3);
+                const colors = new Float32Array(count * 3);
+                
+                for(let i = 0; i < count * 3; i++) {
+                    positions[i] = (Math.random() - 0.5) * 20;
+                    colors[i] = Math.random();
+                }
+                
+                particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+                particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+                
+                const particlesMaterial = new THREE.PointsMaterial({
+                    size: 0.02,
+                    vertexColors: true,
+                    transparent: true,
+                    opacity: 0.6
+                });
+                
+                this.particles = new THREE.Points(particlesGeometry, particlesMaterial);
+                this.scene.add(this.particles);
+            }
+            
+            animate() {
+                requestAnimationFrame(() => this.animate());
+                
+                const elapsedTime = this.clock.getElapsedTime();
+                
+                // Animate particles
+                if (this.particles) {
+                    this.particles.rotation.y = elapsedTime * 0.05;
+                    this.particles.rotation.x = elapsedTime * 0.03;
                     
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">${project.name}</h3>
-                        <p class="text-gray-300 text-sm mb-4">${project.description}</p>
-                        
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            ${project.tags.map(tag => `
-                                <span class="px-3 py-1 bg-orange-500/10 text-orange-400 rounded-full text-xs">${tag}</span>
-                            `).join('')}
-                        </div>
-                        
-                        ${project.liveUrl ? `
-                            <a href="${project.liveUrl}" 
-                               target="_blank"
-                               class="text-orange-400 hover:text-orange-300 font-semibold text-sm">
-                                View Live Demo →
-                            </a>
-                        ` : ''}
-                    </div>
-                </div>
-            `).join('');
-        }
-        
-        function renderTimeline(items) {
-            const container = document.querySelector('.timeline-container');
-            if (!container) return;
+                    const positions = this.particles.geometry.attributes.position.array;
+                    for(let i = 0; i < positions.length; i += 3) {
+                        positions[i + 1] = Math.sin(elapsedTime + positions[i] * 0.1) * 0.1;
+                    }
+                    this.particles.geometry.attributes.position.needsUpdate = true;
+                }
+                
+                // Camera animation
+                this.camera.position.x = Math.sin(elapsedTime * 0.2) * 0.5;
+                this.camera.position.y = Math.cos(elapsedTime * 0.2) * 0.5;
+                this.camera.lookAt(0, 0, 0);
+                
+                this.renderer.render(this.scene, this.camera);
+            }
             
-            container.innerHTML = items.map(item => `
-                <div class="timeline-item">
-                    <div class="timeline-icon"></div>
-                    <div class="timeline-content glass">
-                        <div class="text-sm text-orange-400 font-semibold mb-2">${item.period}</div>
-                        <h3 class="text-lg font-semibold mb-1">${item.title}</h3>
-                        <div class="text-gray-400 mb-3">${item.company}</div>
-                        <p class="text-gray-300 text-sm">${item.description}</p>
-                    </div>
-                </div>
-            `).join('');
-        }
-        
-        function animateSkillBars() {
-            document.querySelectorAll('.skill-fill').forEach(bar => {
-                const width = bar.getAttribute('data-width');
-                bar.style.width = `${width}%`;
-            });
+            onWindowResize() {
+                this.camera.aspect = window.innerWidth / window.innerHeight;
+                this.camera.updateProjectionMatrix();
+                this.renderer.setSize(window.innerWidth, window.innerHeight);
+            }
         }
         
         // ============================
-        // MUSIC PLAYER IMPLEMENTATION
+        // MUSIC PLAYER
         // ============================
         
         class MusicPlayer {
             constructor() {
-                this.audio = new Audio('https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3');
-                this.audio.loop = true;
+                this.audio = new Audio();
                 this.isPlaying = false;
+                this.currentSongIndex = 0;
                 this.volume = 0.5;
-                this.audio.volume = this.volume;
-                
-                this.initializeElements();
-                this.setupEventListeners();
-            }
-            
-            initializeElements() {
-                this.playPauseBtn = document.getElementById('playPauseBtn');
-                this.volumeBtn = document.getElementById('volumeBtn');
-                this.musicProgress = document.getElementById('musicProgress');
-                this.musicProgressFill = document.getElementById('musicProgressFill');
-                this.currentTimeEl = document.getElementById('currentTime');
-                this.musicToggle = document.getElementById('musicToggle');
-                this.musicPlayer = document.getElementById('musicPlayer');
-                this.closeMusic = document.getElementById('closeMusic');
-                this.songTitle = document.getElementById('songTitle');
-            }
-            
-            setupEventListeners() {
-                // Play/Pause
-                this.playPauseBtn.addEventListener('click', () => this.togglePlay());
-                
-                // Volume toggle
-                this.volumeBtn.addEventListener('click', () => this.toggleVolume());
-                
-                // Progress bar click
-                this.musicProgress.addEventListener('click', (e) => {
-                    const rect = this.musicProgress.getBoundingClientRect();
-                    const percent = (e.clientX - rect.left) / rect.width;
-                    this.audio.currentTime = percent * this.audio.duration;
-                });
-                
-                // Audio time update
-                this.audio.addEventListener('timeupdate', () => this.updateProgress());
-                
-                // Music toggle button
-                this.musicToggle.addEventListener('click', () => {
-                    this.musicPlayer.classList.toggle('hidden');
-                    if (!this.isPlaying) {
-                        this.play();
+                this.songs = [
+                    {
+                        title: "Tech House Vibes",
+                        artist: "Relaxing electronic",
+                        src: "https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3"
+                    },
+                    {
+                        title: "Driving Ambition",
+                        artist: "Motivational beats",
+                        src: "https://assets.mixkit.co/music/preview/mixkit-driving-ambition-32.mp3"
+                    },
+                    {
+                        title: "Simple Tech",
+                        artist: "Focus music",
+                        src: "https://assets.mixkit.co/music/preview/mixkit-simple-tech-1104.mp3"
                     }
+                ];
+                
+                this.initialize();
+            }
+            
+            initialize() {
+                // Load first song
+                this.loadSong(0);
+                
+                // Event listeners
+                document.getElementById('playPauseBtn').addEventListener('click', () => this.togglePlay());
+                document.getElementById('prevBtn').addEventListener('click', () => this.prevSong());
+                document.getElementById('nextBtn').addEventListener('click', () => this.nextSong());
+                document.getElementById('volumeSlider').addEventListener('input', (e) => this.setVolume(e.target.value / 100));
+                document.getElementById('progressBar').addEventListener('click', (e) => this.seek(e));
+                
+                // Song item clicks
+                document.querySelectorAll('.song-item').forEach((item, index) => {
+                    item.addEventListener('click', () => {
+                        this.loadSong(index);
+                        this.play();
+                    });
                 });
                 
-                // Close music player
-                this.closeMusic.addEventListener('click', () => {
-                    this.musicPlayer.classList.add('hidden');
-                });
+                // Time update
+                this.audio.addEventListener('timeupdate', () => this.updateProgress());
+                this.audio.addEventListener('ended', () => this.nextSong());
+            }
+            
+            loadSong(index) {
+                this.currentSongIndex = index;
+                this.audio.src = this.songs[index].src;
+                this.audio.volume = this.volume;
+                this.updateSongInfo();
                 
-                // Play when audio is ready
-                this.audio.addEventListener('canplaythrough', () => {
-                    console.log('Audio ready to play');
+                // Highlight current song
+                document.querySelectorAll('.song-item').forEach((item, i) => {
+                    item.classList.toggle('bg-primary/10', i === index);
+                    const icon = item.querySelector('i');
+                    icon.className = i === index ? 'fas fa-pause text-primary' : 'fas fa-play text-primary';
                 });
-                
-                // Error handling
-                this.audio.addEventListener('error', (e) => {
-                    console.error('Audio error:', e);
-                    this.songTitle.textContent = 'Error loading music';
-                });
+            }
+            
+            updateSongInfo() {
+                const song = this.songs[this.currentSongIndex];
+                // You can display song info if needed
             }
             
             togglePlay() {
@@ -910,61 +1189,441 @@
             }
             
             play() {
-                this.audio.play().then(() => {
-                    this.isPlaying = true;
-                    this.playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                    this.musicToggle.innerHTML = '<i class="fas fa-music text-green-400"></i>';
-                }).catch(error => {
-                    console.error('Play failed:', error);
-                    // Fallback to different audio source
-                    this.audio.src = 'https://assets.mixkit.co/music/preview/mixkit-driving-ambition-32.mp3';
-                    this.audio.play();
-                });
+                this.audio.play()
+                    .then(() => {
+                        this.isPlaying = true;
+                        document.getElementById('playPauseBtn').innerHTML = '<i class="fas fa-pause"></i>';
+                        // Update current song icon
+                        const currentSongItem = document.querySelectorAll('.song-item')[this.currentSongIndex];
+                        const icon = currentSongItem.querySelector('i');
+                        icon.className = 'fas fa-pause text-primary';
+                    })
+                    .catch(error => {
+                        console.error('Play failed:', error);
+                        // Fallback to a different source
+                        this.audio.src = 'https://assets.mixkit.co/music/preview/mixkit-driving-ambition-32.mp3';
+                        this.audio.play();
+                    });
             }
             
             pause() {
                 this.audio.pause();
                 this.isPlaying = false;
-                this.playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-                this.musicToggle.innerHTML = '<i class="fas fa-music text-orange-400"></i>';
+                document.getElementById('playPauseBtn').innerHTML = '<i class="fas fa-play"></i>';
+                // Update current song icon
+                const currentSongItem = document.querySelectorAll('.song-item')[this.currentSongIndex];
+                const icon = currentSongItem.querySelector('i');
+                icon.className = 'fas fa-play text-primary';
             }
             
-            toggleVolume() {
-                if (this.volume === 0.5) {
-                    this.volume = 0;
-                    this.volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-                } else {
-                    this.volume = 0.5;
-                    this.volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-                }
-                this.audio.volume = this.volume;
+            prevSong() {
+                let newIndex = this.currentSongIndex - 1;
+                if (newIndex < 0) newIndex = this.songs.length - 1;
+                this.loadSong(newIndex);
+                if (this.isPlaying) this.play();
+            }
+            
+            nextSong() {
+                let newIndex = this.currentSongIndex + 1;
+                if (newIndex >= this.songs.length) newIndex = 0;
+                this.loadSong(newIndex);
+                if (this.isPlaying) this.play();
+            }
+            
+            setVolume(value) {
+                this.volume = value;
+                this.audio.volume = value;
+            }
+            
+            seek(e) {
+                const progressBar = document.getElementById('progressBar');
+                const rect = progressBar.getBoundingClientRect();
+                const percent = (e.clientX - rect.left) / rect.width;
+                this.audio.currentTime = percent * this.audio.duration;
             }
             
             updateProgress() {
-                const percent = (this.audio.currentTime / this.audio.duration) * 100 || 0;
-                this.musicProgressFill.style.width = `${percent}%`;
+                const progress = (this.audio.currentTime / this.audio.duration) * 100 || 0;
+                document.querySelector('.progress-fill').style.width = `${progress}%`;
                 
-                // Update current time
-                const minutes = Math.floor(this.audio.currentTime / 60);
-                const seconds = Math.floor(this.audio.currentTime % 60);
-                this.currentTimeEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                // Update time display
+                const currentTime = document.getElementById('currentTime');
+                const duration = document.getElementById('duration');
+                
+                if (this.audio.duration) {
+                    currentTime.textContent = this.formatTime(this.audio.currentTime);
+                    duration.textContent = this.formatTime(this.audio.duration);
+                }
             }
             
-            // Method to change song
-            changeSong(url, title) {
-                this.audio.src = url;
-                this.songTitle.textContent = title;
-                if (this.isPlaying) {
-                    this.audio.play();
-                }
+            formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs.toString().padStart(2, '0')}`;
             }
         }
         
         // ============================
-        // TYPED.JS INITIALIZATION
+        // CHATBOT
         // ============================
         
-        function initializeTypedJS() {
+        class Chatbot {
+            constructor() {
+                this.messages = [
+                    { type: 'bot', text: "Hello! I'm DataBot, your AI assistant. How can I help you today?" },
+                    { type: 'bot', text: "I can tell you about Md. Masum Billah's skills, projects, experience, or help you contact him." }
+                ];
+                
+                this.responses = {
+                    'skills': "Md. Masum Billah specializes in: Google Apps Script (95%), SQL (90%), Power BI (88%), Python (85%), Excel (95%), Data Analysis (92%), and Automation (94%).",
+                    'projects': "He has worked on several projects including: Autopilot Business System, Car Sales Analytics Dashboard, and HR Analytics Dashboard. You can view them in the Projects section.",
+                    'experience': "Current: Data Analyst at Data Solution 360. Previous: Accounts Executive at Orient Button Ltd. Education: BBA from Mohammadpur Kendriya College and Google Data Analytics Professional Certificate.",
+                    'contact': "You can contact him via email: itsmbillah@gmail.com or phone: +880 1915-966721. Also available on LinkedIn and other social media.",
+                    'hi': "Hello! How can I help you today?",
+                    'hello': "Hi there! What would you like to know?",
+                    'help': "I can help you with: skills, projects, experience, contact information, or general questions.",
+                    'default': "I'm not sure I understand. You can ask about: skills, projects, experience, or contact information."
+                };
+                
+                this.initialize();
+            }
+            
+            initialize() {
+                // Load initial messages
+                this.renderMessages();
+                
+                // Event listeners
+                document.getElementById('sendMessage').addEventListener('click', () => this.sendMessage());
+                document.getElementById('chatInput').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') this.sendMessage();
+                });
+            }
+            
+            sendMessage() {
+                const input = document.getElementById('chatInput');
+                const message = input.value.trim();
+                
+                if (message) {
+                    // Add user message
+                    this.addMessage('user', message);
+                    
+                    // Clear input
+                    input.value = '';
+                    
+                    // Generate response
+                    setTimeout(() => {
+                        this.generateResponse(message.toLowerCase());
+                    }, 500);
+                }
+            }
+            
+            addMessage(type, text) {
+                this.messages.push({ type, text });
+                this.renderMessages();
+            }
+            
+            generateResponse(message) {
+                let response = this.responses.default;
+                
+                // Check for keywords
+                if (message.includes('skill')) response = this.responses.skills;
+                else if (message.includes('project')) response = this.responses.projects;
+                else if (message.includes('experience') || message.includes('work')) response = this.responses.experience;
+                else if (message.includes('contact') || message.includes('email') || message.includes('phone')) response = this.responses.contact;
+                else if (message.includes('hi') || message.includes('hello')) response = this.responses.hi;
+                else if (message.includes('help')) response = this.responses.help;
+                
+                this.addMessage('bot', response);
+            }
+            
+            renderMessages() {
+                const container = document.getElementById('chatMessages');
+                container.innerHTML = '';
+                
+                this.messages.forEach(msg => {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = `message ${msg.type} mb-4`;
+                    
+                    if (msg.type === 'bot') {
+                        messageDiv.innerHTML = `
+                            <div class="inline-block max-w-xs bg-white/10 rounded-2xl rounded-bl-none px-4 py-2">
+                                <div class="font-bold text-primary text-sm mb-1">DataBot:</div>
+                                ${msg.text}
+                            </div>
+                        `;
+                    } else {
+                        messageDiv.innerHTML = `
+                            <div class="inline-block max-w-xs bg-primary/20 rounded-2xl rounded-br-none px-4 py-2 ml-auto">
+                                ${msg.text}
+                            </div>
+                        `;
+                    }
+                    
+                    container.appendChild(messageDiv);
+                });
+                
+                // Scroll to bottom
+                container.scrollTop = container.scrollHeight;
+            }
+        }
+        
+        // ============================
+        // PORTFOLIO UI RENDERING
+        // ============================
+        
+        function renderSkills() {
+            const container = document.getElementById('skillsList');
+            if (!container) return;
+            
+            container.innerHTML = portfolioData.skills.map(skill => `
+                <div class="skill-item">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium">${skill.name}</span>
+                        <span class="text-primary font-bold">${skill.level}%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" data-width="${skill.level}"></div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function renderProjects() {
+            const container = document.getElementById('projectsGrid');
+            if (!container) return;
+            
+            container.innerHTML = portfolioData.projects.map(project => `
+                <div class="glass rounded-3xl overflow-hidden card-3d hover-glow">
+                    <img src="${project.image}" 
+                         alt="${project.name}"
+                         class="w-full h-48 object-cover">
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">${project.name}</h3>
+                        <p class="text-gray-300 text-sm mb-4">${project.description}</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            ${project.tags.map(tag => `
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs">${tag}</span>
+                            `).join('')}
+                        </div>
+                        
+                        ${project.liveUrl ? `
+                            <a href="${project.liveUrl}" 
+                               target="_blank"
+                               class="text-primary hover:text-accent font-semibold text-sm inline-flex items-center">
+                                View Live Demo <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function renderTimeline() {
+            const container = document.getElementById('timelineContainer');
+            if (!container) return;
+            
+            const items = portfolioData.experience;
+            
+            container.innerHTML = items.map((item, index) => `
+                <div class="timeline-item ${index % 2 === 0 ? 'left' : 'right'}">
+                    <div class="content glass rounded-3xl p-6">
+                        <span class="text-primary font-bold text-sm mb-2 block">${item.period}</span>
+                        <h3 class="text-xl font-bold mb-2">${item.title}</h3>
+                        <div class="text-accent font-medium mb-3">${item.company}</div>
+                        <p class="text-gray-300">${item.description}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // ============================
+        // ANIMATIONS & EFFECTS
+        // ============================
+        
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current);
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+        
+        function animateSkillBars() {
+            document.querySelectorAll('.skill-fill').forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = `${width}%`;
+            });
+        }
+        
+        // ============================
+        // UI INTERACTIONS
+        // ============================
+        
+        function setupUIInteractions() {
+            // Music player toggle
+            const musicToggle = document.getElementById('musicToggle');
+            const musicPlayer = document.querySelector('.music-player');
+            
+            musicToggle.addEventListener('click', () => {
+                musicPlayer.classList.toggle('hidden');
+            });
+            
+            document.getElementById('closeMusic').addEventListener('click', () => {
+                musicPlayer.classList.add('hidden');
+            });
+            
+            // Chatbot toggle
+            const chatbotToggle = document.getElementById('chatbotToggle');
+            const chatbotWindow = document.querySelector('.chatbot-window');
+            
+            chatbotToggle.addEventListener('click', () => {
+                chatbotWindow.classList.toggle('active');
+            });
+            
+            document.getElementById('closeChatbot').addEventListener('click', () => {
+                chatbotWindow.classList.remove('active');
+            });
+            
+            // Back to top
+            const backToTop = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTop.classList.remove('opacity-0', 'pointer-events-none');
+                    backToTop.classList.add('opacity-100', 'pointer-events-auto');
+                } else {
+                    backToTop.classList.add('opacity-0', 'pointer-events-none');
+                    backToTop.classList.remove('opacity-100', 'pointer-events-auto');
+                }
+            });
+            
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Mobile menu
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const nav = document.querySelector('nav');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                // Toggle mobile menu
+                const menu = document.createElement('div');
+                menu.className = 'md:hidden mt-4 p-4 glass rounded-lg';
+                menu.innerHTML = `
+                    <div class="space-y-3">
+                        <a href="#home" class="block py-2 hover:text-primary">Home</a>
+                        <a href="#about" class="block py-2 hover:text-primary">About</a>
+                        <a href="#skills" class="block py-2 hover:text-primary">Skills</a>
+                        <a href="#projects" class="block py-2 hover:text-primary">Projects</a>
+                        <a href="#experience" class="block py-2 hover:text-primary">Experience</a>
+                        <a href="#contact" class="block py-2 hover:text-primary">Contact</a>
+                    </div>
+                `;
+                
+                // Remove existing menu if present
+                const existingMenu = nav.querySelector('.mobile-menu');
+                if (existingMenu) {
+                    existingMenu.remove();
+                } else {
+                    menu.classList.add('mobile-menu');
+                    nav.appendChild(menu);
+                }
+            });
+            
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        const mobileMenu = nav.querySelector('.mobile-menu');
+                        if (mobileMenu) {
+                            mobileMenu.remove();
+                        }
+                        
+                        // Close chatbot if open
+                        chatbotWindow.classList.remove('active');
+                    }
+                });
+            });
+            
+            // Contact form
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        subject: document.getElementById('subject').value,
+                        message: document.getElementById('message').value
+                    };
+                    
+                    // Simple validation
+                    if (!formData.name || !formData.email || !formData.message) {
+                        alert('Please fill in all required fields');
+                        return;
+                    }
+                    
+                    // Show success message
+                    alert('Thank you for your message! I will contact you soon.');
+                    this.reset();
+                    
+                    // You can add AJAX submission here
+                    // Example: sendToGoogleSheets(formData);
+                });
+            }
+        }
+        
+        // ============================
+        // INITIALIZE EVERYTHING
+        // ============================
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+            
+            // Initialize 3D scene
+            const scene = new ThreeDScene();
+            
+            // Initialize music player
+            const musicPlayer = new MusicPlayer();
+            
+            // Initialize chatbot
+            const chatbot = new Chatbot();
+            
+            // Initialize Typed.js
             new Typed('#typed-text', {
                 strings: [
                     'Data Analyst',
@@ -979,13 +1638,8 @@
                 loop: true,
                 cursorChar: ''
             });
-        }
-        
-        // ============================
-        // PARTICLE BACKGROUND
-        // ============================
-        
-        function initializeParticles() {
+            
+            // Initialize Particles.js
             particlesJS('particles-js', {
                 particles: {
                     number: { value: 80, density: { enable: true, value_area: 800 } },
@@ -1002,7 +1656,7 @@
                     },
                     move: {
                         enable: true,
-                        speed: 1.5,
+                        speed: 1,
                         direction: "none",
                         random: true,
                         straight: false,
@@ -1011,210 +1665,49 @@
                     }
                 }
             });
-        }
-        
-        // ============================
-        // SMOOTH SCROLLING
-        // ============================
-        
-        function initializeSmoothScrolling() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        // Close mobile menu
-                        document.getElementById('mobileMenu').classList.add('hidden');
-                        
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        }
-        
-        // ============================
-        // BACK TO TOP BUTTON
-        // ============================
-        
-        function initializeBackToTop() {
-            const backToTopBtn = document.getElementById('backToTop');
             
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    backToTopBtn.classList.remove('hidden');
-                } else {
-                    backToTopBtn.classList.add('hidden');
-                }
-            });
+            // Render portfolio data
+            renderSkills();
+            renderProjects();
+            renderTimeline();
             
-            backToTopBtn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        }
-        
-        // ============================
-        // MOBILE MENU
-        // ============================
-        
-        function initializeMobileMenu() {
-            const menuBtn = document.getElementById('mobileMenuBtn');
-            const menu = document.getElementById('mobileMenu');
+            // Setup UI interactions
+            setupUIInteractions();
             
-            menuBtn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
-                    menu.classList.add('hidden');
-                }
-            });
-        }
-        
-        // ============================
-        // FORM SUBMISSION
-        // ============================
-        
-        function initializeContactForm() {
-            document.getElementById('contactForm').addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                const formData = {
-                    name: document.getElementById('name').value.trim(),
-                    email: document.getElementById('email').value.trim(),
-                    subject: document.getElementById('subject').value.trim() || 'No Subject',
-                    message: document.getElementById('message').value.trim()
-                };
-                
-                // Validation
-                if (!formData.name || !formData.email || !formData.message) {
-                    alert('Please fill in all required fields');
-                    return;
-                }
-                
-                // Show loading state
-                const submitBtn = this.querySelector('button[type="submit"]');
-                const originalText = submitBtn.textContent;
-                submitBtn.textContent = 'Sending...';
-                submitBtn.disabled = true;
-                
-                try {
-                    // Send to Google Sheets
-                    const params = new URLSearchParams(formData);
-                    await fetch(`${GAS_API_URL}?${params.toString()}`, {
-                        method: 'GET',
-                        mode: 'no-cors'
-                    });
-                    
-                    // Show success
-                    alert('Message sent successfully! I will contact you soon.');
-                    this.reset();
-                    
-                } catch (error) {
-                    console.error('Form error:', error);
-                    alert('Sending failed. Please email me directly at itsmbillah@gmail.com');
-                } finally {
-                    // Reset button
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    }, 2000);
-                }
-            });
-        }
-        
-        // ============================
-        // AOS INITIALIZATION
-        // ============================
-        
-        function initializeAOS() {
-            AOS.init({
-                duration: 1000,
-                once: true,
-                offset: 100
-            });
-        }
-        
-        // ============================
-        // INITIALIZE EVERYTHING
-        // ============================
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            // Hide loader after delay
+            // Animate elements
             setTimeout(() => {
+                animateCounters();
+                animateSkillBars();
+                
+                // Hide loader
                 document.getElementById('loader').style.opacity = '0';
                 setTimeout(() => {
                     document.getElementById('loader').style.display = 'none';
                 }, 500);
             }, 1500);
             
-            // Initialize all components
-            initializeAOS();
-            initializeParticles();
-            initializeTypedJS();
-            initializeSmoothScrolling();
-            initializeBackToTop();
-            initializeMobileMenu();
-            initializeContactForm();
+            // Custom cursor
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorRing = document.querySelector('.cursor-ring');
             
-            // Initialize music player
-            const musicPlayer = new MusicPlayer();
-            
-            // Load portfolio data
-            loadPortfolioData();
-            
-            // Add magnetic button effect
-            document.querySelectorAll('.magnetic-btn').forEach(btn => {
-                btn.addEventListener('mousemove', (e) => {
-                    const rect = btn.getBoundingClientRect();
-                    const x = e.clientX - rect.left - rect.width / 2;
-                    const y = e.clientY - rect.top - rect.height / 2;
-                    
-                    const distance = Math.sqrt(x * x + y * y);
-                    const maxDistance = 50;
-                    
-                    if (distance < maxDistance) {
-                        const strength = 1 - (distance / maxDistance);
-                        btn.style.transform = `translate(${x * strength * 0.2}px, ${y * strength * 0.2}px)`;
-                    }
-                });
+            document.addEventListener('mousemove', (e) => {
+                cursorDot.style.left = `${e.clientX}px`;
+                cursorDot.style.top = `${e.clientY}px`;
                 
-                btn.addEventListener('mouseleave', () => {
-                    btn.style.transform = 'translate(0, 0)';
-                });
+                cursorRing.style.left = `${e.clientX}px`;
+                cursorRing.style.top = `${e.clientY}px`;
             });
             
-            // Add hover effect to cards
-            document.querySelectorAll('.card-3d').forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const rotateY = (x - centerX) / 25;
-                    const rotateX = (centerY - y) / 25;
-                    
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-                });
-                
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-                });
+            document.addEventListener('mousedown', () => {
+                cursorDot.style.transform = 'scale(0.5)';
+                cursorRing.style.transform = 'scale(0.8)';
+            });
+            
+            document.addEventListener('mouseup', () => {
+                cursorDot.style.transform = 'scale(1)';
+                cursorRing.style.transform = 'scale(1)';
             });
         });
-        
-        // Export music player for global access if needed
-        window.musicPlayer = new MusicPlayer();
     </script>
 </body>
 </html>
