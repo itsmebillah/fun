@@ -1,93 +1,119 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>আরামের চ্যাট</title>
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
       height:100dvh;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      font-family: system-ui, sans-serif;
-      color: white;
-      display: grid;
-      place-items: center;
+      background:linear-gradient(135deg,#1e0533,#2a0b4a,#3f1a6e);
+      font-family:system-ui,sans-serif;
+      color:#f0e8ff;
+      overflow:hidden;
+      display:grid;
+      place-items:center;
     }
-    .container {
-      width:  min(92%, 380px);
-      height: min(92dvh, 680px);
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(16px);
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,0.12);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
+    .container{
+      width:min(94%,420px);
+      height:min(96dvh,720px);
+      background:rgba(30,10,60,0.38);
+      backdrop-filter:blur(20px);
+      border-radius:28px;
+      border:1px solid rgba(180,140,255,0.18);
+      box-shadow:0 20px 60px rgba(0,0,0,0.6);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      position:relative;
     }
-    .header {
-      padding: 16px 20px;
-      background: rgba(0,0,0,0.15);
-      text-align: center;
-      font-weight: 600;
-      font-size: 1.1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+    .header{
+      padding:18px 24px;
+      background:linear-gradient(to right,rgba(100,50,200,0.4),rgba(140,80,255,0.3));
+      text-align:center;
+      font-weight:700;
+      font-size:1.25rem;
+      letter-spacing:1px;
+      border-bottom:1px solid rgba(255,255,255,0.12);
     }
-    .messages {
-      flex: 1;
-      padding: 20px;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+    .messages{
+      flex:1;
+      padding:24px 20px;
+      overflow-y:auto;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      scrollbar-width:thin;
     }
-    .msg {
-      max-width: 78%;
-      padding: 12px 16px;
-      border-radius: 18px;
-      line-height: 1.4;
-      word-break: break-word;
+    .messages::-webkit-scrollbar{
+      width:5px;
     }
-    .user {
-      align-self: flex-end;
-      background: #4f46e5;
-      border-bottom-right-radius: 4px;
+    .messages::-webkit-scrollbar-thumb{
+      background:rgba(180,140,255,0.5);
+      border-radius:10px;
     }
-    .bot {
-      align-self: flex-start;
-      background: rgba(255,255,255,0.15);
-      border-bottom-left-radius: 4px;
+    .msg{
+      max-width:82%;
+      padding:13px 18px;
+      border-radius:22px;
+      line-height:1.45;
+      font-size:1.02rem;
+      animation:fadeIn 0.4s ease-out;
     }
-    .input-area {
-      padding: 16px 20px;
-      background: rgba(0,0,0,0.18);
-      display: flex;
-      gap: 12px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+    @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    .user{
+      align-self:flex-end;
+      background:linear-gradient(135deg,#7c3aed,#a78bfa);
+      color:white;
+      border-bottom-right-radius:6px;
+      box-shadow:0 4px 12px rgba(124,58,237,0.4);
     }
-    input {
-      flex: 1;
-      padding: 12px 18px;
-      border: none;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.12);
-      color: white;
-      font-size: 1rem;
-      outline: none;
+    .bot{
+      align-self:flex-start;
+      background:rgba(255,255,255,0.13);
+      border:1px solid rgba(180,140,255,0.3);
+      border-bottom-left-radius:6px;
     }
-    input::placeholder { color: rgba(255,255,255,0.5); }
-    button {
-      width: 48px;
-      height: 48px;
-      border: none;
-      border-radius: 50%;
-      background: #6366f1;
-      color: white;
-      font-size: 1.3rem;
-      cursor: pointer;
+    .input-area{
+      padding:18px 24px;
+      background:rgba(20,5,40,0.45);
+      display:flex;
+      gap:12px;
+      border-top:1px solid rgba(180,140,255,0.15);
     }
-    button:hover { background: #4f46e5; }
+    input{
+      flex:1;
+      padding:14px 20px;
+      border:none;
+      border-radius:999px;
+      background:rgba(255,255,255,0.09);
+      color:#f0e8ff;
+      font-size:1.05rem;
+      outline:none;
+      transition:0.3s;
+    }
+    input:focus{
+      background:rgba(255,255,255,0.16);
+      box-shadow:0 0 0 3px rgba(124,58,237,0.3);
+    }
+    button{
+      width:54px;
+      height:54px;
+      border:none;
+      border-radius:50%;
+      background:linear-gradient(135deg,#7c3aed,#a78bfa);
+      color:white;
+      font-size:1.4rem;
+      cursor:pointer;
+      transition:0.25s;
+      box-shadow:0 6px 16px rgba(124,58,237,0.35);
+    }
+    button:hover{
+      transform:scale(1.08);
+      box-shadow:0 10px 24px rgba(124,58,237,0.5);
+    }
+    button:active{transform:scale(0.94)}
   </style>
 </head>
 <body>
@@ -96,11 +122,11 @@
   <div class="header">আরামের চ্যাট</div>
   
   <div class="messages" id="messages">
-    <div class="msg bot">হাই! কেমন আছো? 😌</div>
+    <div class="msg bot">হাই! আজ কেমন লাগছে? 🌙</div>
   </div>
 
   <div class="input-area">
-    <input type="text" id="input" placeholder="কী বলতে চাও..." autocomplete="off"/>
+    <input type="text" id="input" placeholder="কী মনে চলছে..." autocomplete="off"/>
     <button onclick="send()">➤</button>
   </div>
 </div>
@@ -126,25 +152,20 @@ function send() {
 
   setTimeout(() => {
     const replies = [
-      'হুম, বুঝলাম 😌',
-      'খুব ভালো লাগলো শুনে!',
-      'আজকের মুড কেমন?',
-      'তুমি সবসময় এত কিউট কেনো? 🫶',
-      'আর কী কী মজার কথা আছে বলো...',
-      'আমি তো শুধু তোমার কথাই শুনতে চাই ☺️'
+      'হুম... খুব ভালো লাগছে শুনে 🌟',
+      'তোমার কথা শুনতে আমারও ভালো লাগে ☺️',
+      'আজকের মুডটা কোন রঙের?',
+      'তুমি সবসময় এত মিষ্টি কেনো? 🫶',
+      'আরো বলো... আমি শুনছি',
+      'তোমার সাথে কথা বলতে আমার রাত জেগে যায় ✨'
     ];
     const random = replies[Math.floor(Math.random() * replies.length)];
     addMsg(random, 'bot');
-  }, 600);
+  }, 700);
 }
 
 input.addEventListener('keypress', e => {
   if (e.key === 'Enter') send();
-  // Google Analytics
-        gtag('event', 'page_view', {
-            page_title: document.title,
-            page_location: window.location.href
-      
 });
 </script>
 
