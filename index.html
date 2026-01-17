@@ -3,130 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>আরামের চ্যাট</title>
+  <title>হট নাইট চ্যাট</title>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
     body{
-      height:100dvh;
-      background:linear-gradient(135deg,#1e0533,#2a0b4a,#3f1a6e);
+      margin:0; height:100dvh;
+      background:url('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200') center/cover fixed;
+      position:relative;
       font-family:system-ui,sans-serif;
-      color:#f0e8ff;
+      color:#fff;
       overflow:hidden;
-      display:grid;
-      place-items:center;
+    }
+    body::before{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(to bottom,rgba(0,0,0,0.7),rgba(60,0,100,0.6));
+      z-index:1;
     }
     .container{
-      width:min(94%,420px);
-      height:min(96dvh,720px);
-      background:rgba(30,10,60,0.38);
-      backdrop-filter:blur(20px);
-      border-radius:28px;
-      border:1px solid rgba(180,140,255,0.18);
-      box-shadow:0 20px 60px rgba(0,0,0,0.6);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      position:relative;
+      position:relative; z-index:2;
+      width:min(95%,460px); height:min(96dvh,780px);
+      margin:2vh auto;
+      background:rgba(20,0,40,0.6);
+      backdrop-filter:blur(18px);
+      border-radius:30px;
+      border:1px solid rgba(255,80,180,0.35);
+      box-shadow:0 20px 80px rgba(0,0,0,0.8);
+      display:flex; flex-direction:column; overflow:hidden;
     }
     .header{
-      padding:18px 24px;
-      background:linear-gradient(to right,rgba(100,50,200,0.4),rgba(140,80,255,0.3));
-      text-align:center;
-      font-weight:700;
-      font-size:1.25rem;
-      letter-spacing:1px;
-      border-bottom:1px solid rgba(255,255,255,0.12);
+      padding:18px; background:rgba(255,0,100,0.35);
+      text-align:center; font-size:1.3rem; font-weight:700;
+      border-bottom:1px solid rgba(255,100,180,0.4);
     }
     .messages{
-      flex:1;
-      padding:24px 20px;
-      overflow-y:auto;
-      display:flex;
-      flex-direction:column;
-      gap:16px;
-      scrollbar-width:thin;
-    }
-    .messages::-webkit-scrollbar{
-      width:5px;
-    }
-    .messages::-webkit-scrollbar-thumb{
-      background:rgba(180,140,255,0.5);
-      border-radius:10px;
+      flex:1; padding:24px; overflow-y:auto;
+      display:flex; flex-direction:column; gap:16px;
     }
     .msg{
-      max-width:82%;
-      padding:13px 18px;
-      border-radius:22px;
-      line-height:1.45;
-      font-size:1.02rem;
-      animation:fadeIn 0.4s ease-out;
+      max-width:84%; padding:14px 20px; border-radius:24px;
+      line-height:1.5; animation:fadeUp 0.4s ease;
     }
-    @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-    .user{
-      align-self:flex-end;
-      background:linear-gradient(135deg,#7c3aed,#a78bfa);
-      color:white;
-      border-bottom-right-radius:6px;
-      box-shadow:0 4px 12px rgba(124,58,237,0.4);
-    }
-    .bot{
-      align-self:flex-start;
-      background:rgba(255,255,255,0.13);
-      border:1px solid rgba(180,140,255,0.3);
-      border-bottom-left-radius:6px;
-    }
+    @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+    .user{align-self:flex-end; background:#ff3366; color:#fff; border-bottom-right-radius:6px;}
+    .bot{align-self:flex-start; background:rgba(255,255,255,0.18); border-bottom-left-radius:6px;}
     .input-area{
-      padding:18px 24px;
-      background:rgba(20,5,40,0.45);
-      display:flex;
-      gap:12px;
-      border-top:1px solid rgba(180,140,255,0.15);
+      padding:18px; background:rgba(0,0,0,0.45); display:flex; gap:12px;
+      border-top:1px solid rgba(255,80,180,0.3);
     }
-    input{
-      flex:1;
-      padding:14px 20px;
-      border:none;
-      border-radius:999px;
-      background:rgba(255,255,255,0.09);
-      color:#f0e8ff;
-      font-size:1.05rem;
-      outline:none;
-      transition:0.3s;
-    }
-    input:focus{
-      background:rgba(255,255,255,0.16);
-      box-shadow:0 0 0 3px rgba(124,58,237,0.3);
-    }
-    button{
-      width:54px;
-      height:54px;
-      border:none;
-      border-radius:50%;
-      background:linear-gradient(135deg,#7c3aed,#a78bfa);
-      color:white;
-      font-size:1.4rem;
-      cursor:pointer;
-      transition:0.25s;
-      box-shadow:0 6px 16px rgba(124,58,237,0.35);
-    }
-    button:hover{
-      transform:scale(1.08);
-      box-shadow:0 10px 24px rgba(124,58,237,0.5);
-    }
-    button:active{transform:scale(0.94)}
+    input{flex:1; padding:14px 20px; border:none; border-radius:999px;
+      background:rgba(255,255,255,0.14); color:#fff; outline:none;}
+    input:focus{box-shadow:0 0 0 3px rgba(255,80,180,0.5);}
+    button{width:52px; height:52px; border:none; border-radius:50%;
+      background:#ff3366; color:#fff; font-size:1.4rem; cursor:pointer; transition:0.3s;}
+    button:hover{transform:scale(1.1); background:#ff1a5c;}
   </style>
 </head>
 <body>
 
 <div class="container">
-  <div class="header">আরামের চ্যাট</div>
+  <div class="header">হট নাইট চ্যাট</div>
   
   <div class="messages" id="messages">
-    <div class="msg bot">হাই! আজ কেমন লাগছে? 🌙</div>
+    <div class="msg bot">হাই... রাত গভীর, শরীর গরম? 😈🔥</div>
   </div>
 
   <div class="input-area">
-    <input type="text" id="input" placeholder="কী মনে চলছে..." autocomplete="off"/>
+    <input id="input" placeholder="বলো... আমি অপেক্ষায় 💋" autocomplete="off"/>
     <button onclick="send()">➤</button>
   </div>
 </div>
@@ -135,39 +76,36 @@
 const messages = document.getElementById('messages');
 const input = document.getElementById('input');
 
-function addMsg(text, who) {
-  const div = document.createElement('div');
-  div.className = `msg ${who}`;
-  div.textContent = text;
-  messages.appendChild(div);
+function add(text, cls){
+  const d = document.createElement('div');
+  d.className = `msg ${cls}`;
+  d.textContent = text;
+  messages.appendChild(d);
   messages.scrollTop = messages.scrollHeight;
 }
 
-function send() {
-  const text = input.value.trim();
-  if (!text) return;
-  
-  addMsg(text, 'user');
+function send(){
+  const t = input.value.trim();
+  if(!t) return;
+  add(t, 'user');
   input.value = '';
 
-  setTimeout(() => {
-    const replies = [
-      'হুম... খুব ভালো লাগছে শুনে 🌟',
-      'তোমার কথা শুনতে আমারও ভালো লাগে ☺️',
-      'আজকের মুডটা কোন রঙের?',
-      'তুমি সবসময় এত মিষ্টি কেনো? 🫶',
-      'আরো বলো... আমি শুনছি',
-      'তোমার সাথে কথা বলতে আমার রাত জেগে যায় ✨'
+  setTimeout(()=>{
+    const r = [
+      'উফ... তোমার কথা শুনে গা শিরশির 😏',
+      'রাতটা আরো হট করবো? 🔥',
+      'তোমার লিপস্টিকের রঙ কী? 💄',
+      'আমার কাছে এসো... আরো কাছে 😈',
+      'শরীরের কোন জায়গাটা সবচেয়ে সেনসিটিভ? 😉',
+      'আজ রাতে কী কী করতে চাও আমার সাথে? 💦',
+      'ছবি পাঠাও... দেখি কতটা হট তুমি 😍',
+      'তোমাকে ছুঁতে চাই... এখনই 🔥'
     ];
-    const random = replies[Math.floor(Math.random() * replies.length)];
-    addMsg(random, 'bot');
+    add(r[Math.floor(Math.random()*r.length)], 'bot');
   }, 700);
 }
 
-input.addEventListener('keypress', e => {
-  if (e.key === 'Enter') send();
-});
+input.onkeypress = e => { if(e.key==='Enter') send() };
 </script>
-
 </body>
 </html>
